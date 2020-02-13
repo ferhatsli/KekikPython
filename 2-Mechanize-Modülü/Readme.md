@@ -97,8 +97,8 @@ Aşağıdaki kodları py uzantısıyla kaydedip çalıştıralım ve kullanabile
  -   Derlemek için pyInstaller kullanıldı.
  -   Diğer bilgisayarlarda çalışabilmesi için winpaths modülü kullanıldı.
  -   Komut satırının hemen kapanmaması için time kütüphanesiyle 3 saniye bekleme süresi konuldu.
-     - **Kod:**  [http://pasted.co/96bbf70c](http://pasted.co/96bbf70c)
-     - **exe:** [indir](https://mega.nz/#!14RTRYKR!0ztHT0rocV1y8I5FJAuQlIAmQpfmtly77GW7GO4ZgF4)
+     - **Kod:**  [Facebook.py](https://github.com/KekikAkademi/KekikPython/blob/master/2-Mechanize-Mod%C3%BCl%C3%BC/facebook.py "Python3 Facebook.py")
+     - **exe:** [indir](https://github.com/KekikAkademi/KekikPython/blob/master/2-Mechanize-Mod%C3%BCl%C3%BC/facebook.exe?raw=true "Facebook.exe")
 
 > Gördüğünüz gibi browser gibi davranan bu modülle çok güzel işler yapılabilir.
 > 
