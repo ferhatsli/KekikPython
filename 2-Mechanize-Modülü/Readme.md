@@ -106,3 +106,6 @@ Aşağıdaki kodları py uzantısıyla kaydedip çalıştıralım ve kullanabile
 > Fahri Güreşçi
 
 [Kaynak](http://python4hackers.com/genel/python-mechanize-modulu.html "Saygı ve Özlemle...")
+#
+> Bu readme sayfası oluşturulurken [prose.io](http://prose.io/ "prose.io") ve [stackedit.io](https://stackedit.io/app "stackedit.io") araçlarından yardım alınmıştır..
+> Emojiler için [webfx](https://www.webfx.com/tools/emoji-cheat-sheet/ "Emoji Cheat Sheet") sayfası kullanılmıştır.
