@@ -98,8 +98,8 @@ Aşağıdaki kodları py uzantısıyla kaydedip çalıştıralım ve kullanabile
 -   Diğer bilgisayarlarda çalışabilmesi için winpaths modülü kullanıldı.
 -   Komut satırının hemen kapanmaması için time kütüphanesiyle 3 saniye bekleme süresi konuldu.
 
-**Kod:**  [http://pasted.co/96bbf70c](https://web.archive.org/web/20190720033020/http://pasted.co/96bbf70c)
-**exe:** [indir](https://web.archive.org/web/20190720033020/https://mega.nz/#!14RTRYKR!0ztHT0rocV1y8I5FJAuQlIAmQpfmtly77GW7GO4ZgF4)
+**Kod:**  [http://pasted.co/96bbf70c](http://pasted.co/96bbf70c)
+**exe:** [indir](https://mega.nz/#!14RTRYKR!0ztHT0rocV1y8I5FJAuQlIAmQpfmtly77GW7GO4ZgF4)
 
 > Gördüğünüz gibi browser gibi davranan bu modülle çok güzel işler yapılabilir.
 > 
