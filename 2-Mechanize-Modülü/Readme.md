@@ -27,16 +27,15 @@ John J. Lee tarafından geliştirilen, web siteleri üzerinde browser gibi davra
 -   Komut satırını yönetici olarak açarak masaüstü dizinine çıkarttığınız mechanize-0.2.5 dizinine cd komutunu kullanarak gelin.
 
 		python setup.py install
-
+        
 -   Komutuyla yükleme işlemini başlatın. Python konsolda import mechanize ile yüklendiğini test edebilirsiniz.
 -   Python path’e ekliyse windows cmd de, linux kurulumunda verdiğim pip ve easy_install paket yöneticileriyle yükleyebilirsiniz.
 
 ### **Linux Kurulumu**
-
 Python paket yöneticilerini kullanarak:
 
    	pip install mechanize
-
+    
 veya
 
     easy_install mechanize
@@ -75,39 +74,24 @@ Aşağıdaki kodları py uzantısıyla kaydedip çalıştıralım ve kullanabile
     dos.close()
 
 **Satırları açıklayacak olursak:**
-
- - **1-**  Mechanize modülünü dahil ediyoruz.
-   **2-**  Browser nesnesi oluşturuyoruz.
-   **3-**  Browser nesnesinin set_handle_robots metodunu kullanarak robots.txt engeli için False değerini veriyoruz.
-   **4-** Cookie değeri ekleyebiliriz.
-   **5-** Referer bilgisi ve daha bir çok header için gerekli olan tanımlamaları yapabiliriz.
-   **6-** Proxy tanımlayabiliriz. Dosya işlemleriyle proxy list yükleyerek her üç login denemesinden sonra değişecek şekilde
-   ayarlayabiliriz. set_proxy fonksiyonunun ilk parametresine dosyadan
-   okuduğumuz tek satırlık string proxy değerini verebiliriz,
-   yapacaklarınız hayal gücünüze bağlı.
-   **7-**  Browser kimliğini (user-agent) tanımlıyoruz. Kendi tarayıcınızın user-agent bilgisini öğrenmek için live http header
-   gibi eklentiler kullanabilirsiniz veya bu siteden user-agent
-   listesine ulaşabilirsiniz >
-   [useragentstring.com](https://web.archive.org/web/20190720033020/http://www.useragentstring.com/)
-   **8-**  Browser nesnesinin open fonksiyonunu kullanarak sayfayı açıyoruz.
-   **9-**  Masaüstünde html kodlarının kaydedileceği dosyayı oluşturuyoruz. user değerini kendi kullanıcı adınızla değiştirmeyi
-   unutmayın. Bu kod windows dizin değerine göre oluşturuldu. Linux için
-   değerleri ayarlamalısınız.
-   **10-**  Kullanıcıdan user pass alıyoruz.
-   **12-**  Post yapacağımız form kısmının html kodunda kaçıncı sırada olduğunu belirtiyoruz. Sayfa içerisinde birden fazla form kısmı
-   olabilir. Html kaynak kodunu inceleyerek öğreniyoruz. İlk sıradaysa
-   sıfır yazıyoruz.
-   **13-** Sayfada bulunan username ve password kısmının name değerlerine raw_inputla aldığımız değerleri atıyoruz.
-   **15-**  Form verilerinin hangi metotla işleneceğini belirliyoruz.
-   **16-**  Girilen verileri gönderiyoruz.
-   **17-**  Login denemesinden sonra anasayfanın html kodunda işlem yapacağımız için browser nesnesinin read fonksiyonuyla masaüstü
-   dizinine kaydediyoruz.
-   **18-**  Dosya işaretçisini başa alıyoruz.
-   **19-**  Açmış olduğumuz dosyayı text değişkeniyle işlem yapmak için eşitliyoruz.
-   **20-**  Login olup olamadığımızı kontrol etmek için ana sayfadaki html kodundan login sayfasında bulunmayan bir kod seçiyoruz.Farklı
-   bir değerde seçebilirdik. Facebook’ta güncellemeler yapıldığında
-   kullandığım  bu html değeri değişebilir ve kod düzgün çalışmaz. Bu
-   değeri siz güncelleyebilirsiniz.
+- **1-**  Mechanize modülünü dahil ediyoruz.
+- **2-**  Browser nesnesi oluşturuyoruz.
+- **3-**  Browser nesnesinin set_handle_robots metodunu kullanarak robots.txt engeli için False değerini veriyoruz.
+- **4-** Cookie değeri ekleyebiliriz.
+- **5-** Referer bilgisi ve daha bir çok header için gerekli olan tanımlamaları yapabiliriz.
+- **6-** Proxy tanımlayabiliriz. Dosya işlemleriyle proxy list yükleyerek her üç login denemesinden sonra değişecek şekilde ayarlayabiliriz. set_proxy fonksiyonunun ilk parametresine dosyadan okuduğumuz tek satırlık string proxy değerini verebiliriz, yapacaklarınız hayal gücünüze bağlı.
+- **7-**  Browser kimliğini (user-agent) tanımlıyoruz. Kendi tarayıcınızın user-agent bilgisini öğrenmek için live http header gibi eklentiler kullanabilirsiniz veya bu siteden user-agent listesine ulaşabilirsiniz > [useragentstring.com](https://web.archive.org/web/20190720033020/http://www.useragentstring.com/)
+- **8-**  Browser nesnesinin open fonksiyonunu kullanarak sayfayı açıyoruz.
+- **9-**  Masaüstünde html kodlarının kaydedileceği dosyayı oluşturuyoruz. user değerini kendi kullanıcı adınızla değiştirmeyi unutmayın. Bu kod windows dizin değerine göre oluşturuldu. Linux için değerleri ayarlamalısınız.
+- **10-**  Kullanıcıdan user pass alıyoruz.
+- **12-**  Post yapacağımız form kısmının html kodunda kaçıncı sırada olduğunu belirtiyoruz. Sayfa içerisinde birden fazla form kısmı olabilir. Html kaynak kodunu inceleyerek öğreniyoruz. İlk sıradaysa sıfır yazıyoruz.
+- **13-** Sayfada bulunan username ve password kısmının name değerlerine raw_inputla aldığımız değerleri atıyoruz.
+- **15-**  Form verilerinin hangi metotla işleneceğini belirliyoruz.
+- **16-**  Girilen verileri gönderiyoruz.
+- **17-**  Login denemesinden sonra anasayfanın html kodunda işlem yapacağımız için browser nesnesinin read fonksiyonuyla masaüstü dizinine kaydediyoruz.
+- **18-**  Dosya işaretçisini başa alıyoruz.
+- **19-**  Açmış olduğumuz dosyayı text değişkeniyle işlem yapmak için eşitliyoruz.
+- **20-**  Login olup olamadığımızı kontrol etmek için ana sayfadaki html kodundan login sayfasında bulunmayan bir kod seçiyoruz.Farklı bir değerde seçebilirdik. Facebook’ta güncellemeler yapıldığında kullandığım  bu html değeri değişebilir ve kod düzgün çalışmaz. Bu değeri siz güncelleyebilirsiniz.
 
 ### **Denemek isteyenler için programın derlenmiş hali:**
  -   Derlemek için pyInstaller kullanıldı.
