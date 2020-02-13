@@ -5,7 +5,7 @@ ________________________________
 ![Mechanize Kurulum](https://raw.githubusercontent.com/KekikAkademi/KekikPython/master/2-Mechanize-Mod%C3%BCl%C3%BC/images/mechanize-kurulum.png)
 
 ### **Mechanize Modülü Nedir?**
-John J. Lee tarafından geliştirilen, web siteleri üzerinde browser gibi davranarak işlemler yapmamızı sağlayan python2x modülüdür. Aynı zamanda perl ve ruby dilleri için de yazılmıştır. Python kurulumuyla beraber gelen urllib standart modülü ile de aynı işlemleri yapabilirsiniz fakat mechanize kadar pratik değildir. Mechanize sayesinde web siteleri üzerinde proxy, cookie, header, user-agent gibi bilgileri bir kaç satır kodla yazarak zamandan kazanabilirsiniz.
+John J. Lee tarafından geliştirilen, web siteleri üzerinde browser gibi davranarak işlemler yapmamızı sağlayan python modülüdür. Aynı zamanda perl ve ruby dilleri için de yazılmıştır. Python kurulumuyla beraber gelen urllib standart modülü ile de aynı işlemleri yapabilirsiniz fakat mechanize kadar pratik değildir. Mechanize sayesinde web siteleri üzerinde proxy, cookie, header, user-agent gibi bilgileri bir kaç satır kodla yazarak zamandan kazanabilirsiniz.
 
 ### **Neler Yapabilirim?**
 -   İstediğiniz bir web sitesi hakkında günün belli saatlerinde bilgi alabilir veya bilgi gönderebilirsiniz.
