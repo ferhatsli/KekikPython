@@ -49,16 +49,16 @@ Aşağıdaki kodları py uzantısıyla kaydedip çalıştıralım ve kullanabile
 
 ### **Facebook Login Örneği**
     import mechanize
+    from time import sleep
+
     br=mechanize.Browser()
     br.set_handle_robots(False)
-    #br.set_cookie("cookie data")
-    #br.addheaders = [("Referer", "http://website.com")]
-    #br.set_proxy("ipadress:port","http")
     br.addheaders=[('User-agent', "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36")]
     op=br.open("https://facebook.com")
-    dos=open("c:\\users\\user\\desktop\\facebook.txt","w+")
-    username=raw_input("enter your facebook username: ")
-    password=raw_input("enter your facebook password: ")
+    dos=open("facebook.txt","rb+")
+    print("python4hackers.com\n")
+    username=input("enter your facebook username: ")
+    password=input("enter your facebook password: ")
     br.select_form(nr=0)
     br.form["email"]=username
     br.form["pass"]=password
@@ -68,10 +68,11 @@ Aşağıdaki kodları py uzantısıyla kaydedip çalıştıralım ve kullanabile
     dos.seek(0)
     text=dos.read().decode("UTF-8")
     if(text.find("home_icon",0,len(text))!=-1):
-     print "success login."
+            print("success login.")
     else:
-     print "error login."
+            print("error login.")
     dos.close()
+    sleep(3)
 
 **Satırları açıklayacak olursak:**
 - **1-**  Mechanize modülünü dahil ediyoruz.
