@@ -82,7 +82,7 @@ Aşağıdaki kodları py uzantısıyla kaydedip çalıştıralım ve kullanabile
 - **6-** Proxy tanımlayabiliriz. Dosya işlemleriyle proxy list yükleyerek her üç login denemesinden sonra değişecek şekilde ayarlayabiliriz. set_proxy fonksiyonunun ilk parametresine dosyadan okuduğumuz tek satırlık string proxy değerini verebiliriz, yapacaklarınız hayal gücünüze bağlı.
 - **7-**  Browser kimliğini (user-agent) tanımlıyoruz. Kendi tarayıcınızın user-agent bilgisini öğrenmek için live http header gibi eklentiler kullanabilirsiniz veya bu siteden user-agent listesine ulaşabilirsiniz > [useragentstring.com](https://web.archive.org/web/20190720033020/http://www.useragentstring.com/)
 - **8-**  Browser nesnesinin open fonksiyonunu kullanarak sayfayı açıyoruz.
-- **9-**  Masaüstünde html kodlarının kaydedileceği dosyayı oluşturuyoruz. user değerini kendi kullanıcı adınızla değiştirmeyi unutmayın. Bu kod windows dizin değerine göre oluşturuldu. Linux için değerleri ayarlamalısınız.
+- **9-**  Masaüstünde html kodlarının kaydedileceği dosyayı oluşturuyoruz. [user değerini kendi kullanıcı adınızla değiştirmeyi unutmayın.](https://stackoverflow.com/a/23566951) Bu kod windows dizin değerine göre oluşturuldu. Linux için değerleri ayarlamalısınız.
 - **10-**  Kullanıcıdan user pass alıyoruz.
 - **12-**  Post yapacağımız form kısmının html kodunda kaçıncı sırada olduğunu belirtiyoruz. Sayfa içerisinde birden fazla form kısmı olabilir. Html kaynak kodunu inceleyerek öğreniyoruz. İlk sıradaysa sıfır yazıyoruz.
 - **13-** Sayfada bulunan username ve password kısmının name değerlerine raw_inputla aldığımız değerleri atıyoruz.
