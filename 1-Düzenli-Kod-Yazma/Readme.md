@@ -1,3 +1,6 @@
+🕊 Bu döküman [**@KekikAkademi**](https://t.me/KekikAkademi "Telegram: @KekikAkademi") için oluşturulmuştur. ✌🏼
+________________________________
+
 # :computer: Python Düzenli Kod Yazma (idiomatic code)
 Bildiğiniz gibi `Python` diğer programlama dillerine göre daha kolay bir *syntax*‘a sahip yani; {} vs. çok az kullanıyoruz.
 *Python*'da dictionary tanımlarken kullanılıyor fakat bazı programlama dillerinde bir "*hello world!*" yazmak için bile kullanıyorlar.
@@ -190,7 +193,12 @@ Aslında listenin sözlüğün kümenin hepsinde `comprehension` kullanmak doğr
 **Eğer Open-Source developersanız;** `kodunuzun okunulurluğunu arttırmak için` *böyle yöntemleri kullanmalısınız.*
 
 Yanlış değil, kullanabilirsiniz ama böyle bir kullanım görmezsiniz. :)
+________________________________
+📃 **Yandex.Disk Bünyemizde 780GB veri olmuştur.**
 
+_Paylaşılan Kursların Tümünü_ [**@KekikKahve**](https://t.me/KekikKahve) _Grubu notlarından Çağırabilirsiniz.._
+
+🕊️ Bize **oy verip** _paylaşarak_ destek olmaya ne dersin? ✌🏼
 #
 > Bu readme sayfası oluşturulurken [prose.io](http://prose.io/ "prose.io") ve [stackedit.io](https://stackedit.io/app "stackedit.io") araçlarından yardım alınmıştır..
 > Emojiler için [webfx](https://www.webfx.com/tools/emoji-cheat-sheet/ "Emoji Cheat Sheet") sayfası kullanılmıştır.
