@@ -194,7 +194,7 @@ Aslında listenin sözlüğün kümenin hepsinde `comprehension` kullanmak doğr
 
 Yanlış değil, kullanabilirsiniz ama böyle bir kullanım görmezsiniz. :)
 
-    [Kaynak](https://www.cyber-warrior.org/Forum/python-idiomatic-codeduzenli-kod-yazma_633580,0.cwx)
+   [Kaynak](https://www.cyber-warrior.org/Forum/python-idiomatic-codeduzenli-kod-yazma_633580,0.cwx)
 ________________________________
 📃 **Yandex.Disk Bünyemizde 780GB veri olmuştur.**
 
