@@ -1,4 +1,3 @@
-
 🕊 Bu döküman [**@KekikAkademi**](https://t.me/KekikAkademi "Telegram: @KekikAkademi") için oluşturulmuştur. ✌🏼
 ________________________________
 # Mechanize Modülü
@@ -8,7 +7,7 @@ ________________________________
 John J. Lee tarafından geliştirilen, web siteleri üzerinde browser gibi davranarak işlemler yapmamızı sağlayan python modülüdür. Aynı zamanda perl ve ruby dilleri için de yazılmıştır. Python kurulumuyla beraber gelen urllib standart modülü ile de aynı işlemleri yapabilirsiniz fakat mechanize kadar pratik değildir. Mechanize sayesinde web siteleri üzerinde proxy, cookie, header, user-agent gibi bilgileri bir kaç satır kodla yazarak zamandan kazanabilirsiniz.
 
 ### **Neler Yapabilirim?**
--   İstediğiniz bir web sitesi hakkında günün belli saatlerinde bilgi alabilir veya bilgi gönderebilirsiniz.
+	-   İstediğiniz bir web sitesi hakkında günün belli saatlerinde bilgi alabilir veya bilgi gönderebilirsiniz.
     -   Haftalık hava durumu takibi
     -   Yorum yazma
     -   Mesaj gönderme
