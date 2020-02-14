@@ -1,6 +1,6 @@
 🕊 Bu döküman [**@KekikAkademi**](https://t.me/KekikAkademi "Telegram: @KekikAkademi") için oluşturulmuştur. ✌🏼
 ________________________________
-# Py4H Simple Wiper Malware v1
+# Py4H Googler
 ![Python Google Searcher](https://raw.githubusercontent.com/KekikAkademi/KekikPython/master/5-Py4H-Googler/images/python-google-searcher.jpg)
 
 Merhaba arkadaşlar. Bugün **Hackerlar için Python Programlama Dili** yani **Python4Hackers** diyerek ilk projemizi beraber yapıyor olacağız.
