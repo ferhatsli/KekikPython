@@ -84,7 +84,7 @@ Aşağıdaki kodlarımız **arama fonksiyonu**muza aittir. Burada kaynak kodlar�
 
 > Bir sonraki yazımızda görüşmek üzere.
 
-[Kaynak](http://python4hackers.com/python-malware/py4h-simple-wiper-malware-v1.html "Saygı ve Özlemle...")
+[Kaynak](http://python4hackers.com/python-search-engine-tools/py4h-googler.html "Saygı ve Özlemle...")
 ________________________________
 
 📃 **Yandex.Disk Bünyemizde 780GB veri olmuştur.**
