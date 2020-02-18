@@ -2,7 +2,7 @@
 #! -*- coding: utf-8 -*-
 # Bu araç @keyiflerolsun tarafından | @KekikAkademi için yazılmıştır.
 
-import time,datetime,os,platform        # OturumBilgisi sağlayacak arkadaşlar
+import time,datetime,pytz,os,platform   # OturumBilgisi sağlayacak arkadaşlar
 import requests                         # İstek gönderici arkadaşımız
 from bs4 import BeautifulSoup           # Ayrıştırıcı arkadaşımız
 
@@ -18,8 +18,8 @@ def Temizle(): # Temizle adında bir betik oluşturduk
 Temizle() # Temizle metodumuzu çağırdık
 
 SistemKullaniciAdi = os.getlogin() # Sistem Kullanıcı Adı
-Tarih = datetime.datetime.now().strftime("%d-%m-%Y") # Bugünün Tarihini Alıyoruz
-Saat = datetime.datetime.now().strftime("%H:%M") # Bugünün Saatini Alıyoruz
+Tarih = datetime.datetime.now(pytz.timezone("Turkey")).strftime("%d-%m-%Y") # Bugünün Tarihini Alıyoruz
+Saat = datetime.datetime.now(pytz.timezone("Turkey")).strftime("%H:%M") # Bugünün Saatini Alıyoruz
 
 def OturumBilgisi(): # OturumBilgisi adında bir betik oluşturduk
     print("\n\t" + SistemKullaniciAdi  + "\t<<<< Oturum Bilgisi >>>>\t" + Tarih + "\t|\t" + Saat + "\n") # Anlık oturum ve tarh bilgisini ekranımıza yazıyoruz.
