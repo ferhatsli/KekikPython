@@ -9,7 +9,6 @@ import ctypes                                # CMD ekran başlığı oluşturabi
 import colorama                              # Ortalığın renklenmesi için
 from colorama import Fore                    # Ortalığın renklenmesi için
 colorama.init(autoreset=True)                # Renklerin satırdan başka devam etmemesi için
-from win10toast import ToastNotifier         # Windows'a bildirim göndermek için
 
 ##
 # Önce çalışma alanımızı oluşturuyoruz
@@ -37,6 +36,7 @@ OturumBilgisi() # OturumBilgisi metodumuzu çağırdık
 
 def WindowsBildirimi(): # WindowsBildirimi adında bir metod oluşturduk
     if Sistem == "Windows":
+        from win10toast import ToastNotifier         # Windows'a bildirim göndermek için
         Bildirim = ToastNotifier()
         Bildirim.show_toast("Güncellendi!", "Veriler Güncel", icon_path=None, duration=3, threaded=True)
 ############################################
