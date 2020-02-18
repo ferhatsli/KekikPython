@@ -10,7 +10,7 @@ from bs4 import BeautifulSoup           # Ayrıştırıcı arkadaşımız
 # Önce çalışma alanımızı oluşturuyoruz
 Sistem = platform.system() # Betiğin çalıştığı işletim sistemini öğreniyoruz
 
-def Temizle(): # Temizle adında bir betik oluşturduk
+def Temizle(): # Temizle adında bir metod oluşturduk
     if Sistem == "Windows": # Eğer Sistem Windows ise
         os.system("cls") # Sisteme "cls" komutu gönder
     else: # Sistem Windows değil ise
@@ -21,7 +21,7 @@ SistemKullaniciAdi = os.getlogin() # Sistem Kullanıcı Adı
 Tarih = datetime.datetime.now(pytz.timezone("Turkey")).strftime("%d-%m-%Y") # Bugünün Tarihini Alıyoruz
 Saat = datetime.datetime.now(pytz.timezone("Turkey")).strftime("%H:%M") # Bugünün Saatini Alıyoruz
 
-def OturumBilgisi(): # OturumBilgisi adında bir betik oluşturduk
+def OturumBilgisi(): # OturumBilgisi adında bir metod oluşturduk
     print("\n\t" + SistemKullaniciAdi  + "\t<<<< Oturum Bilgisi >>>>\t" + Tarih + "\t|\t" + Saat + "\n") # Anlık oturum ve tarh bilgisini ekranımıza yazıyoruz.
 OturumBilgisi() # OturumBilgisi metodumuzu çağırdık
 
