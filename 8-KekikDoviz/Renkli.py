@@ -10,7 +10,7 @@ import colorama                              # Ortalığın renklenmesi için
 from colorama import Fore                    # Ortalığın renklenmesi için
 colorama.init(autoreset=True)                # Renklerin satırdan başka devam etmemesi için
 
-##
+##########################################################################################################################################
 # Önce çalışma alanımızı oluşturuyoruz
 Sistem = platform.system() # Betiğin çalıştığı işletim sistemini öğreniyoruz
 
@@ -39,10 +39,11 @@ def WindowsBildirimi(): # WindowsBildirimi adında bir metod oluşturduk
         from win10toast import ToastNotifier         # Windows'a bildirim göndermek için
         Bildirim = ToastNotifier()
         Bildirim.show_toast("Güncellendi!", "Veriler Güncel", icon_path=None, duration=3, threaded=True)
-############################################
+##########################################################################################################################################
+
 # Hadi Yapalım Şu İşi
 def Doviz(): # Doviz adında bir metod oluşturduk
-    WindowsBildirimi() # OturumBilgisi metodumuzu çağırdık
+    WindowsBildirimi() # OturumBilgisi metodumuzu çağırdık <<<< Başka projede bunu istediğiniz yerde çağırabilirsiniz..
     # Tanımlamalarımızı Yapalım
     URL = "https://www.doviz.com/"
     Kimlik = {'User-Agent': '@KekikAkademi'} # Websitesine istek yollarken kimlik bilgimizi sunuyoruz
@@ -99,10 +100,12 @@ def Doviz(): # Doviz adında bir metod oluşturduk
     #print(rakam)
     #print(oran)
     # haaarika
+    
     for i in range(0,len(isim)): # döngüyü isim tablosunun elemanı kadar sürdür
         print(Fore.MAGENTA + "*"*30 + "\n" + Fore.GREEN + "{} ".format(isim[i]) + Fore.RED + ">>" + Fore.YELLOW + " {} ".format(rakam[i]) + Fore.RED + ">>" + Fore.CYAN + " {}".format(oran[i]) + "\n" + Fore.MAGENTA + "*"*30)
 
     print("\n\t" + Fore.YELLOW + "Teşekkürler doviz.com")
+    
     time.sleep(10) # DDoS gibi olmaması için 10 saniye aralık la yap bu işi
     Temizle() # Temizle metodumuzu çağırdık
     OturumBilgisi() # OturumBilgisi metodumuzu çağırdık
