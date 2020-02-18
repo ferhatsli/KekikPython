@@ -115,6 +115,8 @@ Malware kendini hiçbir servise bind etmemiş, tabi bizimki masum bir malware ol
 **Not: Bu işlem için saldırgan makinanız ile client aynı network’de değilse, saldırgan uygulamanız için modem veya firewall’dan NAT tanımlaması yapmanız gerekir.**
 
 Evet arkadaşlar basit anlamda bu yazımızda Reverse TCP shell’i anlatmaya çalıştık, umarım amaca hizmet edebilmişizdir. Bir sonraki yazımızda görüşmek üzere.
+
+[Kaynak](http://python4hackers.com/python-network-hacking-tools/python-reverse-tcp-shell-socket-create.html "Saygı ve Özlemle...")
 ________________________________
 📃 **Yandex.Disk Bünyemizde 900GB veri olmuştur.**
 
