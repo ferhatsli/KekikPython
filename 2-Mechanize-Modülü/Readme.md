@@ -106,7 +106,7 @@ Aşağıdaki kodları py uzantısıyla kaydedip çalıştıralım ve kullanabile
 [Kaynak](http://python4hackers.com/genel/python-mechanize-modulu.html "Saygı ve Özlemle...")
 ________________________________
 
-📃 **Yandex.Disk Bünyemizde 780GB veri olmuştur.**
+📃 **Yandex.Disk Bünyemizde 900GB veri olmuştur.**
 
 _Paylaşılan Kursların Tümünü_ [**@KekikKahve**](https://t.me/KekikKahve) _Grubu notlarından Çağırabilirsiniz.._
 

@@ -183,7 +183,7 @@ Olası hatalar için `try`-`except` yapısını kullandık ve bu sefer **yakalad
 [Kaynak](http://python4hackers.com:80/karisik/py4h-code-hunter.html "Saygı ve Özlemle...")
 ________________________________
 
-📃 **Yandex.Disk Bünyemizde 780GB veri olmuştur.**
+📃 **Yandex.Disk Bünyemizde 900GB veri olmuştur.**
 
 _Paylaşılan Kursların Tümünü_ [**@KekikKahve**](https://t.me/KekikKahve) _Grubu notlarından Çağırabilirsiniz.._
 

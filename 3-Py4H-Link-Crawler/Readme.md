@@ -70,7 +70,7 @@ Aşağıdaki kodlar asıl işi yapan kodlarımızdır. Argümanımızı alıp ba
 [Kaynak](http://python4hackers.com/python-information-gathering-tools/py4h-link-crawler.html "Saygı ve Özlemle...")
 ________________________________
 
-📃 **Yandex.Disk Bünyemizde 780GB veri olmuştur.**
+📃 **Yandex.Disk Bünyemizde 900GB veri olmuştur.**
 
 _Paylaşılan Kursların Tümünü_ [**@KekikKahve**](https://t.me/KekikKahve) _Grubu notlarından Çağırabilirsiniz.._
 

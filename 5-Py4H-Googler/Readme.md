@@ -87,7 +87,7 @@ Aşağıdaki kodlarımız **arama fonksiyonu**muza aittir. Burada kaynak kodlar�
 [Kaynak](http://python4hackers.com/python-search-engine-tools/py4h-googler.html "Saygı ve Özlemle...")
 ________________________________
 
-📃 **Yandex.Disk Bünyemizde 780GB veri olmuştur.**
+📃 **Yandex.Disk Bünyemizde 900GB veri olmuştur.**
 
 _Paylaşılan Kursların Tümünü_ [**@KekikKahve**](https://t.me/KekikKahve) _Grubu notlarından Çağırabilirsiniz.._
 

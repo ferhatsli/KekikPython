@@ -31,7 +31,7 @@ Aşşağıdaki kodlar renk kodları, içeriye aktarılan kütüphaneler ve tanı
 [Kaynak](https://t.me/KekikAkademi "KekikAkademi")
 ________________________________
 
-📃 **Yandex.Disk Bünyemizde 850GB veri olmuştur.**
+📃 **Yandex.Disk Bünyemizde 900GB veri olmuştur.**
 
 _Paylaşılan Kursların Tümünü_ [**@KekikKahve**](https://t.me/KekikKahve) _Grubu notlarından Çağırabilirsiniz.._
 
