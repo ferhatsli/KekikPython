@@ -9,12 +9,13 @@ import ctypes                                # CMD ekran başlığı oluşturabi
 import colorama                              # Ortalığın renklenmesi için
 from colorama import Fore                    # Ortalığın renklenmesi için
 colorama.init(autoreset=True)                # Renklerin satırdan başka devam etmemesi için
+from win10toast import ToastNotifier         # Windows'a bildirim göndermek için
 
 ##
 # Önce çalışma alanımızı oluşturuyoruz
 Sistem = platform.system() # Betiğin çalıştığı işletim sistemini öğreniyoruz
 
-def Temizle(): # Temizle adında bir betik oluşturduk
+def Temizle(): # Temizle adında bir metod oluşturduk
     if Sistem == "Windows": # Eğer Sistem Windows ise
         os.system("cls") # Sisteme "cls" komutu gönder
     else: # Sistem Windows değil ise
@@ -25,16 +26,23 @@ SistemKullaniciAdi = os.getlogin() # Sistem Kullanıcı Adı
 Tarih = datetime.datetime.now(pytz.timezone("Turkey")).strftime("%d-%m-%Y") # Bugünün Tarihini Alıyoruz
 Saat = datetime.datetime.now(pytz.timezone("Turkey")).strftime("%H:%M") # Bugünün Saatini Alıyoruz
 
-if Sistem == "Windows": # Eğer Sistem Windows ise
-    ctypes.windll.kernel32.SetConsoleTitleW("@KekikAkademi Canlı Döviz Kuru Takip Betiği | {} {} | {}".format(SistemKullaniciAdi, Sistem, Saat)) # Pencere başlığı oluştur
+def KonsolBasligi(): # KonsolBasligi adında bir metod oluşturduk
+    if Sistem == "Windows": # Eğer Sistem Windows ise
+        ctypes.windll.kernel32.SetConsoleTitleW("@KekikAkademi Canlı Döviz Kuru Takip Betiği | {} {} | {}".format(SistemKullaniciAdi, Sistem, Saat)) # Pencere başlığı oluştur
+KonsolBasligi()
 
-def OturumBilgisi(): # OturumBilgisi adında bir betik oluşturduk
+def OturumBilgisi(): # OturumBilgisi adında bir metod oluşturduk
     print("\n\t" + Fore.YELLOW + SistemKullaniciAdi  + Fore.GREEN + "\tMerhaba!\t\n\n" + Fore.CYAN + Tarih + Fore.MAGENTA +"\t|\t" + Fore.RED + Saat + "\n") # Anlık oturum ve tarh bilgisini ekranımıza yazıyoruz.
 OturumBilgisi() # OturumBilgisi metodumuzu çağırdık
 
+def WindowsBildirimi(): # WindowsBildirimi adında bir metod oluşturduk
+    if Sistem == "Windows":
+        Bildirim = ToastNotifier()
+        Bildirim.show_toast("Güncellendi!", "Veriler Güncel", icon_path=None, duration=3, threaded=True)
 ############################################
 # Hadi Yapalım Şu İşi
-def Doviz():
+def Doviz(): # Doviz adında bir metod oluşturduk
+    WindowsBildirimi() # OturumBilgisi metodumuzu çağırdık
     # Tanımlamalarımızı Yapalım
     URL = "https://www.doviz.com/"
     Kimlik = {'User-Agent': '@KekikAkademi'} # Websitesine istek yollarken kimlik bilgimizi sunuyoruz
@@ -96,9 +104,9 @@ def Doviz():
 
     print("\n\t" + Fore.YELLOW + "Teşekkürler doviz.com")
     time.sleep(10) # DDoS gibi olmaması için 10 saniye aralık la yap bu işi
-    Temizle()
-    OturumBilgisi()
+    Temizle() # Temizle metodumuzu çağırdık
+    OturumBilgisi() # OturumBilgisi metodumuzu çağırdık
 
 # Betiği sonsuz döngüye alıyoruz
 while True:
-    Doviz()
+    Doviz() # Doviz metodumuzu çağırdık
