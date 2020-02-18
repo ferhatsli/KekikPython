@@ -7,7 +7,7 @@ ________________________________
 
 Günümüzde gerek network katmanında gerekse host veya server katmanında dışarıdan gelebilecek bağlantılar için firewall’larda port kısıtlamaları son derece önem gösterilerek yapılmaktadır. Server üzerinde istenilmeyen servislerin aktif edilmeyerek socket açmaması, son kullanıcı bilgisayarlarına dışarıdan gelen tüm bağlantıların kapatılması, alınan önlemlerden bir kısmı diyebiliriz. Bunca güvenlik önlemi alınırken saldırganlarda boş durmadı ve “ biz sisteme sızamıyorsak onlar bizim ayağımıza gelsin” yöntemini geliştirdiler. Peki bu nasıl oluyor ? Bunun birçok yöntemi var, server sistemlerde kullanılan uygulamanın zaafiyeti olmasından kaynaklanan bir açıktan tutun bir malware’in sisteme bulaşmasına ve bu zararlı yazılımın saldırgana backdoor ile bağlanmasını sağlamaya kadar gidiyor. Buradaki kilit kelime “ **socket** ”.
 
-[![Saldirgan Bekleyis](https://raw.githubusercontent.com/KekikAkademi/KekikPython/master/9-Py4H-Reverse-TCP-Shell-Socket/images/2-Socket.png)
+![Saldirgan Bekleyis](https://raw.githubusercontent.com/KekikAkademi/KekikPython/master/9-Py4H-Reverse-TCP-Shell-Socket/images/2-Socket.png)
 *VE HACKER, SOCKET AÇARAK BEKLEYİŞE GEÇER…*
 
 ## **Nedir bu Socket?**
@@ -116,7 +116,7 @@ Malware kendini hiçbir servise bind etmemiş, tabi bizimki masum bir malware ol
 
 Evet arkadaşlar basit anlamda bu yazımızda Reverse TCP shell’i anlatmaya çalıştık, umarım amaca hizmet edebilmişizdir. Bir sonraki yazımızda görüşmek üzere.
 ________________________________
-📃 **Yandex.Disk Bünyemizde 780GB veri olmuştur.**
+📃 **Yandex.Disk Bünyemizde 900GB veri olmuştur.**
 
 _Paylaşılan Kursların Tümünü_ [**@KekikKahve**](https://t.me/KekikKahve) _Grubu notlarından Çağırabilirsiniz.._
 
