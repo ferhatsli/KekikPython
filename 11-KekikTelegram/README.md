@@ -66,7 +66,7 @@ Aynı `for` döngüsü içine entegrasyonumuzu sağlarsak; **ekrana yazdırması
 
 #### _Kodların Tamamına_ [**Burdan**](https://github.com/KekikAkademi/KekikPython/blob/master/11-KekikTelegram/KekikTelegram.py "KekikTelegram.py") _Ulaşabilirsiniz.._
 
-[Kaynak 1](https://steemit.com/utopian-io/@overmedia/let-s-make-telegram-bot-with-python-tuerkce) - [Kaynak 2](http://unalfaruk.com/2017/01/21/python-ile-telegram-bot/) - [Kaynak 3](https://medium.com/@mcakir/ki%C5%9Fisel-bildirimleriniz-i%C3%A7in-telegram-botu-olu%C5%9Fturmak-6eb10d51383b)
+> [Kaynak 1](https://steemit.com/utopian-io/@overmedia/let-s-make-telegram-bot-with-python-tuerkce) - [Kaynak 2](http://unalfaruk.com/2017/01/21/python-ile-telegram-bot/) - [Kaynak 3](https://medium.com/@mcakir/ki%C5%9Fisel-bildirimleriniz-i%C3%A7in-telegram-botu-olu%C5%9Fturmak-6eb10d51383b)
 
 ________________________________
 📃 **Yandex.Disk Bünyemizde 900GB veri olmuştur.**
