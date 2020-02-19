@@ -1,6 +1,8 @@
 🕊 Bu döküman [**@KekikAkademi**](https://t.me/KekikAkademi "Telegram: @KekikAkademi") için oluşturulmuştur. ✌🏼
 ________________________________
 # Telegram Botu Oluşturma ve Kazıyıcıya Entegrasyon
+
+![Python Telegram Entegrasyon](https://raw.githubusercontent.com/KekikAkademi/KekikPython/master/11-KekikTelegram/images/kapak.jpg)
 Daha önce yazmış olduğumuz [**KekikDoviz**](https://github.com/KekikAkademi/KekikPython/tree/master/8-KekikDoviz) `Kazıyıcı`*(Scraper)* betiğimizin elde ettiği verileri Telegram Botuna entegrasyonunu konu alacağız.
 
 ## Telegram Botu Oluşturma
