@@ -37,15 +37,15 @@ print(Ayristirici)
 print(Fore.CYAN + "\n\tTarama Başlıyor..\n")
 os.chdir(Calinacak_Dizin) # Dizin değiştir, Calinacak_Dizin ile
 
-sayi = len(Ayristirici) - 1 # Listenin sonuncu(boş) elemanını hikayeden çıkardık
-for i in range(4, sayi):    # ['C:', 'Users', 'kekik', 'Desktop', ''] listesinden 4. olan desktop'ı tanımladık
-    os.chdir(os.pardir)     # os.chdir() (change directory) ile dizin değiştirdik >> os.pardir (parent directory) bir üst dizin ile
+Desktop = len(Ayristirici) - 1 # Listenin Boş elemanını çıkartıp adet bilgisini Desktop değişkenine tanımladık.
+for i in range(4, Desktop):    # ['C:', 'Users', 'kekik', 'Desktop', ''] listemiz
+    os.chdir(os.pardir)        # os.chdir() (change directory) ile dizin değiştirdik >> os.pardir (parent directory) bir üst dizin ile
 
 Girilen_Dizinler = [] # Girilen Dizinler için boş liste oluşturduk 
 
 def BulunanDizin(Gelen_Dizin): # BulunanDizin metodumuz ve alınan Gelen_Dizin verisi
     os.chdir(Gelen_Dizin) # Dizin değiştir, Gelen_Dizin ile
-    print("Bu Dizindeyim >> " + os.getcwd()) # Calinacak_Dizin + Gelen_Dizin
+    print(Fore.MAGENTA + "Bu Dizindeyim >> " + Fore.WHITE + os.getcwd()) # Calinacak_Dizin + Gelen_Dizin
     Girilen_Dizinler.append(Gelen_Dizin) # Girilen_Dizinler listesine ekle, Gelen_Dizin'leri
     KontrolEt()
     os.chdir(os.pardir)
