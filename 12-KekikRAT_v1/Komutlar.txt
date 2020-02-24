@@ -1,0 +1,14 @@
+basla - Açılış, Bilgi Alma
+komutlar - Kullanabileceğiniz Komutlar
+sistem - Bulunduğunuz Sistem Hakkında Bilgi Verir
+url_ac - domain.com | Chrome'dan Link Açar
+islem_sonlandir - chrome.exe | İşlem Sonlandırır
+chrome_verileri - Chrome Tarayıcı Verileri
+ekran_goruntusu - Anlık Ekran Görüntüsü Verir
+pwd - Geçerli Dizini Gösterir
+ls - Bulunulan Dizini Listeler
+cd - Dizin Değiştirir
+rm_dir - Dizin Siler
+indir - Dosya İndirir
+cmd - CMD'den Komut Çalıştır
+hakkinda - Bot Hakkında
