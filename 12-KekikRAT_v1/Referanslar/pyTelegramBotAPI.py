@@ -2,21 +2,30 @@
 #! -*- coding: utf-8 -*-
 # Bu araç @keyiflerolsun tarafından | @KekikAkademi için yazılmıştır.
 
-import platform,os,getpass,socket # Bağlantı Geldiğinde ilk Gönderilecek Bilgiler İçin; Oturum Adı, Network Adı, Yerel IP, Çalışılan Dizin | Bilgileri
 import telebot
+import requests
 
-TOKEN = "XXXXXXXXXX:XXXXXXXXXXXXXX"                     # Telegram Tokenimizi tanımladık
-Chat_id = "XXXXXXXX"                                    # Telegram Chat id mizi tanımladık
+# / Telegram Bağlantısı ################################################
+Bot_Token = "XXXXXXXX:XXXXXXXXXX"                           # Bot Token
+Chat_ID = "XXXXXXXXX"                                       # Chat ID
 
-KekikPython = telebot.TeleBot(TOKEN) # KekikPython Değişkenine Telegram Tokenimizi Gösterdik
+KekikPython = telebot.TeleBot(Bot_Token)  # telebot'a Tokenimizi bağladık
+# / Telegram Bağlantısı ################################################
 
-# Bağlantı Geldiğinde ilk Gönderilecek Bilgiler İçin; Oturum Adı, Network Adı, Yerel IP, Çalışılan Dizin | Bilgileri
-KekikPython.send_message(
-	Chat_id,
-	'Kullanıcı: {}@{}\n\nİşletim Sistemi: {} | {}\n\nİşlemci Mimarisi: {}\n\nYerel IP: {}\n\nÇalışma Dizini;\n{}'.format(
-		getpass.getuser(),platform.node(),platform.system(),platform.release(),platform.processor(),socket.gethostbyname(socket.gethostname()),os.getcwd()
-	)
-)
+####################################################################################################################
+# TeleBot Kütüphanesi ile Mesaj Gönderme
+KekikPython.send_message(Chat_ID, "Merhaba, Beni TeleBot Gönderdi!")
+
+# requests ile Mesaj Gönderme
+gonderilecekYazi = "Merhaba, Beni requests Gönderdi!"
+DataForLink = {'text': gonderilecekYazi}
+requests.post("https://api.telegram.org/bot" + Bot_Token + "/sendMessage?chat_id=" + Chat_ID , data=DataForLink)
+
+# requests ile Dosya Gönderme
+Dosya = open(r"C:\Users\kekik\Desktop\KekikAkademi.txt", 'rb')
+FilesForLink = {'document': Dosya}
+requests.post("https://api.telegram.org/bot" + Bot_Token + "/sendDocument?chat_id=" + Chat_ID , files=FilesForLink)
+####################################################################################################################
 
 @KekikPython.message_handler(commands=['yardim', 'basla'])
 def Yardim(Mesaj):
