@@ -51,7 +51,7 @@ Devamı reklamlardan sonra :)
 
 #### _Kodların Tamamına_ [**Burdan**](https://github.com/KekikAkademi/KekikPython/blob/master/12-KekikRAT_v1/KekikRAT_v1.py "KekikRAT_v1.py") _Ulaşabilirsiniz.._
 ________________________________
-📃 **Yandex.Disk Bünyemizde 900GB veri olmuştur.**
+📃 **Yandex.Disk Bünyemizdeki veriler 900GB'ı geçmiştir..**
 
 _Paylaşılan Kursların Tümünü_ [**@KekikKahve**](https://t.me/KekikKahve) _Grubu notlarından Çağırabilirsiniz.._
 
