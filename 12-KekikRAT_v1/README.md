@@ -1,7 +1,7 @@
 🕊 Bu döküman [**@KekikAkademi**](https://t.me/KekikAkademi "Telegram: @KekikAkademi") için oluşturulmuştur. ✌🏼
 ________________________________
-# KekikRat_v1 Dökümantasyonu
-![Python Telegram RAT](https://raw.githubusercontent.com/KekikAkademi/KekikPython/master/11-KekikTelegram/images/kapak.jpg)
+# KekikRat_v1 Dokümantasyonu
+![Python Telegram RAT](https://raw.githubusercontent.com/KekikAkademi/KekikPython/master/11-KekikTelegram/images/kapak.jpg "Python Telegram RAT")
 
 `KekikRat_v1` Python diliyle yazılmış, Telegram üzerinden kontrol edilebilen `Uzaktan Erişim amaçlı Truva Atı`dır.
 
