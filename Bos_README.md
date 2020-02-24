@@ -3,7 +3,7 @@ ________________________________
 # KekikPython
 KekikPython
 ________________________________
-📃 **Yandex.Disk Bünyemizde 900GB veri olmuştur.**
+📃 **Yandex.Disk Bünyemizdeki veriler 900GB'ı geçmiştir..**
 
 _Paylaşılan Kursların Tümünü_ [**@KekikKahve**](https://t.me/KekikKahve) _Grubu notlarından Çağırabilirsiniz.._
 

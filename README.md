@@ -13,8 +13,9 @@ ________________________________
  9. [Python Reverse TCP Shell (Socket)](https://github.com/KekikAkademi/KekikPython/tree/master/9-Py4H-Reverse-TCP-Shell-Socket)
  10. [Py4H SQL Injection Dedektör](https://github.com/KekikAkademi/KekikPython/tree/master/10-Py4H-SQL-Injection-Dedektor) 
  11. [KekikTelegram](https://github.com/KekikAkademi/KekikPython/tree/master/11-KekikTelegram "Telegram Botu Oluşturma ve Kazıyıcı Entegrasyonu")
+ 12. [KekikRAT_v1](https://github.com/KekikAkademi/KekikPython/tree/master/11-KekikTelegram "Python Telegram RAT")
 ________________________________
-📃 **Yandex.Disk Bünyemizde 900GB veri olmuştur.**
+📃 **Yandex.Disk Bünyemizdeki veriler 900GB'ı geçmiştir..**
 
 _Paylaşılan Kursların Tümünü_ [**@KekikKahve**](https://t.me/KekikKahve) _Grubu notlarından Çağırabilirsiniz.._
 
