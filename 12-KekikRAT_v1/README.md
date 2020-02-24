@@ -49,6 +49,7 @@ Devamı reklamlardan sonra :)
 ### Oluşturduğumuz Komutlar için Kod Yazma
 Devamı reklamlardan sonra :)
 
+#### _Kodların Tamamına_ [**Burdan**](https://github.com/KekikAkademi/KekikPython/blob/master/12-KekikRAT_v1/KekikRAT_v1.py "KekikRAT_v1.py") _Ulaşabilirsiniz.._
 ________________________________
 📃 **Yandex.Disk Bünyemizde 900GB veri olmuştur.**
 
