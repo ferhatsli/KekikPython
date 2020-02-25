@@ -2,8 +2,8 @@
 #! -*- coding: utf-8 -*-
 # Bu araç @keyiflerolsun tarafından | @KekikAkademi için yazılmıştır.
 
-import requests
-import telebot
+import requests     # Eski Usul istek atıcı dostumuz
+import telebot      # Yeni nesil dostumuz
 
 # / Telegram Bağlantısı ################################################
 Bot_Token = "XXXXXXXX:XXXXXXXXXX"                           # Bot Token
