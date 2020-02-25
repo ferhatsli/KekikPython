@@ -5,26 +5,32 @@
 import requests     # Eski Usul istek atıcı dostumuz
 import telebot      # Yeni nesil dostumuz
 
-# / Telegram Bağlantısı ################################################
+# / Telegram Bağlantısı ##################################################
 Bot_Token = "XXXXXXXX:XXXXXXXXXX"                           # Bot Token
 Chat_ID = "XXXXXXXXX"                                       # Chat ID
 
 KekikPython = telebot.TeleBot(Bot_Token)  # telebot'a Tokenimizi bağladık
-# / Telegram Bağlantısı ################################################
+# / Telegram Bağlantısı ##################################################
 
 ####################################################################################################################
 ### Eski Usul requests Metodu;
-# requests ile Mesaj Gönderme --- https://core.telegram.org/bots/api
+## requests ile Mesaj Gönderme --- https://core.telegram.org/bots/api
 Mesaj = "Merhaba, Beni requests Gönderdi!"
 DataForLink = {'text': Mesaj}
 requests.post("https://api.telegram.org/bot" + Bot_Token + "/sendMessage?chat_id=" + Chat_ID , data=DataForLink)
+# https://api.telegram.org/botXXXXXXXX:XXXXXXXXXX/sendMessage?chat_id=XXXXXXXXXdata=&text=Merhaba, Beni requests Gönderdi!
 
-# requests ile Dosya Gönderme
+# veya
+Mesaj = "Merhaba, Beni requests Gönderdi!"
+requests.post("https://api.telegram.org/bot" + Bot_Token + "/sendMessage?chat_id=" + Chat_ID + "&text=" + Mesaj)
+# https://api.telegram.org/botXXXXXXXX:XXXXXXXXXX/sendMessage?chat_id=XXXXXXXXX&text=Merhaba, Beni requests Gönderdi!
+
+## requests ile Dosya Gönderme
 Dosya = open(r"DocTest_KekikAkademi.txt", 'rb') # veya "C:\Users\kekik\Desktop\kodlama\DocTest_KekikAkademi.txt"
 FilesForLink = {'document': Dosya}
 requests.post("https://api.telegram.org/bot" + Bot_Token + "/sendDocument?chat_id=" + Chat_ID , files=FilesForLink)
 
-# requests ile Resim Gönderme
+## requests ile Resim Gönderme
 # (Eğer Fotoğrafta Çözünürlük Kaybı Yaşanmasını İstemiyorsanız Dosya Olarak Gönderin.)
 Resim = open(r"FotoTest_KekikAkademi.png", 'rb') # veya "C:\Users\kekik\Desktop\kodlama\FotoTest_KekikAkademi.png"
 ImgForLink = {'photo': Resim}
