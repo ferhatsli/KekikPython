@@ -100,7 +100,7 @@ def TelegramBot():
         ## requests ile Mesaj Gönderme --- https://core.telegram.org/bots/api
         mesaj = "Merhaba, Beni requests Gönderdi!"
         requests.post("https://api.telegram.org/bot" + tg_bot_token + "/sendMessage?chat_id=" + tg_chat_id + "&text=" + mesaj)
-        # https://api.telegram.org/bot921015578:AAERTtQ-LxeG6huZZw-dbmW1LQjJv9yZK4Q/sendMessage?chat_id=717569643&text=Merhaba, Beni requests Gönderdi!
+        # https://api.telegram.org/bot921015578:AAERTtQ-LxeG6huZZw-dbmW1LQjJv9yZK4Q/sendMessage?chat_id=717569643&text=mesaj
 
         ## requests ile Dosya Gönderme
         dosya = open(r"DocTest_KekikAkademi.txt", 'rb') # veya "C:\Users\kekik\Desktop\kodlama\DocTest_KekikAkademi.txt"
