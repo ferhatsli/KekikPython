@@ -198,7 +198,11 @@ def  WebCrawl():
     #print(oran)
     # haaarika
     for i in range(0, len(isim)):  # döngüyü isim tablosunun elemanı kadar sürdür
-        print(Fore.MAGENTA + "*" * 30 + "\n" + Fore.GREEN + f"{isim[i]} " + Fore.RED + ">>" + Fore.YELLOW + f" {rakam[i]} " + Fore.RED + ">>" + Fore.CYAN + f" {oran[i]}" + "\n" + Fore.MAGENTA + "*" * 30)
+        print(Fore.MAGENTA + "*"*30 + "\n" +
+              Fore.GREEN + f"{isim[i]} " + Fore.RED + ">>" +
+              Fore.YELLOW + f" {rakam[i]} " + Fore.RED + ">>" +
+              Fore.CYAN + f" {oran[i]}" +
+              "\n" + Fore.MAGENTA + "*"*30)
 
     print("\n\t" + Fore.YELLOW + "Teşekkürler doviz.com")
 
