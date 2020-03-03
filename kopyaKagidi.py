@@ -30,6 +30,8 @@ import telebot    # pyTelegramBotAPI
 
 ########################################################################################################################
 ## GenelDegiskenler
+pencere_basligi = "@KekikAkademi Kopya Kağıdı"                        # Pencere Başlığımız
+
 try:
     kullanici_adi = os.getlogin()                                     # Kullanıcı Adı
 except:
@@ -91,13 +93,13 @@ def WindowsTerminaliGizle():                        # WindowsTerminaliGizle adı
 ########################################################################################################################
 def PencereBasligi():                                                               # PencereBasligi fonksiyonu
     if isletim_sistemi == "Windows":                                                # Eğer İşletim Sistemi "Windows" ise
-        ctypes.windll.kernel32.SetConsoleTitleW("@KekikAkademi Kopya Kağıdı")       # Konsol Başlığını ayarla
+        ctypes.windll.kernel32.SetConsoleTitleW(f"{pencere_basligi}")       # Konsol Başlığını ayarla
     elif isletim_sistemi == "Android":                                              # Eğer İşletim Sistemi "Android" ise
         os.system("clear")                                                          # Sisteme "clear" komutu gönder
     elif isletim_sistemi == "Linux":                                                # Eğer İşletim Sistemi "Linux" ise
-        os.system('echo "\033]0;@KekikAkademi Kopya Kağıdı\007"')                   # Başlık Ayarla
+        os.system(f'echo "\033]0;{pencere_basligi}\007"')                   # Başlık Ayarla
     else:                                                                           # Hiçbiri değil ise
-        os.system('title @KekikAkademi Kopya Kağıdı')                               # Başlık Ayarla
+        os.system(f'title {pencere_basligi}')                               # Başlık Ayarla
 PencereBasligi()                                                                    # PencereBasligi çağır
 ########################################################################################################################
 
