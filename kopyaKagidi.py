@@ -16,16 +16,18 @@ colorama.init(autoreset=True)        # Renklerin ilgili satırdan başka satıra
 import requests                 # Websitelerine istek atmamızı sağlayacak arkadaş
 from bs4 import BeautifulSoup   # HTML veya XML dosyalarını işleyen arkadaş
 #################################
-## https://github.com/KekikAkademi/KekikPython/tree/master/12-KekikRAT_v1
-import webbrowser           # Tarayıcıda bağlantı açtırmak için
-import subprocess           # Kill Process(İşlem Sonlandırma) Kullanmak için
-import shutil               # Tarayıcı verilerini kopyalamak için
-import sqlite3              # Tarayıcıdan çekilen veritabanlarıyla çalışmak için
-#import win32crypt           # Tarayıcıdan çekilen şifrelenmiş verileri çözmek için (Yalnızca Windows)
-#from PIL import ImageGrab   # Ekran görüntüsü almak için (MacOS ve Windows)
-import zipfile              # Topladığımız verileri Zip'lemek için
-#############################
 import telebot    # pyTelegramBotAPI
+####################################
+#############################################################################################################
+## https://github.com/KekikAkademi/KekikPython/tree/master/12-KekikRAT_v1                                   #
+#import webbrowser           # Tarayıcıda bağlantı açtırmak için                                            #
+#import subprocess           # Kill Process(İşlem Sonlandırma) Kullanmak için                               #
+#import shutil               # Tarayıcı verilerini kopyalamak için                                          #
+#import sqlite3              # Tarayıcıdan çekilen veritabanlarıyla çalışmak için                           #
+#import win32crypt           # Tarayıcıdan çekilen şifrelenmiş verileri çözmek için (Yalnızca Windows)      #
+#from PIL import ImageGrab   # Ekran görüntüsü almak için (MacOS ve Windows)                                #
+#import zipfile              # Topladığımız verileri Zip'lemek için                                         #
+#############################################################################################################
 ########################################################################################################################
 
 ########################################################################################################################
@@ -41,7 +43,7 @@ logo = '''
           | |     __/ |                     __/ |          
           |_|    |___/                     |___/           
 '''                                                                   # Logomuz
-                                        # logo = http://patorjk.com/software/taag/#p=display&f=Doom&t=kopya%20Kagidi
+        # logo = http://patorjk.com/software/taag/#p=display&f=Doom&t=kopya%20Kagidi
 #######################################################################################
 try:
     kullanici_adi = os.getlogin()                                     # Kullanıcı Adı
