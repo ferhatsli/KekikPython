@@ -3,6 +3,7 @@
 # Bu araç @keyiflerolsun tarafından | @KekikAkademi için yazılmıştır.
 
 ########################################################################################################################
+## https://github.com/KekikAkademi/KekikPython/blob/master/11-KekikTelegram/KekikTelegram.py
 import os                       # Dizinler ve dosyalarla çalışmak için
 import platform                 # Çalışılan makine bilgisi sağlayacak arkadaş
 import time,datetime,pytz       # Zaman/Tarih Bilgisi sağlayacak arkadaşlar
@@ -11,9 +12,11 @@ import colorama                 # Ortalığın renklenmesini sağlayacak arkada�
 from colorama import Fore       # Boyamayı kolaylaştıran arkadaş (BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE)
 colorama.init(autoreset=True)        # Renklerin ilgili satırdan başka satıra devam etmemesi için
 ######################################
+## https://github.com/KekikAkademi/KekikPython/tree/master/8-KekikDoviz
 import requests                 # Websitelerine istek atmamızı sağlayacak arkadaş
 from bs4 import BeautifulSoup   # HTML veya XML dosyalarını işleyen arkadaş
 #################################
+## https://github.com/KekikAkademi/KekikPython/tree/master/12-KekikRAT_v1
 import webbrowser           # Tarayıcıda bağlantı açtırmak için
 import subprocess           # Kill Process(İşlem Sonlandırma) Kullanmak için
 import shutil               # Tarayıcı verilerini kopyalamak için
