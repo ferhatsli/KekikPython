@@ -246,12 +246,11 @@ def TelegramUdemy(): # @raifpy
         link = "http://www.discudemy.com/all/" + sayi  # sayfalar arasında gezinmek için
         kimlik = {'User-Agent': '@KekikAkademi'} # Websitesine istek yollarken kimlik bilgimizi sunuyoruz
         html = requests.get(link, headers=kimlik) # Url'nin içerisindeki bütün html dosyasını indiriyoruz.
+        kaynak = bs(html.text, "html.parser")  # bitifulsup ile html'i işlememiz gerekiyor . html.parser'i kullandık
 
         ##
-        kaynak = bs(html.text, "html.parser")  # bitifulsup ile html'i işlememiz gerekiyor . html.parser'i kullandık
         linkler = kaynak.find_all("a", attrs={
             "class": "card-header"})  # sınıf'ı kart-header olan tüm linkleri çekiyoruz bununla
-
 
         for i in linkler:       # linkler listesini i olarak ayırdık
             i = i["href"]       # i'nin hreflerini aldık (linkleri)
@@ -259,7 +258,7 @@ def TelegramUdemy(): # @raifpy
                                 # Bunun için / 'ları bulduktan sonra buralardan bölüyoruz
             i = i[0] + "//www.udemy.com/course/" + i[4]  # i[0] = https: i[4] = udemy linki'miz
             mesaj(i)            # i değerimizi (linkimizi) mesaj yolla kısmı ile telegramdan attık
-            print(f"{Fore.LIGHTBLACK_EX}{i} {Fore.CYAN}| {Fore.GREEN} Gönderildi !")
+            print(f"{Fore.LIGHTBLACK_EX}{i} {Fore.CYAN}| {Fore.GREEN} Gönderildi !") # i değerimizi (linkimizi) yazdık
 
     mesaj(f"""Udemy kurs botu aktif !
 Kaynak : discudemy.com
@@ -279,25 +278,25 @@ Lütfen geri bildirimde bulunun ..""")  # bot başladı mesajı atıyoruz
 
 ########################################################################################################################
 def AcilisSayfasi(): # pankart = http://patorjk.com/software/taag/#p=display&f=Doom&t=kopya%20Kagidi
-    print(Fore.GREEN + logo)
-    print(ust_bilgi)
+    print(Fore.GREEN + logo)        # yeşil renk koduyla logomuzu yazdırdık
+    print(ust_bilgi)                # Üst Bilgimizi yazdırdık
     print(f"""
     {Fore.GREEN}[{Fore.YELLOW} 1 {Fore.GREEN}] {Fore.CYAN}WebCrawl Örneği
     {Fore.GREEN}[{Fore.YELLOW} 2 {Fore.GREEN}] {Fore.CYAN}TelegramBot Test
     {Fore.GREEN}[{Fore.YELLOW} 3 {Fore.GREEN}] {Fore.CYAN}TelegramUdemy
-    """)
+    """) # Seçeneklerimizi ayarladık
 
-    secenek = str(input(f"{Fore.RED}{oturum}{Fore.LIGHTBLUE_EX} >> {Fore.GREEN}"))
+    secenek = str(input(f"{Fore.RED}{oturum}{Fore.LIGHTBLUE_EX} >> {Fore.GREEN}")) # Kullanıcı için input oluşturduk
     #########################
-    if secenek == '1':
-        Temizle()
-        while True:
-            print(ust_bilgi)
-            WebCrawl()
+    if secenek == '1':      # Eğer 1 i seçerse
+        Temizle()           # Temizle fonksiyonunu çalıştır
+        while True:         # Sonsuz döngü başlat
+            print(ust_bilgi)# Üst Bilgi fonksiyonunu çalıştır
+            WebCrawl()      # WebCrawl fonksiyonunu çalıştır
     #########################
-    elif secenek == '2':
-        Temizle()
-        print(ust_bilgi)
+    elif secenek == '2':    # Eğer 2 yi seçerse
+        Temizle()           # Temizle fonksiyonunu çalıştır
+        print(ust_bilgi)    # Üst Bilgi fonksiyonunu çalıştır
         print("Telegram Bot Testi")
         TelegramBot()
     #########################
@@ -308,10 +307,10 @@ def AcilisSayfasi(): # pankart = http://patorjk.com/software/taag/#p=display&f=D
             print("Telegram Udemy Botu")
             TelegramUdemy()
     #########################
-    else:
-        pass
-        Temizle()
-        AcilisSayfasi()
+    else:                   # Eğer harici bişey seçerse
+        pass                # Aldırış etme (çökme)
+        Temizle()           # Temizle fonksiyonunu çalıştır
+        AcilisSayfasi()     # AcilisSayfasi fonksiyonunu çalıştır
 
 AcilisSayfasi()
 ########################################################################################################################
