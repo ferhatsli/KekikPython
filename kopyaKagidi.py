@@ -120,16 +120,84 @@ def TelegramBot():
         tg_bot_adi.send_message(tg_chat_id, mesaj)
 
         # TeleBot ile Dosya Gönderme
-        dosya = open(r"DocTest_KekikAkademi.txt", 'rb') # veya "C:\Users\kekik\Desktop\kodlama\DocTest_KekikAkademi.txt"
+        dosya = open(r"DocTest_KekikAkademi.txt", 'rb') # veya "C:\Users\kekik\Desktop\DocTest_KekikAkademi.txt"
         tg_bot_adi.send_document(tg_chat_id, dosya)
 
         # TeleBot ile Resim Gönderme
         # (Eğer Fotoğrafta Çözünürlük Kaybı Yaşanmasını İstemiyorsanız Dosya Olarak Gönderin.)
-        resim = open(r"FotoTest_KekikAkademi.png", 'rb') # veya "C:\Users\kekik\Desktop\kodlama\FotoTest_KekikAkademi.png"
+        resim = open(r"FotoTest_KekikAkademi.png", 'rb') # veya "C:\Users\kekik\Desktop\FotoTest_KekikAkademi.png"
         tg_bot_adi.send_photo(tg_chat_id, resim)
         ##############################
     TelegramBotTest()
 #TelegramBot()
+########################################################################################################################
+
+########################################################################################################################
+def  WebCrawl():
+    # Tanımlamalarımızı Yapalım
+    url = "https://www.doviz.com/"
+    kimlik = {'User-Agent': '@KekikAkademi'} # Websitesine istek yollarken kimlik bilgimizi sunuyoruz
+
+    # WebSitesinin Cevabına bakalım (ilk kontrol)
+    #cevap = requests.get(url, headers=kimlik)
+    #print(cevap)
+
+    # Sorun yoksa devam edelim
+    kaynak = requests.get(url, headers=kimlik).text # Url'nin içerisindeki bütün html dosyasını indiriyoruz.
+    sayfa_oku = BeautifulSoup(kaynak , "html.parser")
+    #print(sayfa_oku) # bakalım bize gelen veri görüntülenen ile aynı mı?(ikinci kontrol)
+
+    # Siteye girdik. Ne Alıcaz Burdan?
+    isim = [] # içerisine veri ekleyeceğimiz boş tablo
+    rakam = [] # içerisine veri ekleyeceğimiz boş tablo
+    oran = [] # içerisine veri ekleyeceğimiz boş tablo
+
+    # Hadi Kazıyalım!
+    for ayristirilan_alan in sayfa_oku.findAll('div', attrs={'class':'market-data'}):
+        #print(ayristirilan_alan) # ilk ayrıştırmamızı yaptık
+        #print(ayristirilan_alan.text) # Bir de kodlardan arındırıp bakalım
+
+        # Parçalamaya devam edelim
+        for birinci in ayristirilan_alan.findAll('span', attrs={'class':'name'}):
+            #print(birinci) # Bakalım ne geldi
+            gelenisim = birinci.text # kodlarından ayıralım
+            #print(gelenisim) # kontrol edelim, olmuşsa devam
+            isim.append(gelenisim) # daha önce oluşturduğumuz boş tabloya verilerimizi ekledik
+            #Tablo kontrolünü "print(isim)" döngünün dışında yapmayı unutma !
+
+        # şimdi de rakamları çekelim
+        for ikinci in ayristirilan_alan.findAll('span', attrs={'class':'value'}):
+            #print(ikinci) # Bakalım ne geldi
+            gelenrakam = ikinci.text # kodlarından ayıralım
+            #print(gelenrakam) # kontrol edelim, olmuşsa devam
+            rakam.append(gelenrakam) # daha önce oluşturduğumuz boş tabloya verilerimizi ekledik
+            ## Tablo kontrolünü "print(rakam)" döngünün dışında yapmayı unutma !
+
+        # oranları da çekersek tamamdır
+        for ucuncu in ayristirilan_alan.findAll('div', attrs={'class':'change'}):
+            #print(ucuncu) # Bakalım ne geldi
+            gelenoran = ucuncu.text # kodlarından ayıralım
+            #print(gelenoran) # kontrol edelim, boşluklarımız var. boşlukları yok etmeliyiz..
+            gelenoran = gelenoran.replace("\n", "") # boşlukları kaldır
+            #print(gelenoran) # hala değil
+            gelenoran = gelenoran.replace(" ", "") # boşlıkları kaldır :)
+            #print(gelenoran) # tamamdır :)
+            oran.append(gelenoran) # daha önce oluşturduğumuz boş tabloya verilerimizi ekledik
+            ## Tablo kontrolünü "print(oran)" döngünün dışında yapmayı unutma !
+
+    # Tablolarımızı kontrol edelim
+    #print(isim)
+    #print(rakam)
+    #print(oran)
+    # haaarika
+    for i in range(0, len(isim)):  # döngüyü isim tablosunun elemanı kadar sürdür
+        print(Fore.MAGENTA + "*" * 30 + "\n" + Fore.GREEN + f"{isim[i]} " + Fore.RED + ">>" + Fore.YELLOW + f" {rakam[i]} " + Fore.RED + ">>" + Fore.CYAN + f" {oran[i]}" + "\n" + Fore.MAGENTA + "*" * 30)
+
+    print("\n\t" + Fore.YELLOW + "Teşekkürler doviz.com")
+
+    time.sleep(10)  # DDoS gibi olmaması için 10 saniye aralık la yap bu işi
+    Temizle() # Temizle metodumuzu çağırdık
+#WebCrawl()
 ########################################################################################################################
 
 ########################################################################################################################
@@ -147,12 +215,15 @@ def AcilisSayfasi(): # pankart = http://patorjk.com/software/taag/#p=display&f=D
     print(Fore.GREEN + pankart)
     print(Fore.LIGHTBLACK_EX + f"\t{kullanici_adi} | {cihaz} | " + Fore.LIGHTGREEN_EX + f"{ip}" +
           Fore.YELLOW + f"\n\t\t{zaman}\n")
-    print(Fore.CYAN + '\t[1] SeçenekBİR\n\t[2] SeçenekİKİ\n\t[3] SeçenekÜÇ\n')
+    print(Fore.CYAN + '\t[1] WebCrawl Örneği\n\t[2] SeçenekİKİ\n\t[3] SeçenekÜÇ\n')
 
     secenek = str(input(Fore.RED + f"{oturum}" + Fore.LIGHTBLUE_EX + " >> " + Fore.GREEN))
     #########################
     if secenek == '1':
         Temizle()
-        print("SeçenekBİR")
+        while True:
+            print(Fore.LIGHTBLACK_EX + f"\n{kullanici_adi} | {cihaz} | " + Fore.LIGHTGREEN_EX + f"{ip}" +
+                  Fore.YELLOW + f"\n\t{zaman}\n")
+            WebCrawl()
 AcilisSayfasi()
 ########################################################################################################################
