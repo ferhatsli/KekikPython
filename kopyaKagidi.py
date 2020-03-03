@@ -28,6 +28,16 @@ import telebot    # pyTelegramBotAPI
 #from PIL import ImageGrab   # Ekran görüntüsü almak için (MacOS ve Windows)                                #
 #import zipfile              # Topladığımız verileri Zip'lemek için                                         #
 #############################################################################################################
+def ModulYukle(): # https://github.com/KekikAkademi/KekikPython/blob/master/7-Kekik-File-Stealer/Renkli.py
+    try:                                    # Dene
+        import requests                     # requests Modülünü içe Aktarmayı
+    except ModuleNotFoundError:             # Modül bulunamadıysa
+        os.system("pip3 install requests")  # Yükle
+        try:                                # Dene
+            import requests                 # requests Modülünü içe Aktarmayı
+        except Exception as hata:           # Hala hata var ise
+            sys.exit(f"{Fore.RED}requests yüklenemedi !\n\n{Fore.CYAN}Log : {Fore.LIGHTBLACK_EX}{hata}") # Kapat(yazdır)
+#ModulYukle()
 ########################################################################################################################
 
 ########################################################################################################################
