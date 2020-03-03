@@ -245,7 +245,7 @@ def TelegramUdemy(): # @raifpy
 Kaynak : discudemy.com
 Teşekkürler : @KekikAkademi
 
-Sunucu mimari : {platform.uname()}
+Sunucu mimari : {platform.system()}
 Sunucu : {platform.release()}
 
 Lütfen geri bildirimde bulunun ..""")  # bot başladı mesajı atıyoruz
