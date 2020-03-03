@@ -50,7 +50,7 @@ ip_req = requests.get('http://ip.42.pl/raw')    # Harici IP'yi bulmak için bir 
 ip = ip_req.text                                # ip Adresi
 
 #############################################################################
-pankart = '''
+logo = '''
  _                             _   __            _     _ _ 
 | |                           | | / /           (_)   | (_)
 | | _____  _ __  _   _  __ _  | |/ /  __ _  __ _ _  __| |_ 
@@ -61,7 +61,7 @@ pankart = '''
           |_|    |___/                     |___/           
 '''
 
-banner = f"""
+ust_bilgi = f"""
     {Fore.LIGHTBLACK_EX}{kullanici_adi} | {cihaz} | {Fore.LIGHTGREEN_EX}{ip} 
           {Fore.YELLOW}{zaman}
     """
@@ -277,8 +277,8 @@ Lütfen geri bildirimde bulunun ..""")  # bot başladı mesajı atıyoruz
 
 ########################################################################################################################
 def AcilisSayfasi(): # pankart = http://patorjk.com/software/taag/#p=display&f=Doom&t=kopya%20Kagidi
-    print(Fore.GREEN + pankart)
-    print(banner)
+    print(Fore.GREEN + logo)
+    print(ust_bilgi)
     print(f"""
     {Fore.GREEN}[{Fore.YELLOW} 1 {Fore.GREEN}] {Fore.CYAN}WebCrawl Örneği
     {Fore.GREEN}[{Fore.YELLOW} 2 {Fore.GREEN}] {Fore.CYAN}TelegramBot Test
@@ -290,19 +290,19 @@ def AcilisSayfasi(): # pankart = http://patorjk.com/software/taag/#p=display&f=D
     if secenek == '1':
         Temizle()
         while True:
-            print(banner)
+            print(ust_bilgi)
             WebCrawl()
     #########################
     elif secenek == '2':
         Temizle()
-        print(banner)
+        print(ust_bilgi)
         print("Telegram Bot Testi")
         TelegramBot()
     #########################
     elif secenek == '3':
         while True:
             Temizle()
-            print(banner)
+            print(ust_bilgi)
             print("Telegram Udemy Botu")
             TelegramUdemy()
     #########################
