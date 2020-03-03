@@ -48,6 +48,23 @@ zaman = tarih + " | " + saat
 
 ip_req = requests.get('http://ip.42.pl/raw')    # Harici IP'yi bulmak için bir GET isteği yolluyoruz
 ip = ip_req.text                                # ip Adresi
+
+#############################################################################
+pankart = '''
+ _                             _   __            _     _ _ 
+| |                           | | / /           (_)   | (_)
+| | _____  _ __  _   _  __ _  | |/ /  __ _  __ _ _  __| |_ 
+| |/ / _ \| '_ \| | | |/ _` | |    \ / _` |/ _` | |/ _` | |
+|   < (_) | |_) | |_| | (_| | | |\  \ (_| | (_| | | (_| | |
+|_|\_\___/| .__/ \__, |\__,_| \_| \_/\__,_|\__, |_|\__,_|_|
+          | |     __/ |                     __/ |          
+          |_|    |___/                     |___/           
+'''
+
+banner = f"""
+    {Fore.LIGHTBLACK_EX}{kullanici_adi} | {cihaz} | {Fore.LIGHTGREEN_EX}{ip} 
+          {Fore.YELLOW}{zaman}
+    """
 ########################################################################################################################
 
 ########################################################################################################################
@@ -214,7 +231,7 @@ def TelegramBot():
 ########################################################################################################################
 def TelegramUdemy(): # @raifpy
     from bs4 import BeautifulSoup as bs
-    
+
     tg_bot_token = "921015578:AAERTtQ-LxeG6huZZw-dbmW1LQjJv9yZK4Q" # Bot Token
     tg_chat_id = "717569643"                                       # Chat ID
 
@@ -240,6 +257,7 @@ def TelegramUdemy(): # @raifpy
                                 # Bunun için / 'ları bulduktan sonra buralardan bölüyoruz
             i = i[0] + "//www.udemy.com/course/" + i[4]  # i[0] = https: i[4] = udemy linki'miz
             mesaj(i)            # i değerimizi (linkimizi) mesaj yolla kısmı ile telegramdan attık
+            print(f"{Fore.LIGHTBLACK_EX}{i} {Fore.CYAN}| {Fore.GREEN} Gönderildi !")
 
     mesaj(f"""Udemy kurs botu aktif !
 Kaynak : discudemy.com
@@ -259,39 +277,39 @@ Lütfen geri bildirimde bulunun ..""")  # bot başladı mesajı atıyoruz
 
 ########################################################################################################################
 def AcilisSayfasi(): # pankart = http://patorjk.com/software/taag/#p=display&f=Doom&t=kopya%20Kagidi
-    pankart = '''
- _                             _   __            _     _ _ 
-| |                           | | / /           (_)   | (_)
-| | _____  _ __  _   _  __ _  | |/ /  __ _  __ _ _  __| |_ 
-| |/ / _ \| '_ \| | | |/ _` | |    \ / _` |/ _` | |/ _` | |
-|   < (_) | |_) | |_| | (_| | | |\  \ (_| | (_| | | (_| | |
-|_|\_\___/| .__/ \__, |\__,_| \_| \_/\__,_|\__, |_|\__,_|_|
-          | |     __/ |                     __/ |          
-          |_|    |___/                     |___/           
-'''
     print(Fore.GREEN + pankart)
-    print(Fore.LIGHTBLACK_EX + f"\t{kullanici_adi} | {cihaz} | " + Fore.LIGHTGREEN_EX + f"{ip}" +
-          Fore.YELLOW + f"\n\t\t{zaman}\n")
-    print(Fore.CYAN + '\t[1] WebCrawl Örneği\n\t[2] TelegramBot Test\n\t[3] TelegramUdemy\n')
+    print(banner)
+    print(f"""
+    {Fore.GREEN}[{Fore.YELLOW} 1 {Fore.GREEN}] {Fore.CYAN}WebCrawl Örneği
+    {Fore.GREEN}[{Fore.YELLOW} 2 {Fore.GREEN}] {Fore.CYAN}TelegramBot Test
+    {Fore.GREEN}[{Fore.YELLOW} 3 {Fore.GREEN}] {Fore.CYAN}TelegramUdemy
+    """)
 
-    secenek = str(input(Fore.RED + f"{oturum}" + Fore.LIGHTBLUE_EX + " >> " + Fore.GREEN))
+    secenek = str(input(f"{Fore.RED}{oturum}{Fore.LIGHTBLUE_EX} >> {Fore.GREEN}"))
     #########################
     if secenek == '1':
         Temizle()
         while True:
-            print(Fore.LIGHTBLACK_EX + f"\n{kullanici_adi} | {cihaz} | " + Fore.LIGHTGREEN_EX + f"{ip}" +
-                  Fore.YELLOW + f"\n\t{zaman}\n")
+            print(banner)
             WebCrawl()
     #########################
     elif secenek == '2':
+        Temizle()
+        print(banner)
+        print("Telegram Bot Testi")
         TelegramBot()
     #########################
     elif secenek == '3':
         while True:
+            Temizle()
+            print(banner)
+            print("Telegram Udemy Botu")
             TelegramUdemy()
     #########################
     else:
         pass
+        Temizle()
+        AcilisSayfasi()
 
 AcilisSayfasi()
 ########################################################################################################################
