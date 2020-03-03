@@ -124,44 +124,44 @@ def  WebCrawl():
     # Sorun yoksa devam edelim
     kaynak = requests.get(url, headers=kimlik).text # Url'nin içerisindeki bütün html dosyasını indiriyoruz.
     sayfa_oku = BeautifulSoup(kaynak , "html.parser")
-    #print(sayfa_oku) # bakalım bize gelen veri görüntülenen ile aynı mı?(ikinci kontrol)
+    #print(sayfa_oku)                               # bakalım bize gelen veri görüntülenen ile aynı mı?(ikinci kontrol)
 
     # Siteye girdik. Ne Alıcaz Burdan?
-    isim = [] # içerisine veri ekleyeceğimiz boş tablo
-    rakam = [] # içerisine veri ekleyeceğimiz boş tablo
-    oran = [] # içerisine veri ekleyeceğimiz boş tablo
+    isim = []       # içerisine veri ekleyeceğimiz boş tablo
+    rakam = []      # içerisine veri ekleyeceğimiz boş tablo
+    oran = []       # içerisine veri ekleyeceğimiz boş tablo
 
     # Hadi Kazıyalım!
     for ayristirilan_alan in sayfa_oku.findAll('div', attrs={'class':'market-data'}):
-        #print(ayristirilan_alan) # ilk ayrıştırmamızı yaptık
-        #print(ayristirilan_alan.text) # Bir de kodlardan arındırıp bakalım
+        #print(ayristirilan_alan)       # ilk ayrıştırmamızı yaptık
+        #print(ayristirilan_alan.text)  # Bir de kodlardan arındırıp bakalım
 
         # Parçalamaya devam edelim
         for birinci in ayristirilan_alan.findAll('span', attrs={'class':'name'}):
-            #print(birinci) # Bakalım ne geldi
-            gelenisim = birinci.text # kodlarından ayıralım
-            #print(gelenisim) # kontrol edelim, olmuşsa devam
-            isim.append(gelenisim) # daha önce oluşturduğumuz boş tabloya verilerimizi ekledik
+            #print(birinci)             # Bakalım ne geldi
+            gelenisim = birinci.text    # kodlarından ayıralım
+            #print(gelenisim)           # kontrol edelim, olmuşsa devam
+            isim.append(gelenisim)      # daha önce oluşturduğumuz boş tabloya verilerimizi ekledik
             #Tablo kontrolünü "print(isim)" döngünün dışında yapmayı unutma !
 
         # şimdi de rakamları çekelim
         for ikinci in ayristirilan_alan.findAll('span', attrs={'class':'value'}):
-            #print(ikinci) # Bakalım ne geldi
-            gelenrakam = ikinci.text # kodlarından ayıralım
-            #print(gelenrakam) # kontrol edelim, olmuşsa devam
-            rakam.append(gelenrakam) # daha önce oluşturduğumuz boş tabloya verilerimizi ekledik
+            #print(ikinci)              # Bakalım ne geldi
+            gelenrakam = ikinci.text    # kodlarından ayıralım
+            #print(gelenrakam)          # kontrol edelim, olmuşsa devam
+            rakam.append(gelenrakam)    # daha önce oluşturduğumuz boş tabloya verilerimizi ekledik
             ## Tablo kontrolünü "print(rakam)" döngünün dışında yapmayı unutma !
 
         # oranları da çekersek tamamdır
         for ucuncu in ayristirilan_alan.findAll('div', attrs={'class':'change'}):
-            #print(ucuncu) # Bakalım ne geldi
-            gelenoran = ucuncu.text # kodlarından ayıralım
-            #print(gelenoran) # kontrol edelim, boşluklarımız var. boşlukları yok etmeliyiz..
+            #print(ucuncu)                  # Bakalım ne geldi
+            gelenoran = ucuncu.text         # kodlarından ayıralım
+            #print(gelenoran)               # kontrol edelim, boşluklarımız var. boşlukları yok etmeliyiz..
             gelenoran = gelenoran.replace("\n", "") # boşlukları kaldır
-            #print(gelenoran) # hala değil
-            gelenoran = gelenoran.replace(" ", "") # boşlıkları kaldır :)
-            #print(gelenoran) # tamamdır :)
-            oran.append(gelenoran) # daha önce oluşturduğumuz boş tabloya verilerimizi ekledik
+            #print(gelenoran)                       # hala değil
+            gelenoran = gelenoran.replace(" ", "")  # boşlıkları kaldır :)
+            #print(gelenoran)                       # tamamdır :)
+            oran.append(gelenoran)          # daha önce oluşturduğumuz boş tabloya verilerimizi ekledik
             ## Tablo kontrolünü "print(oran)" döngünün dışında yapmayı unutma !
 
     # Tablolarımızı kontrol edelim
@@ -179,7 +179,7 @@ def  WebCrawl():
     print("\n\t" + Fore.YELLOW + "Teşekkürler doviz.com")
 
     time.sleep(10)  # DDoS gibi olmaması için 10 saniye aralık la yap bu işi
-    Temizle() # Temizle metodumuzu çağırdık
+    Temizle()       # Temizle metodumuzu çağırdık
 #WebCrawl()
 ########################################################################################################################
 
