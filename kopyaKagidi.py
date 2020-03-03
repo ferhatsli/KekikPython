@@ -275,7 +275,7 @@ Lütfen geri bildirimde bulunun ..""")  # bot başladı mesajı atıyoruz
                                 # Bu sepeten döngüne aldık . Elbette geliştirilebilir
         start(ii)               # start dediğimiz eleman herşeyi başlatan
         time.sleep(300)         # 5 dakika beklemesini sağlıyoruz
-        
+
 #TelegramUdemy()
 ########################################################################################################################
 
