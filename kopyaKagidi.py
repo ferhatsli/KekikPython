@@ -271,8 +271,8 @@ Lütfen geri bildirimde bulunun ..""")  # bot başladı mesajı atıyoruz
 
     for ii in range(1, 400):    # Neden : discumdey.com sitesi site.com/all/1 ,2 ,4 ,200 şeklinde kursları yayınlıyor.
                                 # Bu sepeten döngüne aldık . Elbette geliştirilebilir
-        start(ii)  # start dediğimiz eleman herşeyi başlatan
-        time.sleep(300)  # 5 dakika beklemesini sağlıyoruz
+        start(ii)               # start dediğimiz eleman herşeyi başlatan
+        time.sleep(300)         # 5 dakika beklemesini sağlıyoruz
 #TelegramUdemy()
 ########################################################################################################################
 
