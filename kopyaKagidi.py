@@ -94,52 +94,6 @@ WindowsBildirimi()
 ########################################################################################################################
 
 ########################################################################################################################
-def TelegramBot():
-    ####################################################################################################################
-    tg_bot_token = "921015578:AAERTtQ-LxeG6huZZw-dbmW1LQjJv9yZK4Q" # Bot Token
-    tg_chat_id = "717569643"                                       # Chat ID
-
-    tg_bot_adi = telebot.TeleBot(tg_bot_token)  # telebot'a Tokenimizi bağladık
-    ####################################################################################################################
-    def TelegramBotTest():
-        ##############################
-        ### Eski Usul requests Metodu;
-        ## requests ile Mesaj Gönderme --- https://core.telegram.org/bots/api
-        mesaj = "Merhaba, Beni requests Gönderdi!"
-        requests.post("https://api.telegram.org/bot" + tg_bot_token + "/sendMessage?chat_id=" + tg_chat_id + "&text=" + mesaj)
-        # https://api.telegram.org/bot921015578:AAERTtQ-LxeG6huZZw-dbmW1LQjJv9yZK4Q/sendMessage?chat_id=717569643&text=mesaj
-
-        ## requests ile Dosya Gönderme
-        dosya = open(r"DocTest_KekikAkademi.txt", 'rb') # veya "C:\Users\kekik\Desktop\kodlama\DocTest_KekikAkademi.txt"
-        files_for_link = {'document': dosya}
-        requests.post("https://api.telegram.org/bot" + tg_bot_token + "/sendDocument?chat_id=" + tg_chat_id , files=files_for_link)
-
-        ## requests ile Resim Gönderme
-        # (Eğer Fotoğrafta Çözünürlük Kaybı Yaşanmasını İstemiyorsanız Dosya Olarak Gönderin.)
-        resim = open(r"FotoTest_KekikAkademi.png", 'rb') # veya "C:\Users\kekik\Desktop\kodlama\FotoTest_KekikAkademi.png"
-        img_for_link = {'photo': resim}
-        requests.post("https://api.telegram.org/bot" + tg_bot_token + "/sendPhoto?chat_id=" + tg_chat_id , files=img_for_link)
-        ##############################
-        ##############################
-        ### Yeni Nesil TeleBot Metodu;
-        # TeleBot ile Mesaj Gönderme --- https://github.com/eternnoir/pyTelegramBotAPI#telebot
-        mesaj = "Merhaba, Beni TeleBot Gönderdi!"
-        tg_bot_adi.send_message(tg_chat_id, mesaj)
-
-        # TeleBot ile Dosya Gönderme
-        dosya = open(r"DocTest_KekikAkademi.txt", 'rb') # veya "C:\Users\kekik\Desktop\DocTest_KekikAkademi.txt"
-        tg_bot_adi.send_document(tg_chat_id, dosya)
-
-        # TeleBot ile Resim Gönderme
-        # (Eğer Fotoğrafta Çözünürlük Kaybı Yaşanmasını İstemiyorsanız Dosya Olarak Gönderin.)
-        resim = open(r"FotoTest_KekikAkademi.png", 'rb') # veya "C:\Users\kekik\Desktop\FotoTest_KekikAkademi.png"
-        tg_bot_adi.send_photo(tg_chat_id, resim)
-        ##############################
-    TelegramBotTest()
-#TelegramBot()
-########################################################################################################################
-
-########################################################################################################################
 def  WebCrawl():
     # Tanımlamalarımızı Yapalım
     url = "https://www.doviz.com/"
@@ -212,6 +166,98 @@ def  WebCrawl():
 ########################################################################################################################
 
 ########################################################################################################################
+def TelegramBot():
+    ####################################################################################################################
+    tg_bot_token = "921015578:AAERTtQ-LxeG6huZZw-dbmW1LQjJv9yZK4Q" # Bot Token
+    tg_chat_id = "717569643"                                       # Chat ID
+
+    tg_bot_adi = telebot.TeleBot(tg_bot_token)  # telebot'a Tokenimizi bağladık
+    ####################################################################################################################
+    def TelegramBotTest():
+        ##############################
+        ### Eski Usul requests Metodu;
+        ## requests ile Mesaj Gönderme --- https://core.telegram.org/bots/api
+        mesaj = "Merhaba, Beni requests Gönderdi!"
+        requests.post("https://api.telegram.org/bot" + tg_bot_token + "/sendMessage?chat_id=" + tg_chat_id + "&text=" + mesaj)
+        # https://api.telegram.org/bot921015578:AAERTtQ-LxeG6huZZw-dbmW1LQjJv9yZK4Q/sendMessage?chat_id=717569643&text=mesaj
+
+        ## requests ile Dosya Gönderme
+        dosya = open(r"DocTest_KekikAkademi.txt", 'rb') # veya "C:\Users\kekik\Desktop\kodlama\DocTest_KekikAkademi.txt"
+        files_for_link = {'document': dosya}
+        requests.post("https://api.telegram.org/bot" + tg_bot_token + "/sendDocument?chat_id=" + tg_chat_id , files=files_for_link)
+
+        ## requests ile Resim Gönderme
+        # (Eğer Fotoğrafta Çözünürlük Kaybı Yaşanmasını İstemiyorsanız Dosya Olarak Gönderin.)
+        resim = open(r"FotoTest_KekikAkademi.png", 'rb') # veya "C:\Users\kekik\Desktop\kodlama\FotoTest_KekikAkademi.png"
+        img_for_link = {'photo': resim}
+        requests.post("https://api.telegram.org/bot" + tg_bot_token + "/sendPhoto?chat_id=" + tg_chat_id , files=img_for_link)
+        ##############################
+        ##############################
+        ### Yeni Nesil TeleBot Metodu;
+        # TeleBot ile Mesaj Gönderme --- https://github.com/eternnoir/pyTelegramBotAPI#telebot
+        mesaj = "Merhaba, Beni TeleBot Gönderdi!"
+        tg_bot_adi.send_message(tg_chat_id, mesaj)
+
+        # TeleBot ile Dosya Gönderme
+        dosya = open(r"DocTest_KekikAkademi.txt", 'rb') # veya "C:\Users\kekik\Desktop\DocTest_KekikAkademi.txt"
+        tg_bot_adi.send_document(tg_chat_id, dosya)
+
+        # TeleBot ile Resim Gönderme
+        # (Eğer Fotoğrafta Çözünürlük Kaybı Yaşanmasını İstemiyorsanız Dosya Olarak Gönderin.)
+        resim = open(r"FotoTest_KekikAkademi.png", 'rb') # veya "C:\Users\kekik\Desktop\FotoTest_KekikAkademi.png"
+        tg_bot_adi.send_photo(tg_chat_id, resim)
+        ##############################
+    TelegramBotTest()
+#TelegramBot()
+########################################################################################################################
+
+########################################################################################################################
+def TelegramUdemy(): # @raifpy
+    from bs4 import BeautifulSoup as bs
+    
+    tg_bot_token = "921015578:AAERTtQ-LxeG6huZZw-dbmW1LQjJv9yZK4Q" # Bot Token
+    tg_chat_id = "717569643"                                       # Chat ID
+
+    def mesaj(konu):
+        requests.post(f"https://api.telegram.org/bot{tg_bot_token}/sendMessage",
+                      data={"chat_id": f"{tg_chat_id}", "text": konu})
+
+    def start(sayi):
+        sayi = str(sayi)  # int olan değerimizi str yapıyoruz
+        link = "http://www.discudemy.com/all/" + sayi  # sayfalar arasında gezinmek için
+        kimlik = {'User-Agent': '@KekikAkademi'} # Websitesine istek yollarken kimlik bilgimizi sunuyoruz
+        html = requests.get(link, headers=kimlik) # Url'nin içerisindeki bütün html dosyasını indiriyoruz.
+
+        ##
+        kaynak = bs(html.text, "html.parser")  # bitifulsup ile html'i işlememiz gerekiyor . html.parser'i kullandık
+        linkler = kaynak.find_all("a", attrs={
+            "class": "card-header"})  # sınıf'ı kart-header olan tüm linkleri çekiyoruz bununla
+
+
+        for i in linkler:       # linkler listesini i olarak ayırdık
+            i = i["href"]       # i'nin hreflerini aldık (linkleri)
+            i = i.split("/")    # discudemy.com/katagori olan linki udemy.com olarak değiştirmemiz gerekiyor.
+                                # Bunun için / 'ları bulduktan sonra buralardan bölüyoruz
+            i = i[0] + "//www.udemy.com/course/" + i[4]  # i[0] = https: i[4] = udemy linki'miz
+            mesaj(i)            # i değerimizi (linkimizi) mesaj yolla kısmı ile telegramdan attık
+
+    mesaj(f"""Udemy kurs botu aktif !
+Kaynak : discudemy.com
+Teşekkürler : @KekikAkademi
+
+Sunucu mimari : {platform.uname()}
+Sunucu : {platform.release()}
+
+Lütfen geri bildirimde bulunun ..""")  # bot başladı mesajı atıyoruz
+
+    for ii in range(1, 400):    # Neden : discumdey.com sitesi site.com/all/1 ,2 ,4 ,200 şeklinde kursları yayınlıyor.
+                                # Bu sepeten döngüne aldık . Elbette geliştirilebilir
+        start(ii)  # start dediğimiz eleman herşeyi başlatan
+        time.sleep(300)  # 5 dakika beklemesini sağlıyoruz
+#TelegramUdemy()
+########################################################################################################################
+
+########################################################################################################################
 def AcilisSayfasi(): # pankart = http://patorjk.com/software/taag/#p=display&f=Doom&t=kopya%20Kagidi
     pankart = '''
  _                             _   __            _     _ _ 
@@ -226,7 +272,7 @@ def AcilisSayfasi(): # pankart = http://patorjk.com/software/taag/#p=display&f=D
     print(Fore.GREEN + pankart)
     print(Fore.LIGHTBLACK_EX + f"\t{kullanici_adi} | {cihaz} | " + Fore.LIGHTGREEN_EX + f"{ip}" +
           Fore.YELLOW + f"\n\t\t{zaman}\n")
-    print(Fore.CYAN + '\t[1] WebCrawl Örneği\n\t[2] SeçenekİKİ\n\t[3] SeçenekÜÇ\n')
+    print(Fore.CYAN + '\t[1] WebCrawl Örneği\n\t[2] TelegramBot Test\n\t[3] TelegramUdemy\n')
 
     secenek = str(input(Fore.RED + f"{oturum}" + Fore.LIGHTBLUE_EX + " >> " + Fore.GREEN))
     #########################
@@ -236,5 +282,14 @@ def AcilisSayfasi(): # pankart = http://patorjk.com/software/taag/#p=display&f=D
             print(Fore.LIGHTBLACK_EX + f"\n{kullanici_adi} | {cihaz} | " + Fore.LIGHTGREEN_EX + f"{ip}" +
                   Fore.YELLOW + f"\n\t{zaman}\n")
             WebCrawl()
+    #########################
+    elif secenek == '2':
+        TelegramBot()
+    #########################
+    elif secenek == '3':
+        while True:
+            TelegramUdemy()
+    #########################
+    else:
 AcilisSayfasi()
 ########################################################################################################################
