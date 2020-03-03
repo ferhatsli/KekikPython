@@ -41,6 +41,7 @@ logo = '''
           | |     __/ |                     __/ |          
           |_|    |___/                     |___/           
 '''                                                                   # Logomuz
+                                        # logo = http://patorjk.com/software/taag/#p=display&f=Doom&t=kopya%20Kagidi
 ust_bilgi = f"""
     {Fore.LIGHTBLACK_EX}{kullanici_adi} | {cihaz} | {Fore.LIGHTGREEN_EX}{ip} 
           {Fore.YELLOW}{zaman}
@@ -279,7 +280,7 @@ Lütfen geri bildirimde bulunun ..""")  # bot başladı mesajı atıyoruz
 ########################################################################################################################
 
 ########################################################################################################################
-def AcilisSayfasi(): # pankart = http://patorjk.com/software/taag/#p=display&f=Doom&t=kopya%20Kagidi
+def AcilisSayfasi():
     print(Fore.GREEN + logo)        # yeşil renk koduyla logomuzu yazdırdık
     print(ust_bilgi)                # Üst Bilgimizi yazdırdık
     print(f"""
