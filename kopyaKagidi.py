@@ -303,14 +303,14 @@ def AcilisSayfasi():
     elif secenek == '2':    # Eğer 2 yi seçerse
         Temizle()           # Temizle fonksiyonunu çalıştır
         print(ust_bilgi)    # Üst Bilgi fonksiyonunu çalıştır
-        print("Telegram Bot Testi")
+        print("Telegram Bot Testi\n")
         TelegramBot()       # TelegramBot fonksiyonunu çalıştır
     #########################
     elif secenek == '3':    # Eğer 3 ü seçerse
         while True:         # Sonsuz döngü başlat
             Temizle()       # Temizle fonksiyonunu çalıştır
             print(ust_bilgi)# Üst Bilgi fonksiyonunu çalıştır
-            print("Telegram Udemy Botu")
+            print("Telegram Udemy Botu\n")
             TelegramUdemy()# TelegramUdemy fonksiyonunu çalıştır
     #########################
     else:                   # Eğer harici bişey seçerse
