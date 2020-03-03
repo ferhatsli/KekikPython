@@ -291,5 +291,7 @@ def AcilisSayfasi(): # pankart = http://patorjk.com/software/taag/#p=display&f=D
             TelegramUdemy()
     #########################
     else:
+        pass
+
 AcilisSayfasi()
 ########################################################################################################################
