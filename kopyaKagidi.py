@@ -298,14 +298,14 @@ def AcilisSayfasi(): # pankart = http://patorjk.com/software/taag/#p=display&f=D
         Temizle()           # Temizle fonksiyonunu çalıştır
         print(ust_bilgi)    # Üst Bilgi fonksiyonunu çalıştır
         print("Telegram Bot Testi")
-        TelegramBot()
+        TelegramBot()       # TelegramBot fonksiyonunu çalıştır
     #########################
-    elif secenek == '3':
-        while True:
-            Temizle()
-            print(ust_bilgi)
+    elif secenek == '3':    # Eğer 3 ü seçerse
+        while True:         # Sonsuz döngü başlat
+            Temizle()       # Temizle fonksiyonunu çalıştır
+            print(ust_bilgi)# Üst Bilgi fonksiyonunu çalıştır
             print("Telegram Udemy Botu")
-            TelegramUdemy()
+            TelegramUdemy()# TelegramUdemy fonksiyonunu çalıştır
     #########################
     else:                   # Eğer harici bişey seçerse
         pass                # Aldırış etme (çökme)
