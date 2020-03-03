@@ -94,6 +94,8 @@ def PencereBasligi():                                                           
         ctypes.windll.kernel32.SetConsoleTitleW("@KekikAkademi Kopya Kağıdı")       # Konsol Başlığını ayarla
     elif isletim_sistemi == "Android":                                              # Eğer İşletim Sistemi "Android" ise
         os.system("clear")                                                          # Sisteme "clear" komutu gönder
+    elif isletim_sistemi == "Linux":                                                # Eğer İşletim Sistemi "Android" ise
+        os.system('echo "\033]0;@KekikAkademi Kopya Kağıdı\007"')                   # Başlık Ayarla
     else:                                                                           # Hiçbiri değil ise
         os.system('title @KekikAkademi Kopya Kağıdı')                               # Başlık Ayarla
 PencereBasligi()                                                                    # PencereBasligi çağır
