@@ -248,10 +248,10 @@ def TelegramUdemy(): # @raifpy
         html = requests.get(link, headers=kimlik) # Url'nin içerisindeki bütün html dosyasını indiriyoruz.
         kaynak = bs(html.text, "html.parser")  # bitifulsup ile html'i işlememiz gerekiyor . html.parser'i kullandık
 
-        ##
+        #######################################################################################
         linkler = kaynak.find_all("a", attrs={
             "class": "card-header"})  # sınıf'ı kart-header olan tüm linkleri çekiyoruz bununla
-
+        #######################################################################################
         for i in linkler:       # linkler listesini i olarak ayırdık
             i = i["href"]       # i'nin hreflerini aldık (linkleri)
             i = i.split("/")    # discudemy.com/katagori olan linki udemy.com olarak değiştirmemiz gerekiyor.
@@ -259,6 +259,7 @@ def TelegramUdemy(): # @raifpy
             i = i[0] + "//www.udemy.com/course/" + i[4]  # i[0] = https: i[4] = udemy linki'miz
             mesaj(i)            # i değerimizi (linkimizi) mesaj yolla kısmı ile telegramdan attık
             print(f"{Fore.LIGHTBLACK_EX}{i} {Fore.CYAN}| {Fore.GREEN} Gönderildi !") # i değerimizi (linkimizi) yazdık
+        ##############################################################################################################
 
     mesaj(f"""Udemy kurs botu aktif !
 Kaynak : discudemy.com
@@ -268,11 +269,13 @@ Sunucu mimari : {platform.system()}
 Sunucu : {platform.release()}
 
 Lütfen geri bildirimde bulunun ..""")  # bot başladı mesajı atıyoruz
+    ################################################################
 
     for ii in range(1, 400):    # Neden : discumdey.com sitesi site.com/all/1 ,2 ,4 ,200 şeklinde kursları yayınlıyor.
                                 # Bu sepeten döngüne aldık . Elbette geliştirilebilir
         start(ii)               # start dediğimiz eleman herşeyi başlatan
         time.sleep(300)         # 5 dakika beklemesini sağlıyoruz
+        
 #TelegramUdemy()
 ########################################################################################################################
 
