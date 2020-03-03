@@ -42,10 +42,6 @@ logo = '''
           |_|    |___/                     |___/           
 '''                                                                   # Logomuz
                                         # logo = http://patorjk.com/software/taag/#p=display&f=Doom&t=kopya%20Kagidi
-ust_bilgi = f"""
-    {Fore.LIGHTBLACK_EX}{kullanici_adi} | {cihaz} | {Fore.LIGHTGREEN_EX}{ip} 
-          {Fore.YELLOW}{zaman}
-    """                                                               # Üst Bilgimiz
 #######################################################################################
 try:
     kullanici_adi = os.getlogin()                                     # Kullanıcı Adı
@@ -65,6 +61,11 @@ zaman = tarih + " | " + saat
 
 ip_req = requests.get('http://ip.42.pl/raw')    # Harici IP'yi bulmak için bir GET isteği yolluyoruz
 ip = ip_req.text                                # ip Adresi
+
+ust_bilgi = f"""
+    {Fore.LIGHTBLACK_EX}{kullanici_adi} | {cihaz} | {Fore.LIGHTGREEN_EX}{ip} 
+          {Fore.YELLOW}{zaman}
+    """                                                               # Üst Bilgimiz
 ########################################################################################################################
 
 ########################################################################################################################
