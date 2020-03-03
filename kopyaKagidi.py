@@ -37,8 +37,6 @@ def ModulYukle(): # https://github.com/KekikAkademi/KekikPython/blob/master/7-Ke
             import requests                 # requests Modülünü içe Aktarmayı
         except Exception as hata:           # Hala hata var ise
             sys.exit(f"{Fore.RED}requests yüklenemedi !\n\n{Fore.CYAN}Log : {Fore.LIGHTBLACK_EX}{hata}") # Kapat(yazdır)
-    except:
-        pass                                # Olmuyosa zorlamayacaksın :)
 #ModulYukle()
 ########################################################################################################################
 
