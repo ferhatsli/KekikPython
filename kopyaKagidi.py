@@ -30,16 +30,21 @@ import telebot    # pyTelegramBotAPI
 #############################################################################################################
 def ModulYukle(): # https://github.com/raif-py/pentester/blob/master/PentesterBeta.py
     try:                                        # Dene
-        import requests                         # requests Modülünü içe Aktarmayı
+        from colorama import Fore       # Boyamayı kolaylaştıran arkadaş (BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE)
+        colorama.init(autoreset=True)   # Renklerin ilgili satırdan başka satıra devam etmemesi için
     except ModuleNotFoundError:                 # Modül bulunamadıysa
         try:                                    # Dene
-            os.system("pip3 install requests")  # pip3 ile Yüklemeyi
+            print("\n\tEksik modüllerin varmış,\n\t\tSenin için pip3 ile yüklemeyi deniyorum..")
+            os.system("pip3 install colorama")  # pip3 ile Yüklemeyi
         except:                                 # pip3 yüklemediyse
-            os.system("pip install requests")   # pip ile yükle
+            print("\n\tpip3 ile yükleyemedim,\n\t\tpip ile yüklemeyi deniyorum..")
+            os.system("pip install colorama")   # pip ile yükle
         try:                                    # Tekrar dene
-            import requests                     # requests Modülünü içe Aktarmayı
+            from colorama import Fore       # Boyamayı kolaylaştıran arkadaş (BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE)
+            colorama.init(autoreset=True)   # Renklerin ilgili satırdan başka satıra devam etmemesi için
+            print(f"\n\t{Fore.GREEN}Modül yükleme işini hallettik!")
         except Exception as hata:               # Hala hata var ise
-            sys.exit(f"{Fore.RED}requests yüklenemedi !\n\n{Fore.CYAN}Log : {Fore.LIGHTBLACK_EX}{hata}") # Kapat(yazdır)
+            sys.exit(f"{Fore.RED}Modüller yüklenemedi !\n\n{Fore.CYAN}Log : {Fore.LIGHTBLACK_EX}{hata}") # Kapat(yazdır)
 #ModulYukle()
 ########################################################################################################################
 
