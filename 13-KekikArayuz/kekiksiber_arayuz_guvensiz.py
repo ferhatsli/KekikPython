@@ -36,17 +36,20 @@ app.geometry(f"+{positionRight}+{positionDown}")                # Pencere konumu
 #NOT# positionRight ve positionDown 'da pencereyi ortalarken "3" rakamında değişiklik yapmanız gerekebilir 
 
 app.resizable(0,0)  # Yeniden boyutlandırmayı kapattık
-label = tkinter.Label(image=image,text=" ",compound="top",bg="black",fg="white",cursor="watch") 
+label = tkinter.Label(image=image,text=" ",compound="top",bg="black",fg="white",cursor="watch") # label'ı ayarladık 
 label.pack()        # label'imizi görünür yaptık
-app.update()
-time.sleep(3)
-label.config(text="Searching LOL Files ..")
-app.update()
-time.sleep(3)
+app.update()        # Tkinter'a tüm ayarları yaptığımızı söyledik.
+                    # Böylece sleep verdiğimiz zaman ekrandaki herşeyi gösterip sonra bekleyecek.
+                    # Aksi türlü ilk sleep()'i bekliyor ardından uygulamamızı açıyor .
+time.sleep(3)       # Arkadaşımızı azıcık bekletelim değil mi :) +knk az bekle yüklenir şimdi
+label.config(text="Searching LOL Files ..") # 3 saniye bekledikten sonra daha önce " " olarak verdiğimiz değere birkaç şeyler yazalım 
+											# Yabancı dil kullanarak "+ adamlar yapmış bee" dedirtebilirsiniz .)
+app.update()        # Tekrardan güncelleme vermek zorundayız
+time.sleep(3)       # "Searching LOL Files .." :)
 label["text"] = "Searching LOL Account" # label.config() yapmak yerine label[]'de kullanabilirsiniz .
-app.update()
-time.sleep(3)       # macera()
-messagebox.showerror("LOL Money Hack","Id1oT.dll not found !") # :)
+app.update()        # Tekrardan güncelliyoruz
+macera()            # Fonksiyonumuzu Çağırdık
+messagebox.showerror("LOL Money Hack","Id1oT.dll not found !") # :) .dll bulunamadı adında bir hata çıkarttık
 
 sys.exit()      # Hata ekranı geçildikten sonra tüm uygulamamızı kapattık
 
