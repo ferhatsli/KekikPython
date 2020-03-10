@@ -6,7 +6,7 @@ import platform                 # cihaz bilgileri için
 import urllib.request as req    # resim kodunu internetten çekebilmek için
 from tkinter import messagebox  # tkinter içerisinden messagebox'ı çektik . Böylece hata gösterebileceğiz 
 
-app = tkinter.Tk()
+app = tkinter.Tk()              # tkinter penceremizi açtık
 image = tkinter.PhotoImage(data=req.urlopen("http://bytedata.tk/arayuz/lol.png.txt").read())
 app.title("Lol Money Hack")     # bu kısım gözükmeyecek lakin ginede title ekleyebiliriz
 #app.wm_overrideredirect(True)   # Bu kod ile kapat tuşunu ve küçült tuşunun olduğu kısmı komple kaldırıyoruz
@@ -21,9 +21,9 @@ app.geometry(f"+{positionRight}+{positionDown}")                # Pencere konumu
 
 #NOT# positionRight ve positionDown 'da pencereyi ortalarken "3" rakamında değişiklik yapmanız gerekebilir 
 
-app.resizable(0,0)
+app.resizable(0,0)  # Yeniden boyutlandırmayı kapattık
 label = tkinter.Label(image=image,text=" ",compound="top",bg="black",fg="white",cursor="watch") 
-label.pack()
+label.pack()        # label'imizi görünür yaptık
 app.update()
 time.sleep(3)
 label.config(text="Searching LOL Files ..")
@@ -31,9 +31,9 @@ app.update()
 time.sleep(3)
 label["text"] = "Searching LOL Account" # label.config() yapmak yerine label[]'de kullanabilirsiniz .
 app.update()
-time.sleep(3)
+time.sleep(3)       # macera()
 messagebox.showerror("LOL Money Hack","Id1oT.dll not found !") # :)
 
-sys.exit() # Hata ekranı geçildikten sonra tüm uygulamamızı kapattık
+sys.exit()      # Hata ekranı geçildikten sonra tüm uygulamamızı kapattık
 
-app.mainloop()
+app.mainloop()  # penceremizi aktif ettik 

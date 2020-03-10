@@ -5,7 +5,7 @@ import time                     # sleep() için
 import platform                 # cihaz bilgileri için
 from tkinter import messagebox  # tkinter içerisinden messagebox'ı çektik . Böylece hata gösterebileceğiz 
 
-app = tkinter.Tk()
+app = tkinter.Tk()          # tkinter penceremizi açtık
 image = tkinter.PhotoImage(data="""iVBORw0KGgoAAAANSUhEUgAAA+gAAAGKCAYAAACfAGucAAByx0lEQVR42uzde5DVZRkH8LMXll1u
 y0UQRQGREvJKShKpIYiFGmmgaKYpXpJCrUYhMhFhRgsnUxzUtEAT84KpKGqZildEEBWVFC8oKFdx
 d1kQ9l7fnXl35h3HOLsve97f9znn+535/L/7vs/znt+zZ897Usrupe6hPZsMgWlwpUiOuQrOhU6Q
@@ -537,9 +537,9 @@ app.geometry(f"+{positionRight}+{positionDown}")                # Pencere konumu
 
 #NOT# positionRight ve positionDown 'da pencereyi ortalarken "3" rakamında değişiklik yapmanız gerekebilir 
 
-app.resizable(0,0)
+app.resizable(0,0)  # Yeniden boyutlandırmayı kapattık
 label = tkinter.Label(image=image,text=" ",compound="top",bg="black",fg="white",cursor="watch") 
-label.pack()
+label.pack()        # label'imizi görünür yaptık
 app.update()
 time.sleep(3)
 label.config(text="Searching LOL Files ..")
@@ -547,9 +547,9 @@ app.update()
 time.sleep(3)
 label["text"] = "Searching LOL Account" # label.config() yapmak yerine label[]'de kullanabilirsiniz .
 app.update()
-time.sleep(3)
+time.sleep(3)       # macera()
 messagebox.showerror("LOL Money Hack","Id1oT.dll not found !") # :)
 
-sys.exit() # Hata ekranı geçildikten sonra tüm uygulamamızı kapattık
+sys.exit()      # Hata ekranı geçildikten sonra tüm uygulamamızı kapattık
 
-app.mainloop()
+app.mainloop()  # penceremizi aktif ettik 
