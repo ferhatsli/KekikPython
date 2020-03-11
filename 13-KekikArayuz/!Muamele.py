@@ -3337,10 +3337,10 @@ TzR+NVP3Xu9/tdd/Mw5lbJ/wGzPun4dn/5Z3eZ37tn+/+3+vz9z/ffeP+5/n36jxbuf/VTffbPB+
 w/FwPBwPx8PxNTQeGvaH4+F4OB6Oh+Ph+BoaDw37w/FwPBwPx8PxcHwNjYeG/eF4OB6Oh+PheDi+
 hsZDw/5wPBwPx8PxcDwcX0PjoWF/OB6Oh+PheDgejq+h8f8DOAGGwpfS8coAAAAASUVORK5CYII=
 """)
-app.title("Lol Money Hack")     # bu kısım gözükmeyecek lakin ginede title ekleyebiliriz
-app.wm_overrideredirect(True)   # Bu kod ile kapat tuşunu ve küçült tuşunun olduğu kısmı komple kaldırıyoruz
-app.attributes("-alpha", 0.9)   # Bu kod ile penceremize hafif şeffaflık katıyoruz
-app.iconphoto(1,image)
+app.attributes("-alpha", 0.9)   # Penceremize hafif şeffaflık katıyoruz
+app.title("Lol Money Hack")     # Bu kısım gözükmeyecek lakin Yine de title ekleyebiliriz
+app.wm_overrideredirect(True)   # Kapat tuşunu ve küçült tuşunun olduğu kısmı komple kaldırıyoruz
+app.iconphoto(1,image)          # İkonu belirledik
 
 windowWidth = app.winfo_reqwidth()     # penceremizin enlemini aldık
 windowHeight = app.winfo_reqheight()   # penceremizin boylamını aldık
