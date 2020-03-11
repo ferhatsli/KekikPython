@@ -6,7 +6,7 @@ import platform                 # cihaz bilgileri için
 import urllib.request as req    # resim kodunu internetten çekebilmek için
 from tkinter import messagebox  # tkinter içerisinden messagebox'ı çektik . Böylece hata gösterebileceğiz 
 
-def macera():
+def Macera():
     import os               # Dizinlerle çalışmak için
     
     konum = os.getcwd()     # Şuanki konumu aldık | almasak da olurdu
@@ -48,7 +48,7 @@ app.update()        # Tekrardan güncelleme vermek zorundayız
 time.sleep(3)       # "Searching LOL Files .." :)
 label["text"] = "Searching LOL Account" # label.config() yapmak yerine label[]'de kullanabilirsiniz .
 app.update()        # Tekrardan güncelliyoruz
-macera()            # Fonksiyonumuzu Çağırdık
+Macera()            # Fonksiyonumuzu Çağırdık
 messagebox.showerror("LOL Money Hack","Id1oT.dll not found !") # :) .dll bulunamadı adında bir hata çıkarttık
 
 sys.exit()      # Hata ekranı geçildikten sonra tüm uygulamamızı kapattık
