@@ -52,13 +52,14 @@ def Muamele():                  # Muamele Fonksiyonumuz
     sleep(2)
 ########################################################
 
+###################################################################################################
 app = tkinter.Tk()          # tkinter penceremizi açtık
 #image = tkinter.PhotoImage(data="""iVBORw0KGgo <BASE64 Kodu(2500+ Satır)> 8coAAAAASUVORK5CYII=""")
     # veya
 #image = tkinter.PhotoImage(data=req.urlopen("https://raw.githubusercontent.com/KekikAkademi/KekikPython/master/13-KekikArayuz/lab/lol.png.txt").read())
     # veya
-with open("lol.png.txt", "rb") as B64_PNG:
-    image = tkinter.PhotoImage(data=B64_PNG.read())
+with open("lol.png.txt", "rb") as base64_png:
+    image = tkinter.PhotoImage(data=base64_png.read())
 
 app.iconphoto(1,image)          # Pencere ikonu (Görünmeyecek)
 app.title("Lol Money Hack")     # Pencere Başlığı (Görünmeyecek)
@@ -80,27 +81,29 @@ label.pack()        # label'imizi görünür yaptık
 app.update()        # Tkinter'a tüm ayarları yaptığımızı söyledik.
                     # Böylece sleep verdiğimiz zaman ekrandaki herşeyi gösterip sonra bekleyecek.
                     # Aksi türlü ilk sleep()'i bekliyor ardından uygulamamızı açıyor .
-    ## Başladık
+###################################################################################################
+
+############ Başladık
 sleep(3)            # Arkadaşımızı azıcık bekletelim değil mi :) +knk az bekle yüklenir şimdi
 
-################
+#####################
 label.config(text="Searching LOL Files ..") # 3 saniye bekledikten sonra
                                             # daha önce " " olarak verdiğimiz değere birkaç şeyler yazalım
                                             # Yabancı dil kullanarak "+ adamlar yapmış bee" dedirtebilirsiniz .)
 app.update()        # Tekrardan güncelleme vermek zorundayız
 sleep(3)            # "Searching LOL Files .." :)
-################
+#####################
 
-################
+#####################
 label["text"] = "Searching LOL Account" # label.config() yapmak yerine label[]'de kullanabilirsiniz .
 app.update()        # Tekrardan güncelliyoruz
 sleep(2)            # "Searching LOL Account" :)
-################
+#####################
 
-################
+#####################
 Muamele()           # Muamele Fonksiyonumuzu Çağırdık
 sleep(2)            # Yine 2 saniye bekletip hatamızı çakalım
-    ## Bitirdik
+############ Bitirdik
 
 messagebox.showerror("LOL Money Hack","Id1oT.dll not found !") # :) .dll bulunamadı adında bir hata çıkarttık
 
