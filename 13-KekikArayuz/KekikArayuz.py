@@ -1,4 +1,4 @@
-#KekikSiber | t.me/kekiksiber | Python ile Sahte Arayüz Oluşturuyoruz
+# KekikSiber | t.me/kekiksiber | Python ile Sahte Arayüz Oluşturuyoruz
 
 #######################################################
 import tkinter                  # arayüz için
