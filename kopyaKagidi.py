@@ -173,7 +173,7 @@ def  ProgressBar():
             os.system("pip3 install random")  # pip3 ile Yükle
         from random import uniform
     ### / Modül Yükle #####################################################
-
+    Temizle()
 
     for i in tqdm(range(10)):
         sleep(0.2)
@@ -275,6 +275,7 @@ def InstagramScraper(): # https://www.instagram.com/p/B7Lv_HaAIWY/
 
 ########################################################################################################################
 def AcilisSayfasi():
+    Temizle()
     print(Fore.GREEN + logo)        # yeşil renk koduyla logomuzu yazdırdık
     print(ust_bilgi)                # Üst Bilgimizi yazdırdık
     print(f"""
@@ -310,6 +311,6 @@ def AcilisSayfasi():
         pass                # Aldırış etme (çökme)
         Temizle()           # Temizle fonksiyonunu çalıştır
         AcilisSayfasi()     # AcilisSayfasi fonksiyonunu çalıştır
+########################################################################################################################
 
 AcilisSayfasi()
-########################################################################################################################
