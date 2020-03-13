@@ -274,6 +274,53 @@ def InstagramScraper(): # https://www.instagram.com/p/B7Lv_HaAIWY/
 ########################################################################################################################
 
 ########################################################################################################################
+def ProxyCrawler(): # https://www.instagram.com/p/B7JOl9iA1h4/
+    ### Modül Yükle #####################################################
+    try:
+        import requests
+    except ModuleNotFoundError:
+        if platform.system() == "Windows":  # Eğer İşletim Sistemi Windows İse
+            os.system("pip install requests")  # pip ile Yükle
+        else:  # İşletim Sistemi Windows Değilse
+            os.system("pip3 install requests")  # pip3 ile Yükle
+        import requests
+    ######################################################################
+    try:
+        from bs4 import BeautifulSoup
+    except ModuleNotFoundError:
+        if platform.system() == "Windows":  # Eğer İşletim Sistemi Windows İse
+            os.system("pip install bs4")  # pip ile Yükle
+        else:  # İşletim Sistemi Windows Değilse
+            os.system("pip3 install bs4")  # pip3 ile Yükle
+        from bs4 import BeautifulSoup
+    ### / Modül Yükle #####################################################
+    Temizle()
+
+    def CrawlProxies():
+        proxies = []
+        link = "https://sslproxies.org"
+
+        r = requests.get(link)
+        s = BeautifulSoup(r.text, "html5lib")
+
+        for i in s.find_all("tr")[0:30]:
+            try:
+                data = i.find_all("td")
+                adress = data[0].text
+                port = data[1].text
+                type_ = data[4].text
+                proxy = f"{adress}:{port}"
+                print(f"https : {proxy}\n{'*' * 35}")  # Ekrana yaz
+                proxies.append({"https":proxy})
+            except:
+                pass
+        return proxies
+
+    proxies = CrawlProxies()
+    print(f"Proxyler ;\n{proxies}")                  # ekrana datayı yaz
+########################################################################################################################
+
+########################################################################################################################
 def AcilisSayfasi():
     Temizle()
     print(Fore.GREEN + logo)        # yeşil renk koduyla logomuzu yazdırdık
@@ -282,6 +329,7 @@ def AcilisSayfasi():
     {Fore.GREEN}[{Fore.YELLOW} 1 {Fore.GREEN}] {Fore.CYAN}Progress Bar
     {Fore.GREEN}[{Fore.YELLOW} 2 {Fore.GREEN}] {Fore.CYAN}Youtube Scraper
     {Fore.GREEN}[{Fore.YELLOW} 3 {Fore.GREEN}] {Fore.CYAN}Instagram Scraper
+    {Fore.GREEN}[{Fore.YELLOW} 4 {Fore.GREEN}] {Fore.CYAN}Proxy Crawler
     """) # Seçeneklerimizi ayarladık
 
     konum = os.getcwd()
@@ -306,6 +354,10 @@ def AcilisSayfasi():
     elif secenek == '3' or secenek == '03':    # Eğer 3 ü seçerse
         Temizle()
         InstagramScraper()
+    ###########################################################################
+    elif secenek == '4' or secenek == '04':    # Eğer 4 ü seçerse
+        Temizle()
+        ProxyCrawler()
     ###########################################################################
     else:                   # Eğer harici bişey seçerse
         pass                # Aldırış etme (çökme)
