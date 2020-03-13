@@ -10,9 +10,8 @@ from tkinter import messagebox  # Hata Mesajı için
 
 ########################################################
 def Muamele():                  # Muamele Fonksiyonumuz
-    from tqdm import tqdm
-    from random import uniform
-    
+    from random import uniform      # sleep'lere random değer atamak için
+
     liste = ['bağlantı kuruluyor',
         'cpu cevabı.bekleniyor',
         'default klasör aranıyor',
@@ -37,6 +36,8 @@ def Muamele():                  # Muamele Fonksiyonumuz
         sleep(0.1)
 
     def Processing():
+        from tqdm import tqdm  # Terminalde progress bar oluşturmak için
+
         pbar = tqdm(list(liste)[::-1])
         for i in pbar:
             pbar.set_description(f'Processing >> {i}')
