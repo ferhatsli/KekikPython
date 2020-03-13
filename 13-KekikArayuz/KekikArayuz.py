@@ -30,6 +30,7 @@ def Muamele():                  # Muamele Fonksiyonumuz
         'yüklemeye hazırlanıyor',
         'internet bağlantısı kontrol ediliyor',
         'kablolar koklanıyor']
+
     for i in liste:
         label.config(text=i)
         app.update()
@@ -84,8 +85,8 @@ sleep(3)            # Arkadaşımızı azıcık bekletelim değil mi :) +knk az 
 
 ################
 label.config(text="Searching LOL Files ..") # 3 saniye bekledikten sonra
-                                            # daha önce " " olarak verdiğimiz değere birkaç şeyler yazalım 
-											# Yabancı dil kullanarak "+ adamlar yapmış bee" dedirtebilirsiniz .)
+                                            # daha önce " " olarak verdiğimiz değere birkaç şeyler yazalım
+                                            # Yabancı dil kullanarak "+ adamlar yapmış bee" dedirtebilirsiniz .)
 app.update()        # Tekrardan güncelleme vermek zorundayız
 sleep(3)            # "Searching LOL Files .." :)
 ################
