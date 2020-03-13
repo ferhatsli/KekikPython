@@ -188,7 +188,7 @@ def  ProgressBar():
 ########################################################################################################################
 
 ########################################################################################################################
-def YoutubeScraper():
+def YoutubeScraper(): # https://www.instagram.com/p/B7RGVGqgQBO/
     ### Modül Yükle #####################################################
     try:
         import requests
@@ -208,6 +208,7 @@ def YoutubeScraper():
             os.system("pip3 install bs4")  # pip3 ile Yükle
         from bs4 import BeautifulSoup
     ### / Modül Yükle #####################################################
+    Temizle()
 
     def Scrape(link):
         data = []                   # Gelecek datalar için boş liste oluşturduk
@@ -224,13 +225,14 @@ def YoutubeScraper():
 
         return data     # data'ya dön
 
-    link = "https://youtube.com/KekikAkademi"   # link tanımlaması
+    link = input("Youtube Kullanıcı Adı Girin : ")
+    link = f"https://youtube.com/{link}"        # link tanımlaması
     data = Scrape(link)                         # data tanımlaması
     print(f"Datalar;\n{data}")                  # ekrana datayı yaz
 ########################################################################################################################
 
 ########################################################################################################################
-def InstagramScraper():
+def InstagramScraper(): # https://www.instagram.com/p/B7Lv_HaAIWY/
     ### Modül Yükle #####################################################
     try:
         import requests
@@ -250,6 +252,7 @@ def InstagramScraper():
             os.system("pip3 install bs4")  # pip3 ile Yükle
         from bs4 import BeautifulSoup
     ### / Modül Yükle #####################################################
+    Temizle()
 
     url = "https://instagram.com/{}/"
 
@@ -264,7 +267,8 @@ def InstagramScraper():
 
         return main_text
 
-    username = "keyiflerolsun"
+    username = input("Instagram Kullanıcı Adı Girin : ")
+    username = f"{username}"
     data = Scrape(username)
     print(data)
 ########################################################################################################################
