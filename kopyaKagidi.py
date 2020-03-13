@@ -294,19 +294,19 @@ def AcilisSayfasi():
     secenek = str(input(
         f"{Fore.RED}{oturum}:{Fore.LIGHTBLUE_EX}~/../{konum[-2] + '/' + konum[-1]} >> {Fore.GREEN}")
         ) # Kullanıcı için input oluşturduk
-    #########################
-    if secenek == '1':      # Eğer 1 i seçerse
+    ###########################################################################
+    if secenek == '1' or secenek == '01':      # Eğer 1 i seçerse
         Temizle()
         ProgressBar()
-    #########################
-    elif secenek == '2':    # Eğer 2 yi seçerse
+    ###########################################################################
+    elif secenek == '2' or secenek == '02':    # Eğer 2 yi seçerse
         Temizle()
         YoutubeScraper()
-    #########################
-    elif secenek == '3':    # Eğer 3 ü seçerse
+    ###########################################################################
+    elif secenek == '3' or secenek == '03':    # Eğer 3 ü seçerse
         Temizle()
         InstagramScraper()
-    #########################
+    ###########################################################################
     else:                   # Eğer harici bişey seçerse
         pass                # Aldırış etme (çökme)
         Temizle()           # Temizle fonksiyonunu çalıştır
