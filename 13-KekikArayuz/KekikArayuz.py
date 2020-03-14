@@ -1,5 +1,6 @@
-# ! -*- coding: utf-8 -*-
+#! -*- coding: utf-8 -*-
 # KekikSiber | t.me/KekikSiber | Python ile Sahte Arayüz Oluşturuyoruz
+# @raifpy > Ömer Rai'ye Sonsuz Teşekkürler..
 
 ###########################################################################
 import tkinter                  # arayüz için

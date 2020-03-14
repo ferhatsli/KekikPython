@@ -1,5 +1,6 @@
-# ! -*- coding: utf-8 -*-
+#! -*- coding: utf-8 -*-
 # Bu araç @keyiflerolsun tarafından | @KekikAkademi için yazılmıştır.
+# @raifpy > Ömer Rai'ye Sonsuz Teşekkürler..
 
 ###########################################################################
 import tkinter                  # arayüz için

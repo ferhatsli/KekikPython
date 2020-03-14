@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 #! -*- coding: utf-8 -*-
 # Bu araç @keyiflerolsun tarafından | @KekikAkademi için yazılmıştır.
+# @raifpy > Ömer Rai'ye Sonsuz Teşekkürler..
 
 ########################################################################################################################
 ## ModulYukle
