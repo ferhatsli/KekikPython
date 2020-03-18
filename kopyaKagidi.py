@@ -115,7 +115,7 @@ def WindowsTerminaliGizle():                        # WindowsTerminaliGizle adı
     else:                                           # Eğer İşletim Sistemi "Windows" değilse
         pass                                        # Boşver :)
 #WindowsTerminaliGizle() # Eğer Windows'da Terminalin gizlenmesini istiyosanız aktifleştirin
-                         # -- pyinstaller --onefile KekikRAT_v1.py --
+                         # -- pyinstaller -i udemy.ico --onefile --noconsole KekikUdemyGUI.py --
 ########################################################################################################################
 
 ########################################################################################################################
@@ -133,7 +133,7 @@ PencereBasligi()    # PencereBasligi çağır
 
 ########################################################################################################################
 def WindowsBildirimi():                         # WindowsBildirimi adında bir metod oluşturduk
-    if isletim_sistemi == "Windows":            # Eğer İşletim Sistemi "Windows" ise
+    if isletim_sistemi == "Windows" and bellenim_surumu >= "10":    # Windows ve 10'a büyük eşitse
         from win10toast import ToastNotifier    # Windows'a bildirim göndermek için
         bildirim = ToastNotifier()
         bildirim.show_toast("Bildirim Gibi Bildirim", "Kopya Kağıdı", icon_path=None, duration=10, threaded=True)
