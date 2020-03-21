@@ -3,12 +3,12 @@
 # Bu araç @keyiflerolsun tarafından | @KekikAkademi için yazılmıştır.
 # @raifpy > Ömer Rai'ye Sonsuz Teşekkürler..
 
-########################################################################################################################
+#----------------------------------------------------------------------------------------------------------------------#
 ## ModulYukle
 # https://github.com/raif-py/pentester/blob/master/PentesterBeta.py
 import os                       # Dizinler ve dosyalarla çalışmak için
 import platform                 # Çalışılan makine bilgisi sağlayacak arkadaş
-#############################################
+#-------------------------------------------#
 try:                                        # Dene
     import time,datetime,pytz               # Zaman/Tarih Bilgisi sağlayacak arkadaşları eklemeyi
 except ModuleNotFoundError:                 # Modül Bulunamadı Hatası Alırsan
@@ -22,7 +22,7 @@ except ModuleNotFoundError:                 # Modül Bulunamadı Hatası Alırsa
         os.system("pip3 install datetime")  # pip3 ile Yükle
         os.system("pip3 install pytz")      # pip3 ile Yükle
     import time, datetime, pytz             # Zaman/Tarih Bilgisi sağlayacak arkadaşları ekle
-#############################################
+#-------------------------------------------#
 try:                                        # Dene
     import requests                         # ip bilgisi almak için websitesine istek atıcak arkadaşı eklemeyi
 except ModuleNotFoundError:                 # Modül Bulunamadı Hatası Alırsan
@@ -32,7 +32,7 @@ except ModuleNotFoundError:                 # Modül Bulunamadı Hatası Alırsa
     else:                                   # İşletim Sistemi Windows Değilse
         os.system("pip3 install requests")  # pip3 ile Yükle
     import requests                         # ip bilgisi almak için websitesine istek atıcak arkadaşı ekle
-#############################################
+#-------------------------------------------#
 try:                                        # Dene
     import ctypes                           # C dili veri tipleri kullanmamızı sağlayacak arkadaşı eklemeyi (.DLL / .SO)
 except ModuleNotFoundError:                 # Modül Bulunamadı Hatası Alırsan
@@ -42,7 +42,7 @@ except ModuleNotFoundError:                 # Modül Bulunamadı Hatası Alırsa
     else:                                   # İşletim Sistemi Windows Değilse
         os.system("pip3 install ctypes")    # pip3 ile Yükle
     import ctypes                           # C dili veri tipleri kullanmamızı sağlayacak arkadaşı ekle (.DLL / .SO)
-#############################################
+#-------------------------------------------#
 try:                                        # Dene
     import colorama                         # Ortalığın renklenmesini sağlayacak arkadaşı eklemeyi
 except ModuleNotFoundError:                 # Modül Bulunamadı Hatası Alırsan
@@ -52,12 +52,12 @@ except ModuleNotFoundError:                 # Modül Bulunamadı Hatası Alırsa
     else:                                   # İşletim Sistemi Windows Değilse
         os.system("pip3 install colorama")  # pip3 ile Yükle
     import colorama                         # Ortalığın renklenmesini sağlayacak arkadaşı ekle
-#############################################
+#-------------------------------------------#
 from colorama import Fore       # Boyamayı kolaylaştıran arkadaş (BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE)
 colorama.init(autoreset=True)   # Renklerin ilgili satırdan başka satıra devam etmemesi için
-########################################################################################################################
+#----------------------------------------------------------------------------------------------------------------------#
 
-########################################################################################################################
+#----------------------------------------------------------------------------------------------------------------------#
 ## GenelDegiskenler
 pencere_basligi = "@KekikAkademi Kopya Kağıdı"                        # Pencere Başlığımız
 logo = '''
@@ -71,7 +71,7 @@ logo = '''
           |_|    |___/                     |___/           
 '''                                                                   # Logomuz
         # logo = http://patorjk.com/software/taag/#p=display&f=Doom&t=kopya%20Kagidi
-#######################################################################################
+#------------------------------------------------------------------------------------------------------------#
 try:
     kullanici_adi = os.getlogin()                                               # Kullanıcı Adı
 except:
@@ -95,18 +95,18 @@ ust_bilgi = f"""
     {Fore.LIGHTBLACK_EX}{kullanici_adi} | {cihaz} | {Fore.LIGHTGREEN_EX}{ip} 
           {Fore.YELLOW}{zaman}
     """                                                                         # Üst Bilgimiz
-########################################################################################################################
+#----------------------------------------------------------------------------------------------------------------------#
 
-########################################################################################################################
+#----------------------------------------------------------------------------------------------------------------------#
 def Temizle():                          # Temizle adında bir fonksiyon oluşturduk
     if isletim_sistemi == "Windows":    # Eğer İşletim Sistemi "Windows" ise
         os.system("cls")                # Sisteme "cls" komutu gönder
     else:                               # Sistem Windows değil ise
         os.system("clear")              # Sisteme "clear" komutu gönder
 Temizle()                               # Temizle fonksiyonumuzu çağırdık
-########################################################################################################################
+#----------------------------------------------------------------------------------------------------------------------#
 
-########################################################################################################################
+#----------------------------------------------------------------------------------------------------------------------#
 def WindowsTerminaliGizle():                        # WindowsTerminaliGizle adında bir fonksiyon oluşturduk
     if isletim_sistemi == "Windows":                # Eğer İşletim Sistemi "Windows" ise
         import win32console, win32gui               # Gerekli Modüller
@@ -116,9 +116,9 @@ def WindowsTerminaliGizle():                        # WindowsTerminaliGizle adı
         pass                                        # Boşver :)
 #WindowsTerminaliGizle() # Eğer Windows'da Terminalin gizlenmesini istiyosanız aktifleştirin
                          # -- pyinstaller -i udemy.ico --onefile --noconsole KekikUdemyGUI.py --
-########################################################################################################################
+#----------------------------------------------------------------------------------------------------------------------#
 
-########################################################################################################################
+#----------------------------------------------------------------------------------------------------------------------#
 def PencereBasligi():                                                   # PencereBasligi fonksiyonu
     if isletim_sistemi == "Windows":                                    # Eğer İşletim Sistemi "Windows" ise
         ctypes.windll.kernel32.SetConsoleTitleW(f"{pencere_basligi}")   # Konsol Başlığını ayarla
@@ -129,9 +129,9 @@ def PencereBasligi():                                                   # Pencer
     else:                                                               # Hiçbiri değil ise
         os.system(f'title {pencere_basligi}')                           # Başlık Ayarla
 PencereBasligi()    # PencereBasligi çağır
-########################################################################################################################
+#----------------------------------------------------------------------------------------------------------------------#
 
-########################################################################################################################
+#----------------------------------------------------------------------------------------------------------------------#
 def WindowsBildirimi():                         # WindowsBildirimi adında bir metod oluşturduk
     if isletim_sistemi == "Windows" and bellenim_surumu >= "10":    # Windows ve 10'a büyük eşitse
         from win10toast import ToastNotifier    # Windows'a bildirim göndermek için
@@ -140,13 +140,13 @@ def WindowsBildirimi():                         # WindowsBildirimi adında bir m
     else:                                       # Eğer İşletim Sistemi "Windows" değilse
         pass                                    # Boşver
 WindowsBildirimi()
-########################################################################################################################
+#----------------------------------------------------------------------------------------------------------------------#
 
-######################################## Her Şey Burda Başlar :) #######################################################
+#---------------------------------------- Her Şey Burda Başlar :) -----------------------------------------------------#
 
-########################################################################################################################
+#----------------------------------------------------------------------------------------------------------------------#
 def  ProgressBar():
-    ### Modül Yükle #####################################################
+    #-- Modül Yükle ----------------------------------------------------------#
     try:
         from tqdm import tqdm
     except ModuleNotFoundError:
@@ -155,7 +155,7 @@ def  ProgressBar():
         else:  # İşletim Sistemi Windows Değilse
             os.system("pip3 install tqdm")  # pip3 ile Yükle
         from tqdm import tqdm
-    ######################################################################
+    #-------------------------------------------------------------------------#
     try:
         from time import sleep
     except ModuleNotFoundError:
@@ -164,7 +164,7 @@ def  ProgressBar():
         else:  # İşletim Sistemi Windows Değilse
             os.system("pip3 install time")  # pip3 ile Yükle
         from time import sleep
-    ######################################################################
+    #-------------------------------------------------------------------------#
     try:
         from random import uniform
     except ModuleNotFoundError:
@@ -173,7 +173,7 @@ def  ProgressBar():
         else:  # İşletim Sistemi Windows Değilse
             os.system("pip3 install random")  # pip3 ile Yükle
         from random import uniform
-    ### / Modül Yükle #####################################################
+    #-- Modül Yükle ----------------------------------------------------------#
     Temizle()
 
     for i in tqdm(range(10)):
@@ -186,11 +186,11 @@ def  ProgressBar():
 
     for i in tqdm(range(100), unit=" keystrokes", desc="Loading ", position=1):
         sleep(uniform(0.001, 0.03))
-########################################################################################################################
+#------------------------------------------------------------------------------------------------------------------------#
 
-########################################################################################################################
+#------------------------------------------------------------------------------------------------------------------------#
 def YoutubeScraper(): # https://www.instagram.com/p/B7RGVGqgQBO/
-    ### Modül Yükle #####################################################
+    #-- Modül Yükle ----------------------------------------------------------#
     try:
         import requests
     except ModuleNotFoundError:
@@ -199,7 +199,7 @@ def YoutubeScraper(): # https://www.instagram.com/p/B7RGVGqgQBO/
         else:  # İşletim Sistemi Windows Değilse
             os.system("pip3 install requests")  # pip3 ile Yükle
         import requests
-    ######################################################################
+    #-------------------------------------------------------------------------#
     try:
         from bs4 import BeautifulSoup
     except ModuleNotFoundError:
@@ -208,7 +208,7 @@ def YoutubeScraper(): # https://www.instagram.com/p/B7RGVGqgQBO/
         else:  # İşletim Sistemi Windows Değilse
             os.system("pip3 install bs4")  # pip3 ile Yükle
         from bs4 import BeautifulSoup
-    ### / Modül Yükle #####################################################
+    #-- Modül Yükle ----------------------------------------------------------#
     Temizle()
 
     def Scrape(link):
@@ -230,11 +230,11 @@ def YoutubeScraper(): # https://www.instagram.com/p/B7RGVGqgQBO/
     link = f"https://youtube.com/{link}"        # link tanımlaması
     data = Scrape(link)                         # data tanımlaması
     print(f"Datalar;\n{data}")                  # ekrana datayı yaz
-########################################################################################################################
+#------------------------------------------------------------------------------------------------------------------------#
 
-########################################################################################################################
+#------------------------------------------------------------------------------------------------------------------------#
 def InstagramScraper(): # https://www.instagram.com/p/B7Lv_HaAIWY/
-    ### Modül Yükle #####################################################
+    #-- Modül Yükle ----------------------------------------------------------#
     try:
         import requests
     except ModuleNotFoundError:
@@ -243,7 +243,7 @@ def InstagramScraper(): # https://www.instagram.com/p/B7Lv_HaAIWY/
         else:  # İşletim Sistemi Windows Değilse
             os.system("pip3 install requests")  # pip3 ile Yükle
         import requests
-    ######################################################################
+    #-------------------------------------------------------------------------#
     try:
         from bs4 import BeautifulSoup
     except ModuleNotFoundError:
@@ -252,7 +252,7 @@ def InstagramScraper(): # https://www.instagram.com/p/B7Lv_HaAIWY/
         else:  # İşletim Sistemi Windows Değilse
             os.system("pip3 install bs4")  # pip3 ile Yükle
         from bs4 import BeautifulSoup
-    ### / Modül Yükle #####################################################
+    #-- Modül Yükle ----------------------------------------------------------#
     Temizle()
 
     url = "https://instagram.com/{}/"
@@ -272,11 +272,11 @@ def InstagramScraper(): # https://www.instagram.com/p/B7Lv_HaAIWY/
     username = f"{username}"
     data = Scrape(username)
     print(data)
-########################################################################################################################
+#------------------------------------------------------------------------------------------------------------------------#
 
-########################################################################################################################
+#------------------------------------------------------------------------------------------------------------------------#
 def ProxyCrawler(): # https://www.instagram.com/p/B7JOl9iA1h4/
-    ### Modül Yükle #####################################################
+    #-- Modül Yükle ----------------------------------------------------------#
     try:
         import requests
     except ModuleNotFoundError:
@@ -285,7 +285,7 @@ def ProxyCrawler(): # https://www.instagram.com/p/B7JOl9iA1h4/
         else:  # İşletim Sistemi Windows Değilse
             os.system("pip3 install requests")  # pip3 ile Yükle
         import requests
-    ######################################################################
+    #-------------------------------------------------------------------------#
     try:
         from bs4 import BeautifulSoup
     except ModuleNotFoundError:
@@ -294,7 +294,7 @@ def ProxyCrawler(): # https://www.instagram.com/p/B7JOl9iA1h4/
         else:  # İşletim Sistemi Windows Değilse
             os.system("pip3 install bs4")  # pip3 ile Yükle
         from bs4 import BeautifulSoup
-    ### / Modül Yükle #####################################################
+    #-- Modül Yükle ----------------------------------------------------------#
     Temizle()
 
     def CrawlProxies():
@@ -319,9 +319,9 @@ def ProxyCrawler(): # https://www.instagram.com/p/B7JOl9iA1h4/
 
     proxies = CrawlProxies()
     print(f"Proxyler ;\n{proxies}")                  # ekrana datayı yaz
-########################################################################################################################
+#------------------------------------------------------------------------------------------------------------------------#
 
-########################################################################################################################
+#------------------------------------------------------------------------------------------------------------------------#
 def AcilisSayfasi():
     Temizle()
     print(Fore.GREEN + logo)        # yeşil renk koduyla logomuzu yazdırdık
@@ -343,27 +343,27 @@ def AcilisSayfasi():
     secenek = str(input(
         f"{Fore.RED}{oturum}:{Fore.LIGHTBLUE_EX}~/../{konum[-2] + '/' + konum[-1]} >> {Fore.GREEN}")
         ) # Kullanıcı için input oluşturduk
-    ###########################################################################
+    #-------------------------------------------------------------#
     if secenek == '1' or secenek == '01':      # Eğer 1 i seçerse
         Temizle()
         ProgressBar()
-    ###########################################################################
+    #-------------------------------------------------------------#
     elif secenek == '2' or secenek == '02':    # Eğer 2 yi seçerse
         Temizle()
         YoutubeScraper()
-    ###########################################################################
+    #-------------------------------------------------------------#
     elif secenek == '3' or secenek == '03':    # Eğer 3 ü seçerse
         Temizle()
         InstagramScraper()
-    ###########################################################################
+    #-------------------------------------------------------------#
     elif secenek == '4' or secenek == '04':    # Eğer 4 ü seçerse
         Temizle()
         ProxyCrawler()
-    ###########################################################################
+    #-------------------------------------------------------------#
     else:                   # Eğer harici bişey seçerse
         pass                # Aldırış etme (çökme)
         Temizle()           # Temizle fonksiyonunu çalıştır
         AcilisSayfasi()     # AcilisSayfasi fonksiyonunu çalıştır
-########################################################################################################################
+#------------------------------------------------------------------------------------------------------------------------#
 
 AcilisSayfasi()
